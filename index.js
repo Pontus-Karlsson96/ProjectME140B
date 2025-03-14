@@ -35,8 +35,25 @@ function getLocation() {
       <h4>Body</h4>
       <article>${locationObject.limhamn1.description}
       </article> 
-      ${locationObject.limhamn1.image}
         `;
+
+      const carouselContainer = document.createElement('div');
+      carouselContainer.id = 'carouselContainer';
+      
+      const images = locationObject.limhamn1.images; //array
+      images.forEach(imageHtml => {
+        carouselContainer.innerHTML += imageHtml
+      });
+      main.appendChild(carouselContainer);
+
+      const imageElements = document.querySelectorAll(".image1, .image2, .image3");
+      imageElements.forEach(image => {
+        image.addEventListener("click", () => {
+            image.classList.toggle('selectedImage');
+
+          });
+        });
+
 
       const audio = document.createElement("audio");
       audio.controls = true;

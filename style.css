@@ -148,14 +148,54 @@ article {
     
 }
 
-.image1 {
+#carouselContainer {
+    width: 100%;
+    height: 10rem;
+    position: relative;
+    
+
+}
+
+.image0, .image1, .image2, .image3, .image4 {
 border: 3px solid var(--color-yellow);
 max-width: 50%;
 align-self: center;
 rotate: -5deg;
+position: absolute;
+top: 1rem;
+transform: 1s;
+
 
 }
 
+.image0 {
+    left: -100px;
+}
+
+.image1 {
+    left: 0;
+}
+
+.image2 {
+    left: 100px;
+}
+
+.image3 {
+    left: 200px;
+}
+
+.image4 {
+    left: 250px;
+}
+
+.selectedImage {
+    left: 2px;
+    top: -400px;
+    max-width: 23rem;
+    rotate: 1px;
+    transition: 1s;
+    
+}
 audio {
     position: sticky;
     bottom: 20px;
