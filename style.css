@@ -78,6 +78,12 @@ body {
     border: 3px solid var(--color-yellow);
 }
 
+#main {
+    display: flex;
+    flex-direction: column;
+}
+
+
 #fontTitle {
     grid-column: 1;
     grid-row: 1;
@@ -139,6 +145,21 @@ article {
     font-family: bodoni72;
     font-size: var(--main);
     overflow: hidden;
+    
+}
+
+.image1 {
+border: 3px solid var(--color-yellow);
+max-width: 50%;
+align-self: center;
+rotate: -5deg;
+
+}
+
+audio {
+    position: sticky;
+    bottom: 20px;
+    margin: auto;
 }
 
 @media (max-width: 768px) {
