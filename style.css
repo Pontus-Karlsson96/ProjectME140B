@@ -10,6 +10,13 @@
     --color-brown: #502F05;
     --color-blue: #C4E4E5;
     --color-red: #840909;
+
+    /*font-sizes*/
+    --h1: 10rem;
+    --h2: 6rem;
+    --h3: 4rem;
+    --h4: 3rem;
+    --main: 2rem
 }
 
 @font-face {
@@ -48,14 +55,13 @@
 
 body {
     width: 100vw;
-
+    background-color: var(--bg-color-yellow);
 }
 
 #wrapper {
     display: flex;
     flex-direction: column;
-    padding: 80px;
-
+    padding: 5rem;
     width: 100%;
     background-color: var(--bg-color-red);
     color: var(--color-yellow);
@@ -69,14 +75,12 @@ body {
     width: 100%;
     display: grid;
     grid-template-columns: 1fr 3fr;
-
-
 }
 
 #fontTitle {
     grid-column: 1;
     grid-row: 1;
-    font-size: 96px;
+    font-size: 6rem;
     font-family: ritz;
 }
 
@@ -97,8 +101,8 @@ body {
 
 }
 
-#header>div {
-    font-size: 45px;
+#fontName, #fontName2 {
+    font-size: var(--main);
     border: 1px solid black;
 }
 
@@ -109,26 +113,57 @@ body {
 
 h1 {
     font-family: ritz;
-    font-size: 172px;
+    font-size: var(--h1);
 }
 
 h2 {
     font-family: ritz;
-    font-size: 114px;
+    font-size: var(--h2);
 }
 
 h3 {
     font-family: bodoni72;
-    font-size: 72px;
+    font-size: var(--h3);
 }
 
 h4 {
     font-family: bodoni72;
-    font-size: 53px;
+    font-size: var(--h4);
 }
 
 article {
     font-family: bodoni72;
-    font-size: 45px;
+    font-size: var(--main);
     overflow: hidden;
 }
+
+@media (max-width: 768px) {
+    #wrapper {
+        padding: 1.5rem;
+        height: 100svh;
+    }
+
+    h1 {
+        font-size: calc(var(--h1) * 0.5);
+    }
+    h2 {
+        font-size: calc(var(--h2) * 0.5);
+    }
+    h3 {
+        font-size: calc(var(--h3) * 0.5);
+    }
+    h4 {
+        font-size: calc(var(--h4) * 0.5);
+    }
+    article {
+    font-size: calc(var(--main) * 0.5);
+    }
+    #fontTitle {
+        font-size: calc(6rem * 0.5);
+    }
+    #fontName, #fontName2 {
+        font-size: calc(var(--main) * 0.7);
+    }
+
+
+    }
