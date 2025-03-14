@@ -15,7 +15,7 @@ function getLocation() {
     const targetLon = 13.00073; // malmö
     //55.60587, 13.00073
     //55.586181, 13.013989
-    // 59.334591, 18.063240
+    //59.334591, 18.063240
 
     // Tolerans i meter
     const malmo = 10000;
