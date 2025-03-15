@@ -54,7 +54,6 @@ function getLocation() {
           });
         });
 
-
       const audio = document.createElement("audio");
       audio.controls = true;
       audio.autoplay = true;
@@ -85,10 +84,7 @@ function getLocation() {
           <i>Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software
               like Aldus PageMaker including versions of Lorem Ipsum</i>
       </article> 
-      
-      `
-      ;
-      
+      `;
     }
     else {
       document.getElementById("main").innerText = `Ta dig till en av platserna på kartan. ${userLat} ${userLon} ${distance}`;
@@ -99,7 +95,7 @@ function getLocation() {
   function showError(error) {
     switch (error.code) {
       case error.PERMISSION_DENIED:
-        alert("Användaren nekade begäran om Geolocation.");
+        alert("Var vänligt tillåt din webbläsare att se din.");
         break;
       case error.POSITION_UNAVAILABLE:
         alert("Platsinformation är otillgänglig.");
