@@ -205,7 +205,7 @@ audio {
 @media (max-width: 768px) {
     #wrapper {
         padding: 1.5rem;
-       
+       overflow-x: hidden;
     }
 
     h1 {
