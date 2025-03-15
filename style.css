@@ -192,7 +192,7 @@ transform: 1s;
     left: 2px;
     top: -400px;
     max-width: 23rem;
-    rotate: 1px;
+    rotate: 1deg;
     transition: 1s;
     
 }
@@ -205,7 +205,7 @@ audio {
 @media (max-width: 768px) {
     #wrapper {
         padding: 1.5rem;
-        height: 100svh;
+       
     }
 
     h1 {
