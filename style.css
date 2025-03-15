@@ -1,9 +1,20 @@
 :root {
     /*background-colors*/
     --bg-color-red: #840909;
+    --bg-color-red-darker1: #7A0909;
+    --bg-color-red-lighter1: #8E0909;
+    --bg-color-red-darker2: #700909;
+    --bg-color-red-lighter2: #980909;
+
     --bg-color-yellow: #F4B320;
+    --bg-color-yellow-darker1: #EAB320;
+    --bg-color-yellow-lighter1: #FEB320;
+    --bg-color-yellow-darker2: #E0B320;
+    --bg-color-yellow-lighter2: #FFB320;
+
     --bg-color-blue: #143C54;
     --bg-color-offwhite: #F4EBDF;
+    
 
     /*font-color*/
     --color-yellow: #FDCC44;
@@ -65,6 +76,13 @@ body {
     width: 100%;
     background-color: var(--bg-color-red);
     color: var(--color-yellow);
+    animation-name: bg;
+    animation-name: fg;
+    animation-duration: 8s;
+    animation-direction: alternate-reverse;
+    animation-iteration-count: infinite;
+
+
 }
 
 #header {
@@ -230,5 +248,21 @@ audio {
         font-size: calc(var(--main) * 0.7);
     }
 
-
     }
+
+    @keyframes bg {
+        0%   {background-color:var(--bg-color-red-darker2);}
+        25%  {background-color:var(--bg-color-red-darker1);}
+        50%  {background-color:var(--bg-color-red);}
+        75%  {background-color:var(--bg-color-red-lighter1);}
+        100% {background-color:var(--bg-color-red-lighter2);}
+      }
+
+      @keyframes fg {
+        0%   {color:var(--bg-color-yellow-darker2);}
+        25%  {color:var(--bg-color-yellow-darker1);}
+        50%  {color:var(--bg-color-yellow);}
+        75%  {color:var(--bg-color-yellow-lighter1);}
+        100% {color:var(--bg-color-yellow-lighter2);}
+      }
+      
