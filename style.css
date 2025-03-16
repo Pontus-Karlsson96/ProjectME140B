@@ -5,16 +5,10 @@
     --bg-color-red-lighter1: #8E0909;
     --bg-color-red-darker2: #700909;
     --bg-color-red-lighter2: #980909;
-
     --bg-color-yellow: #F4B320;
-    --bg-color-yellow-darker1: #EAB320;
-    --bg-color-yellow-lighter1: #FEB320;
-    --bg-color-yellow-darker2: #E0B320;
-    --bg-color-yellow-lighter2: #FFB320;
-
     --bg-color-blue: #143C54;
     --bg-color-offwhite: #F4EBDF;
-    
+
 
     /*font-color*/
     --color-yellow: #FDCC44;
@@ -77,7 +71,6 @@ body {
     background-color: var(--bg-color-red);
     color: var(--color-yellow);
     animation-name: bg;
-    animation-name: fg;
     animation-duration: 8s;
     animation-direction: alternate-reverse;
     animation-iteration-count: infinite;
@@ -107,13 +100,13 @@ body {
     grid-row: 1;
     font-size: 6rem;
     font-family: ritz;
-    
+
 }
 
 #fontName {
     grid-column: 1;
     grid-row: 2;
-    
+
     border-right: 3px solid var(--color-yellow);
     font-family: ritz;
 
@@ -126,7 +119,8 @@ body {
 
 }
 
-#fontName, #fontName2 {
+#fontName,
+#fontName2 {
     font-size: var(--main);
     border-top: 3px solid var(--color-yellow);
     height: 3.5rem;
@@ -163,25 +157,29 @@ article {
     font-family: bodoni72;
     font-size: var(--main);
     overflow: hidden;
-    
+
 }
 
 #carouselContainer {
     width: 100%;
     height: 10rem;
     position: relative;
-    
+
 
 }
 
-.image0, .image1, .image2, .image3, .image4 {
-border: 3px solid var(--color-yellow);
-max-width: 50%;
-align-self: center;
-rotate: -5deg;
-position: absolute;
-top: 1rem;
-transform: 1s;
+.image0,
+.image1,
+.image2,
+.image3,
+.image4 {
+    border: 3px solid var(--color-yellow);
+    max-width: 50%;
+    align-self: center;
+    rotate: -5deg;
+    position: absolute;
+    top: 1rem;
+    transform: 1s;
 
 
 }
@@ -212,8 +210,9 @@ transform: 1s;
     max-width: 23rem;
     rotate: 1deg;
     transition: 1s;
-    
+
 }
+
 audio {
     position: sticky;
     bottom: 20px;
@@ -223,46 +222,58 @@ audio {
 @media (max-width: 768px) {
     #wrapper {
         padding: 1.5rem;
-       overflow-x: hidden;
+        overflow-x: hidden;
     }
 
     h1 {
         font-size: calc(var(--h1) * 0.5);
     }
+
     h2 {
         font-size: calc(var(--h2) * 0.5);
     }
+
     h3 {
         font-size: calc(var(--h3) * 0.5);
     }
+
     h4 {
         font-size: calc(var(--h4) * 0.5);
     }
+
     article {
-    font-size: calc(var(--main) * 0.5);
+        font-size: calc(var(--main) * 0.5);
     }
+
     #fontTitle {
         font-size: calc(6rem * 0.5);
     }
-    #fontName, #fontName2 {
+
+    #fontName,
+    #fontName2 {
         font-size: calc(var(--main) * 0.7);
     }
 
+}
+
+@keyframes bg {
+    0% {
+        background-color: var(--bg-color-red-darker2);
     }
 
-    @keyframes bg {
-        0%   {background-color:var(--bg-color-red-darker2);}
-        25%  {background-color:var(--bg-color-red-darker1);}
-        50%  {background-color:var(--bg-color-red);}
-        75%  {background-color:var(--bg-color-red-lighter1);}
-        100% {background-color:var(--bg-color-red-lighter2);}
-      }
+    25% {
+        background-color: var(--bg-color-red-darker1);
+    }
 
-      @keyframes fg {
-        0%   {color:var(--bg-color-yellow-darker2);}
-        25%  {color:var(--bg-color-yellow-darker1);}
-        50%  {color:var(--bg-color-yellow);}
-        75%  {color:var(--bg-color-yellow-lighter1);}
-        100% {color:var(--bg-color-yellow-lighter2);}
-      }
-      
+    50% {
+        background-color: var(--bg-color-red);
+    }
+
+    75% {
+        background-color: var(--bg-color-red-lighter1);
+    }
+
+    100% {
+        background-color: var(--bg-color-red-lighter2);
+    }
+}
