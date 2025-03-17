@@ -1,20 +1,11 @@
 :root {
     /*background-colors*/
-    --bg-color-red: #840909;
-    --bg-color-red-darker1: #7A0909;
-    --bg-color-red-lighter1: #8E0909;
-    --bg-color-red-darker2: #700909;
-    --bg-color-red-lighter2: #980909;
-    --bg-color-yellow: #F4B320;
-    --bg-color-blue: #143C54;
-    --bg-color-offwhite: #F4EBDF;
-
-
-    /*font-color*/
-    --color-yellow: #FDCC44;
-    --color-brown: #502F05;
-    --color-blue: #C4E4E5;
-    --color-red: #840909;
+    --color-brown: #563F22;
+    --color-orange: #EF8E31;
+    --color-blue: #295969;
+    --color-yellow: #F4B320;
+    --color-white: #FFFEF5;
+    --color-black: #000000;
 
     /*font-sizes*/
     --h1: 10rem;
@@ -60,7 +51,7 @@
 
 body {
     width: 100vw;
-    background-color: var(--bg-color-yellow);
+    background-color: var(--color-brown);
 }
 
 #wrapper {
@@ -68,13 +59,13 @@ body {
     flex-direction: column;
     padding: 5rem;
     width: 100%;
-    background-color: var(--bg-color-red);
+    background-color: var(--bg-color-brown);
     color: var(--color-yellow);
-    animation-name: bg;
+    /*animation-name: bg;
     animation-duration: 8s;
     animation-direction: alternate-reverse;
     animation-iteration-count: infinite;
-
+*/
 
 }
 

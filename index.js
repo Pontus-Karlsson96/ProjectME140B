@@ -1,6 +1,6 @@
 function getLocation() {
     if (navigator.geolocation) {
-      navigator.geolocation.getCurrentPosition(checkPosition, showError);
+      navigator.geolocation.watchPosition(checkPosition, showError);
     } else {
       alert("Geolocation stöds inte av denna webbläsare.");
     }
