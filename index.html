@@ -3,20 +3,16 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Real-Time Location Updates</title>
+    <title>My Real-Time Location</title>
     <link rel="stylesheet" href="./style.css">
 </head>
 <body>
-    <h1>Real-Time Location Updates</h1>
+    <h1>My Real-Time Location</h1>
 
-    <h2>My Location</h2>
     <div>
         Latitude: <span id="latitude">-</span><br>
         Longitude: <span id="longitude">-</span>
     </div>
-
-    <h2>Other Users</h2>
-    <ul id="users"></ul>
 
     <script>
         const socket = new WebSocket(`wss://${window.location.host}/ws`);
@@ -34,15 +30,12 @@
             }));
         };
 
-        // Handle incoming location updates
+        // Handle incoming messages from the server
         socket.addEventListener("message", (event) => {
             const data = JSON.parse(event.data);
 
-            if (data.type === "location") {
-                const usersList = document.getElementById("users");
-                const userItem = document.createElement("li");
-                userItem.textContent = `Lat: ${data.latitude}, Lon: ${data.longitude}`;
-                usersList.appendChild(userItem);
+            if (data.type === "acknowledge") {
+                console.log("Server acknowledged location update:", data.message);
             }
         });
 
