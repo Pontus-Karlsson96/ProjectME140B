@@ -1,10 +1,12 @@
 import { serve } from "https://deno.land/std@0.200.0/http/server.ts";
 
+// Store all connected WebSocket clients
 const clients = new Set<WebSocket>();
 
 const handleRequest = async (request: Request): Promise<Response> => {
   const url = new URL(request.url);
 
+  // Handle WebSocket connections
   if (url.pathname === "/ws") {
     if (request.headers.get("upgrade") === "websocket") {
       const { socket, response } = Deno.upgradeWebSocket(request);
@@ -15,6 +17,7 @@ const handleRequest = async (request: Request): Promise<Response> => {
     }
   }
 
+  // Serve static files
   let filePath = `.${url.pathname}`;
   if (filePath === "./") {
     filePath = "./index.html";
@@ -47,20 +50,33 @@ const handleRequest = async (request: Request): Promise<Response> => {
 };
 
 const handleWebSocket = (socket: WebSocket) => {
+  console.log("New WebSocket connection");
+
+  // Add the new client to the set
   clients.add(socket);
 
+  // Handle messages from the client
   socket.addEventListener("message", (event) => {
-    clients.forEach((client) => {
-      if (client.readyState === WebSocket.OPEN) {
-        client.send(event.data);
-      }
-    });
+    const data = JSON.parse(event.data);
+
+    // Broadcast the location update to all connected clients
+    if (data.type === "location") {
+      console.log(`Received location update: ${JSON.stringify(data)}`);
+      clients.forEach((client) => {
+        if (client.readyState === WebSocket.OPEN) {
+          client.send(JSON.stringify(data));
+        }
+      });
+    }
   });
 
+  // Handle client disconnection
   socket.addEventListener("close", () => {
+    console.log("WebSocket connection closed");
     clients.delete(socket);
   });
 
+  // Handle errors
   socket.addEventListener("error", (event) => {
     console.error("WebSocket error:", event);
   });

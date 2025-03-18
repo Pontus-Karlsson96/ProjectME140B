@@ -3,53 +3,63 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Static Media with WebSocket</title>
+    <title>Real-Time Location Updates</title>
     <link rel="stylesheet" href="./style.css">
 </head>
 <body>
-    <h1>Welcome to My Media Page</h1>
+    <h1>Real-Time Location Updates</h1>
 
-    <h2>Images</h2>
+    <h2>My Location</h2>
     <div>
-        <img src="./media/limhamn1.jpg" alt="Limhamn 1" width="300">
-        <img src="./media/limhamn2.jpg" alt="Limhamn 2" width="300">
-        <img src="./media/limhamn3.jpg" alt="Limhamn 3" width="300">
+        Latitude: <span id="latitude">-</span><br>
+        Longitude: <span id="longitude">-</span>
     </div>
 
-    <h2>Audio</h2>
-    <div>
-        <audio controls>
-            <source src="./media/fi.mp3" type="audio/mpeg">
-            Your browser does not support the audio element.
-        </audio>
-    </div>
-
-    <h2>WebSocket Chat</h2>
-    <div>
-        <input id="messageInput" type="text" placeholder="Type a message">
-        <button id="sendButton">Send</button>
-    </div>
-    <ul id="messages"></ul>
+    <h2>Other Users</h2>
+    <ul id="users"></ul>
 
     <script>
         const socket = new WebSocket(`wss://${window.location.host}/ws`);
 
-        socket.addEventListener("message", (event) => {
-            const messages = document.getElementById("messages");
-            const li = document.createElement("li");
-            li.textContent = event.data;
-            messages.appendChild(li);
-        });
+        // Update my location
+        const updateLocation = (latitude, longitude) => {
+            document.getElementById("latitude").textContent = latitude;
+            document.getElementById("longitude").textContent = longitude;
 
-        const sendButton = document.getElementById("sendButton");
-        const messageInput = document.getElementById("messageInput");
-        sendButton.addEventListener("click", () => {
-            const message = messageInput.value;
-            if (message) {
-                socket.send(message);
-                messageInput.value = "";
+            // Send location to the server
+            socket.send(JSON.stringify({
+                type: "location",
+                latitude,
+                longitude,
+            }));
+        };
+
+        // Handle incoming location updates
+        socket.addEventListener("message", (event) => {
+            const data = JSON.parse(event.data);
+
+            if (data.type === "location") {
+                const usersList = document.getElementById("users");
+                const userItem = document.createElement("li");
+                userItem.textContent = `Lat: ${data.latitude}, Lon: ${data.longitude}`;
+                usersList.appendChild(userItem);
             }
         });
+
+        // Get the user's location
+        if ("geolocation" in navigator) {
+            navigator.geolocation.watchPosition(
+                (position) => {
+                    const { latitude, longitude } = position.coords;
+                    updateLocation(latitude, longitude);
+                },
+                (error) => {
+                    console.error("Error getting location:", error);
+                }
+            );
+        } else {
+            console.error("Geolocation is not supported by this browser.");
+        }
     </script>
 </body>
 </html>
