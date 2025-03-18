@@ -1,20 +1,3 @@
-const LOCATIONS = {
-  MALMO: {
-    lat: 55.60587,
-    lon: 13.00073,
-    tolerance: 10000, // 10 km
-    title: "Malmö",
-    description: "This is Malmö!",
-    images: ["<img src='limhamn1.jpg'>", "<img src='limhamn2.jpg'>"],
-    audio: "malmo.mp3",
-  },
-  SWEDEN: {
-    tolerance: 1000000, // 1000 km
-    title: "Sverige",
-    description: "This is Sweden!",
-  },
-};
-
 function getLocation() {
   if (navigator.geolocation) {
     navigator.geolocation.watchPosition(checkPosition, showError);
@@ -27,12 +10,12 @@ function checkPosition(position) {
   const userLat = position.coords.latitude;
   const userLon = position.coords.longitude;
 
-  const distanceToMalmo = calculateDistance(userLat, userLon, LOCATIONS.MALMO.lat, LOCATIONS.MALMO.lon);
+  const distanceToMalmo = calculateDistance(userLat, userLon, locationObject.MALMO.lat, locationObject.MALMO.lon);
 
-  if (distanceToMalmo <= LOCATIONS.MALMO.tolerance) {
-    displayLocationContent(LOCATIONS.MALMO, userLat, userLon, distanceToMalmo);
-  } else if (distanceToMalmo <= LOCATIONS.SWEDEN.tolerance) {
-    displayLocationContent(LOCATIONS.SWEDEN, userLat, userLon, distanceToMalmo);
+  if (distanceToMalmo <= locationObject.MALMO.tolerance) {
+    displayLocationContent(locationObject.MALMO, userLat, userLon, distanceToMalmo);
+  } else if (distanceToMalmo <= locationObject.SWEDEN.tolerance) {
+    displayLocationContent(locationObject.SWEDEN, userLat, userLon, distanceToMalmo);
   } else {
     const main = document.getElementById("main");
     if (main) {
