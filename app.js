@@ -10,10 +10,10 @@ function checkPosition(position) {
   const userLat = position.coords.latitude;
   const userLon = position.coords.longitude;
 
-  const distanceToMalmo = calculateDistance(userLat, userLon, locationObject.MALMO.lat, locationObject.MALMO.lon);
+  const distanceToMalmo = calculateDistance(userLat, userLon, locationObject.TEXAS.lat, locationObject.TEXAS.lon);
 
-  if (distanceToMalmo <= locationObject.MALMO.tolerance) {
-    displayLocationContent(locationObject.MALMO, userLat, userLon, distanceToMalmo);
+  if (distanceToMalmo <= locationObject.TEXAS.tolerance) {
+    displayLocationContent(locationObject.TEXAS, userLat, userLon, distanceToMalmo);
   } else if (distanceToMalmo <= locationObject.SWEDEN.tolerance) {
     displayLocationContent(locationObject.SWEDEN, userLat, userLon, distanceToMalmo);
   } else {
