@@ -1,6 +1,6 @@
 const locationObject =  {
 
-    PLATS1:{ 
+    MALMO:{ 
     lat: 55.60587,
     lon: 13.00073,
     tolerance: 10000,
