@@ -1,5 +1,6 @@
 import { serve } from "https://deno.land/std@0.200.0/http/server.ts";
-import { WebSocket } from "https://deno.land/std@0.200.0/ws/mod.ts";
+
+const clients = new Set<WebSocket>();
 
 const handleRequest = async (request: Request): Promise<Response> => {
   const url = new URL(request.url);
@@ -10,33 +11,60 @@ const handleRequest = async (request: Request): Promise<Response> => {
       handleWebSocket(socket);
       return response;
     } else {
-      return new Response("Expected websocket upgrade", { status: 400 });
+      return new Response("Expected WebSocket upgrade", { status: 400 });
     }
-  } else {
-      return new Response("Not Found", {status:404})
+  }
+
+  let filePath = `.${url.pathname}`;
+  if (filePath === "./") {
+    filePath = "./index.html";
+  }
+
+  try {
+    const file = await Deno.readFile(filePath);
+    let contentType = "text/plain";
+    if (filePath.endsWith(".html")) {
+      contentType = "text/html";
+    } else if (filePath.endsWith(".css")) {
+      contentType = "text/css";
+    } else if (filePath.endsWith(".jpg") || filePath.endsWith(".jpeg")) {
+      contentType = "image/jpeg";
+    } else if (filePath.endsWith(".png")) {
+      contentType = "image/png";
+    } else if (filePath.endsWith(".mp3")) {
+      contentType = "audio/mpeg";
+    }
+
+    return new Response(file, {
+      headers: { "Content-Type": contentType },
+    });
+  } catch (error) {
+    if (error instanceof Deno.errors.NotFound) {
+      return new Response("File Not Found", { status: 404 });
+    }
+    return new Response("Internal Server Error", { status: 500 });
   }
 };
 
 const handleWebSocket = (socket: WebSocket) => {
-  console.log("New WebSocket connection");
+  clients.add(socket);
 
-  const interval = setInterval(() => {
-    if (socket.readyState === WebSocket.OPEN) {
-      console.log("LOCATION");
-      socket.send(JSON.stringify("location"));
-    }
-  }, 5000);
+  socket.addEventListener("message", (event) => {
+    clients.forEach((client) => {
+      if (client.readyState === WebSocket.OPEN) {
+        client.send(event.data);
+      }
+    });
+  });
 
   socket.addEventListener("close", () => {
-    console.log("Websocket connection closed");
-    clearInterval(interval);
+    clients.delete(socket);
+  });
+
+  socket.addEventListener("error", (event) => {
+    console.error("WebSocket error:", event);
   });
 };
 
-if (Deno.env.get("DENO_DEPLOYMENT_ID")) {
-  console.log("Server is running on Deno Deploy");
-} else {
-  console.log("server is running locally");
-}
-
-serve(handleRequest, { port: 8888 });
+console.log("Server is running");
+serve(handleRequest);

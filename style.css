@@ -1,270 +1,33 @@
-:root {
-    /*background-colors*/
-    --color-brown: #563F22;
-    --color-orange: #EF8E31;
-    --color-blue: #295969;
-    --color-yellow: #F4B320;
-    --color-white: #FFFEF5;
-    --color-black: #000000;
-
-    /*font-sizes*/
-    --h1: 10rem;
-    --h2: 6rem;
-    --h3: 4rem;
-    --h4: 3rem;
-    --main: 2rem;
-}
-
-@font-face {
-    font-family: ritz;
-    src: url(./fonts/RitzFLF.ttf);
-    font-weight: normal;
-    font-style: normal;
-}
-
-@font-face {
-    font-family: ritz;
-    src: url(./fonts/RitzFLF-Italic.ttf);
-    font-weight: normal;
-    font-style: italic;
-}
-
-@font-face {
-    font-family: ritz;
-    src: url(./fonts/RitzFLFCond.ttf);
-    font-weight: normal;
-    font-style: condensed;
-}
-
-@font-face {
-    font-family: Bodoni72;
-    src: url(./fonts/bodoni-72-book.ttf);
-    font-weight: normal;
-    font-style: normal;
-}
-
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-
 body {
-    width: 100vw;
-    background-color: var(--color-brown);
+    font-family: Arial, sans-serif;
+    text-align: center;
+    background-color: #f0f0f0;
+    padding: 20px;
 }
 
-#wrapper {
-    display: flex;
-    flex-direction: column;
-    padding: 5rem;
-    width: 100%;
-    background-color: var(--bg-color-brown);
-    color: var(--color-yellow);
-    /*animation-name: bg;
-    animation-duration: 8s;
-    animation-direction: alternate-reverse;
-    animation-iteration-count: infinite;
-*/
-
+h1, h2 {
+    color: #333;
 }
 
-#header {
-    width: 100%;
-}
-
-#headerWrapper {
-    width: 100%;
-    display: grid;
-    grid-template-columns: 1fr 3fr;
-    border: 3px solid var(--color-yellow);
-}
-
-#main {
-    display: flex;
-    flex-direction: column;
-}
-
-
-#fontTitle {
-    grid-column: 1;
-    grid-row: 1;
-    font-size: 6rem;
-    font-family: ritz;
-
-}
-
-#fontName {
-    grid-column: 1;
-    grid-row: 2;
-
-    border-right: 3px solid var(--color-yellow);
-    font-family: ritz;
-
-}
-
-#fontName2 {
-    grid-column: 2;
-    grid-row: 2;
-    font-family: bodoni72;
-
-}
-
-#fontName,
-#fontName2 {
-    font-size: var(--main);
-    border-top: 3px solid var(--color-yellow);
-    height: 3.5rem;
-    display: flex;
-    align-items: center;
-}
-
-#headerWrapper>div {
-    padding: 10px;
-    align-self: center;
-}
-
-h1 {
-    font-family: ritz;
-    font-size: var(--h1);
-}
-
-h2 {
-    font-family: ritz;
-    font-size: var(--h2);
-}
-
-h3 {
-    font-family: bodoni72;
-    font-size: var(--h3);
-}
-
-h4 {
-    font-family: bodoni72;
-    font-size: var(--h4);
-}
-
-article {
-    font-family: bodoni72;
-    font-size: var(--main);
-    overflow: hidden;
-
-}
-
-#carouselContainer {
-    width: 100%;
-    height: 10rem;
-    position: relative;
-
-
-}
-
-.image0,
-.image1,
-.image2,
-.image3,
-.image4 {
-    border: 3px solid var(--color-yellow);
-    max-width: 50%;
-    align-self: center;
-    rotate: -5deg;
-    position: absolute;
-    top: 1rem;
-    transform: 1s;
-
-
-}
-
-.image0 {
-    left: -100px;
-}
-
-.image1 {
-    left: 0;
-}
-
-.image2 {
-    left: 100px;
-}
-
-.image3 {
-    left: 200px;
-}
-
-.image4 {
-    left: 250px;
-}
-
-.selectedImage {
-    left: 2px;
-    top: -400px;
-    max-width: 23rem;
-    rotate: 1deg;
-    transition: 1s;
-
+img {
+    margin: 10px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
 
 audio {
-    position: sticky;
-    bottom: 20px;
-    margin: auto;
+    margin-top: 20px;
 }
 
-@media (max-width: 768px) {
-    #wrapper {
-        padding: 1.5rem;
-        overflow-x: hidden;
-    }
-
-    h1 {
-        font-size: calc(var(--h1) * 0.5);
-    }
-
-    h2 {
-        font-size: calc(var(--h2) * 0.5);
-    }
-
-    h3 {
-        font-size: calc(var(--h3) * 0.5);
-    }
-
-    h4 {
-        font-size: calc(var(--h4) * 0.5);
-    }
-
-    article {
-        font-size: calc(var(--main) * 0.5);
-    }
-
-    #fontTitle {
-        font-size: calc(6rem * 0.5);
-    }
-
-    #fontName,
-    #fontName2 {
-        font-size: calc(var(--main) * 0.7);
-    }
-
+#messages {
+    list-style-type: none;
+    padding: 0;
 }
 
-@keyframes bg {
-    0% {
-        background-color: var(--bg-color-red-darker2);
-    }
-
-    25% {
-        background-color: var(--bg-color-red-darker1);
-    }
-
-    50% {
-        background-color: var(--bg-color-red);
-    }
-
-    75% {
-        background-color: var(--bg-color-red-lighter1);
-    }
-
-    100% {
-        background-color: var(--bg-color-red-lighter2);
-    }
+#messages li {
+    background-color: #fff;
+    padding: 10px;
+    margin: 5px 0;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
