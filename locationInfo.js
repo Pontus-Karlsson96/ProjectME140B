@@ -17,9 +17,9 @@ const locationObject =  {
     TEXAS: {
         lat: 55.60170625333595,
         lon: 13.001817923103184,
-        tolerance: 100000,
+        tolerance: 100,
         title: 'Texas Longhorn',
-        description: "Fan va gött - Anton Lindeborg",
+        description: "Grattis på födelsedagen, Anton",
         images: [
             "<img class='image1' src='./media/finland.jpg' alt='grattis Anton'>",
             "<img class='image2' src='./media/finland.jpg' alt='grattis Anton'>",
