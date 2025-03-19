@@ -4,6 +4,7 @@
     --color-orange: #EF8E31;
     --color-blue: #295969;
     --color-yellow: #F4B320;
+    --color-red: #DB2E17;
     --color-white: #FFFEF5;
     --color-black: #000000;
 
@@ -43,6 +44,11 @@
     font-style: normal;
 }
 
+@font-face {
+    font-family: ConcertOne;
+    src: url(./fonts/ConcertOne-Regular.ttf);
+}
+
 * {
     margin: 0;
     padding: 0;
@@ -51,7 +57,7 @@
 
 body {
     width: 100vw;
-    background-color: var(--color-brown);
+    background-color: var(--color-yellow);
 }
 
 #wrapper {
