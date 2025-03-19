@@ -26,6 +26,20 @@ const locationObject =  {
             "<img class='image3' src='./media/finland.jpg' alt='grattis Anton'>",
         ],
         audio: "./media/fi.mp3",
+    },
+
+    NIAGARA: {
+        lat:55.608952734938306,
+        lon: 12.994511836068497,
+        tolerance: 200,
+        title: 'Niagara',
+        description: 'Gott med kaffe',
+        images: [
+            "<img class='image1' src='./media/finland.jpg' alt='Japp'>",
+            "<img class='image2' src='./media/finland.jpg' alt='Japp'>",
+            "<img class='image3' src='./media/finland.jpg' alt='Japp'>",
+        ],
+        audio: "./media/fi.mp3",
     }
 
 };
