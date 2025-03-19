@@ -1,6 +1,6 @@
 const locationObject =  {
 
-    MALMO:{ 
+    LIMHAMN:{ 
     lat: 0,//55.60587,
     lon: 0,//13.00073,
     tolerance: 10000,

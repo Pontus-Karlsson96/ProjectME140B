@@ -10,12 +10,16 @@ function checkPosition(position) {
   const userLat = position.coords.latitude;
   const userLon = position.coords.longitude;
 
-  const distanceToMalmo = calculateDistance(userLat, userLon, locationObject.NIAGARA.lat, locationObject.NIAGARA.lon);
+  const distanceToNiagara = calculateDistance(userLat, userLon, locationObject.NIAGARA.lat, locationObject.NIAGARA.lon);
+  const distanceToTexas = calculateDistance(userLat, userLon, locationObject.TEXAS.lat, locationObject.TEXAS.lon);
+  const distanceToLimhamn = calculateDistance(userLat, userLon, locationObject.LIMHAMN.lat, locationObject.LIMHAMN.lon);
 
-  if (distanceToMalmo <= locationObject.NIAGARA.tolerance) {
-    displayLocationContent(locationObject.NIAGARA, userLat, userLon, distanceToMalmo);
-  } else if (distanceToMalmo <= locationObject.SWEDEN.tolerance) {
-    displayLocationContent(locationObject.SWEDEN, userLat, userLon, distanceToMalmo);
+  if (distanceToNiagara <= locationObject.NIAGARA.tolerance) {
+    displayLocationContent(locationObject.NIAGARA, userLat, userLon, distanceToNiagara);
+  } else if (distanceToTexas <= locationObject.TEXAS.tolerance) {
+    displayLocationContent(locationObject.TEXAS, userLat, userLon, distanceToTexas);
+  } else if (distanceToLimhamn <= locationObject.LIMHAMN.tolerance) {
+    displayLocationContent(locationObject.LIMHAMN, userLat, userLon, distanceToLimhamn);
   } else {
     const main = document.getElementById("main");
     if (main) {
