@@ -6,14 +6,17 @@ function getLocation() {
   }
 }
 
+//Check user position
 function checkPosition(position) {
   const userLat = position.coords.latitude;
   const userLon = position.coords.longitude;
 
+  //Check distance to set places determined in locationInfo.js. 
   const distanceToNiagara = calculateDistance(userLat, userLon, locationObject.NIAGARA.lat, locationObject.NIAGARA.lon);
   const distanceToTexas = calculateDistance(userLat, userLon, locationObject.TEXAS.lat, locationObject.TEXAS.lon);
   const distanceToLimhamn = calculateDistance(userLat, userLon, locationObject.LIMHAMN.lat, locationObject.LIMHAMN.lon);
 
+  //display object content based on the distance and tolerance. 
   if (distanceToNiagara <= locationObject.NIAGARA.tolerance) {
     displayLocationContent(locationObject.NIAGARA, userLat, userLon, distanceToNiagara);
   } else if (distanceToTexas <= locationObject.TEXAS.tolerance) {
@@ -28,6 +31,7 @@ function checkPosition(position) {
   }
 }
 
+//user location
 function displayLocationContent(location, userLat, userLon, distance) {
   const main = document.getElementById("main");
   if (!main) {
