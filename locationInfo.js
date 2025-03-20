@@ -43,7 +43,7 @@ const locationObject =  {
     },
     LONNGATAN: {
         lat: 55.58611327405579,
-        long: 13.014027259123269,
+        lon: 13.014027259123269,
         tolerance: 400,
         title: 'Lönngatan',
         description: 'Här är jag',
