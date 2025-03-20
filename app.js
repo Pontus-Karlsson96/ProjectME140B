@@ -28,7 +28,7 @@ function checkPosition(position) {
   } else { 
     const main = document.getElementById("main");
     if (main) {
-      main.innerText = `Ta dig till en av platserna på kartan. ${userLat} ${userLon} ${distanceToMalmo}`;
+      main.innerText = `Ta dig till en av platserna på kartan. ${userLat} ${userLon} ${'distanceToMalmo'}`;
     }
   }
 }
