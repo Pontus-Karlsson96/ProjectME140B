@@ -65,7 +65,7 @@ body {
     flex-direction: column;
     padding: 5rem;
     width: 100%;
-    background-color: var(--bg-color-brown);
+    background-color: var(--color-brown);
     color: var(--color-yellow);
     /*animation-name: bg;
     animation-duration: 8s;
