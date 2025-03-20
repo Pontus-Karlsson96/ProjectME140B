@@ -52,6 +52,19 @@ const locationObject =  {
         "<img class='image3' src='./media/finland.jpg' alt='Japp'>",
     ],
     audio: "./media/fi.mp3,"
+    },
+    MALMO: {
+        lat: 55.60587,
+        lon: 13.00073,
+        tolerance: 300,
+        title: 'Malmo',
+        description: "VÄLKOMMEN TILL MALMÖ",
+        images: ["<img class='image1' src='./media/finland.jpg' alt='Japp'>",
+        "<img class='image2' src='./media/finland.jpg' alt='Japp'>",
+        "<img class='image3' src='./media/finland.jpg' alt='Japp'>",
+    ],
+    audio: "./media/fi.mp3,",
+
     }
 
 };
