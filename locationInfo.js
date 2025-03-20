@@ -40,6 +40,18 @@ const locationObject =  {
             "<img class='image3' src='./media/finland.jpg' alt='Japp'>",
         ],
         audio: "./media/fi.mp3",
+    },
+    LONNGATAN: {
+        lat: 55.58611327405579,
+        long: 13.014027259123269,
+        tolerance: 400,
+        title: 'Lönngatan',
+        description: 'Här är jag',
+        images: ["<img class='image1' src='./media/finland.jpg' alt='Japp'>",
+        "<img class='image2' src='./media/finland.jpg' alt='Japp'>",
+        "<img class='image3' src='./media/finland.jpg' alt='Japp'>",
+    ],
+    audio: "./media/fi.mp3,"
     }
 
 };

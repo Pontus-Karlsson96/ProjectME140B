@@ -15,7 +15,7 @@ function checkPosition(position) {
   const distanceToNiagara = calculateDistance(userLat, userLon, locationObject.NIAGARA.lat, locationObject.NIAGARA.lon);
   const distanceToTexas = calculateDistance(userLat, userLon, locationObject.TEXAS.lat, locationObject.TEXAS.lon);
   const distanceToLimhamn = calculateDistance(userLat, userLon, locationObject.LIMHAMN.lat, locationObject.LIMHAMN.lon);
-
+  const distanceToLonngatan = calculateDistance(userLat, userLon, locationObject.LONNGATAN.lat, locationObject.LONNGATAN.lon);
   //display object content based on the distance and tolerance. 
   if (distanceToNiagara <= locationObject.NIAGARA.tolerance) {
     displayLocationContent(locationObject.NIAGARA, userLat, userLon, distanceToNiagara);
@@ -23,7 +23,9 @@ function checkPosition(position) {
     displayLocationContent(locationObject.TEXAS, userLat, userLon, distanceToTexas);
   } else if (distanceToLimhamn <= locationObject.LIMHAMN.tolerance) {
     displayLocationContent(locationObject.LIMHAMN, userLat, userLon, distanceToLimhamn);
-  } else {
+  } else if (distanceToLonngatan <= locationObject.LONNGATAN.tolerance) {
+    displayLocationContent(location.Object.LONNGATAN, userLat, userLon, distanceToLonngatan);
+  } else { 
     const main = document.getElementById("main");
     if (main) {
       main.innerText = `Ta dig till en av platserna på kartan. ${userLat} ${userLon} ${distanceToMalmo}`;
