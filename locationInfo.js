@@ -1,6 +1,6 @@
 const locationObject =  {
 
-    LIMHAMN:{ 
+    LOCATION1:{ 
     lat: 0,//55.60587,
     lon: 0,//13.00073,
     tolerance: 1000,
@@ -14,7 +14,7 @@ const locationObject =  {
     audio: "./media/fi.mp3",
     },
 
-    TEXAS: {
+    LOCATION2: {
         lat: 55.60170625333595,
         lon: 13.001817923103184,
         tolerance: 100,
@@ -26,9 +26,10 @@ const locationObject =  {
             "<img class='image3' src='./media/finland.jpg' alt='grattis Anton'>",
         ],
         audio: "./media/fi.mp3",
+        question: ["Fråga 1", "Fråga 2", "Fråga 3"]
     },
 
-    NIAGARA: {
+    LOCATION3: {
         lat:55.608952734938306,
         lon: 12.994511836068497,
         tolerance: 200,
@@ -40,8 +41,9 @@ const locationObject =  {
             "<img class='image3' src='./media/finland.jpg' alt='Japp'>",
         ],
         audio: "./media/fi.mp3",
+        question: ["Fråga 1", "Fråga 2", "Fråga 3"]
     },
-    LONNGATAN: {
+    LOCATION4: {
         lat: 55.58611327405579,
         lon: 13.014027259123269,
         tolerance: 400,
@@ -51,7 +53,8 @@ const locationObject =  {
         "<img class='image2' src='./media/finland.jpg' alt='Japp'>",
         "<img class='image3' src='./media/finland.jpg' alt='Japp'>",
     ],
-    audio: "./media/fi.mp3,"
+    audio: "./media/fi.mp3",
+    question: ["Fråga 1", "Fråga 2", "Fråga 3"]
     },
     MALMO: {
         lat: 55.60587,
@@ -63,9 +66,9 @@ const locationObject =  {
         "<img class='image2' src='./media/finland.jpg' alt='Japp'>",
         "<img class='image3' src='./media/finland.jpg' alt='Japp'>",
     ],
-    audio: "./media/fi.mp3,",
+    audio: "./media/fi.mp3",
+    question: ["Fråga 1", "Fråga 2", "Fråga 3"]
 
     }
 
 };
-//Please work
