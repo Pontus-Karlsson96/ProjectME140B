@@ -57,16 +57,19 @@
 
 body {
     width: 100vw;
+    height: 100vh;
     background-color: var(--color-yellow);
+    position: relative;
 }
 
 #wrapper {
+ 
     display: flex;
     flex-direction: column;
-    padding: 5rem;
-    width: 100%;
-    background-color: var(--color-brown);
-    color: var(--color-yellow);
+    padding: 50px 20px 0 20px;
+    background-color: var(--color-white);
+    color: var(--color-black);
+    height: 100%;
     /*animation-name: bg;
     animation-duration: 8s;
     animation-direction: alternate-reverse;
@@ -75,20 +78,63 @@ body {
 
 }
 
-#header {
+nav {
     width: 100%;
+    height: 33px;
+    position: fixed;
+    border-bottom: 1px solid black;
+
+    display: flex;
+    justify-content: space-evenly;
 }
 
-#headerWrapper {
-    width: 100%;
-    display: grid;
-    grid-template-columns: 1fr 3fr;
-    border: 3px solid var(--color-yellow);
+nav>div {
+    width:  25%;
+    height: 100%;
+ 
+    align-self: center;
 }
+#homeBtnContainer, #imageContainer, #mapBtnContainer {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/*NAV IDS
+#homeBtnContainer
+#imageContainer
+#mapBtnContainer*/ 
+
+#imageContainer {
+    flex-direction: row;
+    border-left: 1px solid black;
+    border-right: 1px solid black;
+    width: 50%;
+}
+
 
 #main {
-    display: flex;
-    flex-direction: column;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    
+    border-top: 1px solid black;
+    width: 100%;
+    padding-top: 21px;
+    padding-bottom: 21px;
+    border-bottom: 1px solid black;
+
+}
+
+#main>p {
+    grid-row: 2;
+    grid-column: 2;
+
+}
+
+audio {
+    color: white;
+    background-color: black;
+    
 }
 
 
@@ -165,6 +211,17 @@ article {
 
 }
 
+svg {
+    height: 25px;
+    width: 25px;
+}
+
+.imageFrame {
+    height: 177px;
+    width: 180px;
+    border: 1px solid black;
+}
+
 .image0,
 .image1,
 .image2,
@@ -210,11 +267,6 @@ article {
 
 }
 
-audio {
-    position: sticky;
-    bottom: 20px;
-    margin: auto;
-}
 
 #mapContainer {
     height: 500px;
@@ -226,13 +278,13 @@ audio {
     height: 300px;
 }
 
-.hideMap {
+.hide {
     display: none;
 }
 
 @media (max-width: 768px) {
     #wrapper {
-        padding: 1.5rem;
+
         overflow-x: hidden;
     }
 

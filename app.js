@@ -1,31 +1,61 @@
 let locationAlreadyDisplayed = false;
+let userLat = null;
+let userLon = null;
+let locationInterval = null;
+let trackingActive = null;
 
-function getLocation() {
-  if (navigator.geolocation) {
-    navigator.geolocation.getCurrentPosition(checkPosition, showError); // FIXAT
-  } else {
-    alert("Geolocation stöds inte av denna webbläsare.");
-  }
+//Hämtar location och sparar i lat och lon
+navigator.geolocation.getCurrentPosition(
+  (position) => {
+    const lat = position.coords.latitude;
+    const lon = position.coords.longitude;
+    console.log("Latitude:", lat, "Longitude:", lon)});
+    
+//togglar hide på map
+function mapFunction() {
+  const map = document.getElementById("mapContainer");
+  map.classList.toggle("hide");
 }
 
-function checkPosition(position) {
-  const userLat = position.coords.latitude;
-  const userLon = position.coords.longitude;
+//uppdaterar locationInterval variable med hämtad position och kallar på checkPosition(), uppdateras var 5e sekund. Denna måste stoppas!
+function getLocation(trackingActive) {
+locationInterval = setInterval(() => {
+  if (!trackingActive) {
+  clearInterval() } 
 
+  navigator.geolocation.getCurrentPosition(checkPosition, showError, {
+    enableHighAccuracy: true,
+    timeout: 10000,
+    maximumAge: 0
+  });
+}, 5000);}
+
+function checkPosition(position) {
+  userLat = position.coords.latitude;
+  userLon = position.coords.longitude;
+  console.log(`User position: ${userLat}, ${userLon}`);
+  
   const distanceToObject1 = calculateDistance(userLat, userLon, locationObject.LOCATION1.lat, locationObject.LOCATION1.lon);
   const distanceToObject2 = calculateDistance(userLat, userLon, locationObject.LOCATION2.lat, locationObject.LOCATION2.lon);
   const distanceToObject3 = calculateDistance(userLat, userLon, locationObject.LOCATION3.lat, locationObject.LOCATION3.lon);
   const distanceToObject4 = calculateDistance(userLat, userLon, locationObject.LOCATION4.lat, locationObject.LOCATION4.lon);
   const distanceToMalmo = calculateDistance(userLat, userLon, locationObject.MALMO.lat, locationObject.MALMO.lon);
+  console.log(distanceToObject1, distanceToObject2);
+  console.log(locationObject.LOCATION1.tolerance)
+ 
 
   if (distanceToObject1 <= locationObject.LOCATION1.tolerance) {
-    displayLocationContent(locationObject.LOCATION1, userLat, userLon, distanceToObject1);
+    renderBtn(locationObject.LOCATION1, userLat, userLon, distanceToObject1);
+    trackingActive = true;
   } else if (distanceToObject2 <= locationObject.LOCATION2.tolerance) {
-    displayLocationContent(locationObject.LOCATION2, userLat, userLon, distanceToObject2);
+    trackingActive = true;
+    renderBtn(locationObject.LOCATION2, userLat, userLon, distanceToObject2);
   } else if (distanceToObject3 <= locationObject.LOCATION3.tolerance) {
-    displayLocationContent(locationObject.LOCATION3, userLat, userLon, distanceToObject3);
+    trackingActive = true;
+    renderBtn(locationObject.LOCATION3, userLat, userLon, distanceToObject3);
   } else if (distanceToObject4 <= locationObject.LOCATION4.tolerance) {
-    displayLocationContent(locationObject.LOCATION4, userLat, userLon, distanceToObject4);
+    trackingActive = true;
+    renderBtn(locationObject.LOCATION4, userLat, userLon, distanceToObject4);
   } else { 
     const main = document.getElementById("main");
     if (main) {
@@ -35,8 +65,6 @@ function checkPosition(position) {
 }
 
 function displayLocationContent(location, userLat, userLon, distance) {
-  if (locationAlreadyDisplayed) return; // 🛑 Laddar inte flera gånger
-  locationAlreadyDisplayed = true;
 
   const main = document.getElementById("main");
   if (!main) {
@@ -50,11 +78,11 @@ function displayLocationContent(location, userLat, userLon, distance) {
     return;
   }
 
-  map.classList.add('hideMap');
+  map.classList.toggle('hide');
   main.innerHTML = `
     <h1>${location.title}</h1>
     <h2>Din plats: ${userLat} ${userLon}</h2>
-    <h3>Du är ${Math.round(distance)} meter från mig</h3>
+    <h3>Du är ${distance} meter från mig</h3>
     <h4>Body</h4>
     <article>${location.description}</article>
   `;
@@ -88,7 +116,7 @@ function displayLocationContent(location, userLat, userLon, distance) {
 
   const quizContainer = document.getElementById('quizContainer');
   if (quizContainer && location.question) {
-    quizContainer.innerHTML = ""; // 🧼 Rensa gamla frågor
+    quizContainer.innerHTML = ""; 
     location.question.forEach((item, index) => {
       const question = document.createElement('button');
       question.textContent = `Fråga ${index + 1}: ${item}`;
@@ -129,5 +157,32 @@ function calculateDistance(lat1, lon1, lat2, lon2) {
   return R * c;
 }
 
-// 🟢 Körs först när sidan laddats klart
-window.onload = getLocation;
+const startBtn = document.getElementById('startBtn');
+
+startBtn.addEventListener("click", (event)=>{
+  event.preventDefault();
+
+  main.innerHTML = "";
+  startBtn.classList.add("hide");
+  mapFunction();
+  getLocation();
+})
+
+function renderBtn(obj, lat, lon, distance) {
+const existingBtn = document.getElementById("OBJECTBUTTON");
+if (existingBtn) return;
+
+const btn = document.createElement('button');
+btn.id = "OBJECTBUTTON";
+btn.textContent = "Visa plats";
+
+
+btn.addEventListener("click", (event) => {
+event.preventDefault();
+
+displayLocationContent(obj, lat, lon, distance);
+})
+main.appendChild(btn); 
+}
+
+//window.onload = getLocation;

@@ -7,85 +7,29 @@
     <link rel="stylesheet" href="./style.css">
 </head>
 <body>
+    <nav>
+        <div id="homeBtnContainer"><div>HEM</div></div>
+        <div id="imageContainer">RETRORESAN</div>
+        <div id="mapBtnContainer"><div>MAP</div>
+    </nav>
+
     <div id="wrapper">
-        <header id="header">
-            <div id="headerWrapper">
-                <div id="fontTitle">Font</div>
-                <div id="fontName">Ritz</div>
-                <div id="fontName2">Bodoni 72</div>
-            </div>
-        </header>
-        <section id="mapContainer">
+        <section id="mapContainer" class="hide">
             <svg class="map1" xmlns="http://www.w3.org/2000/svg">
                 <rect width="20" height="20" fill="red" x="5" y="40" />
             </svg>
         </section>
         
         <main id="main">
-            <h1>Title</h1>
-            <h2>Subtitle</h2>
-            <h3>Small title</h3>
-            <h4>Body</h4>
-            <article>
-                Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the
-                industry's standard dummy text ever since the 1500s,
-                when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has
-                survived not only five centuries, but also the leap into
-                electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the
-                release of Letraset sheets containing Lorem Ipsum passages,
-                and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem
-                Ipsum.  <br><br>
-
-                <b>Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software
-                    like Aldus PageMaker including versions of Lorem Ipsum </b> <br><br>
-
-                <i>Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software
-                    like Aldus PageMaker including versions of Lorem Ipsum</i>
-            </article>
+        <div class="imageFrame"></div>
+        <div class="textFrame"><h2>Cafébabbel</h2>
+            <p>Lars, Britta & Ingvar sitter vid bordet intill och chattrar om sina unga daga i Limhamn. Många kära gamla minnen har dom från yngre dagar. Vågar du tjuvlyssna på deras samtal, eller är du feg?</p>
+            </div>
         </main>
+        <audio controls></audio>
+        <button id="startBtn">START</button>
         <section id="quizContainer"></section>
     </div>
-
-    <script>
-        const socket = new WebSocket(`wss://${window.location.host}/ws`);
-
-        // Update my location
-        const updateLocation = (latitude, longitude) => {
-            document.getElementById("latitude").textContent = latitude;
-            document.getElementById("longitude").textContent = longitude;
-
-            // Send location to the server
-            socket.send(JSON.stringify({
-                type: "location",
-                latitude,
-                longitude,
-            }));
-        };
-
-        // Handle incoming messages from the server
-        socket.addEventListener("message", (event) => {
-            const data = JSON.parse(event.data);
-
-            if (data.type === "acknowledge") {
-                console.log("Server acknowledged location update:", data.message);
-            }
-        });
-
-        // Get the user's location
-        if ("geolocation" in navigator) {
-            navigator.geolocation.watchPosition(
-                (position) => {
-                    const { latitude, longitude } = position.coords;
-                    updateLocation(latitude, longitude);
-                },
-                (error) => {
-                    console.error("Error getting location:", error);
-                }
-            );
-        } else {
-            console.error("Geolocation is not supported by this browser.");
-        }
-    </script>
     <script src="./locationInfo.js"></script>
     <script src="./app.js"></script>
 </body>

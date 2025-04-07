@@ -1,8 +1,8 @@
 const locationObject =  {
 
     LOCATION1:{ 
-    lat: 0,//55.60587,
-    lon: 0,//13.00073,
+    lat: 55.60888775381207,//55.60587,
+    lon: 12.994727729769723,//13.00073,
     tolerance: 1000,
     title: "Limhamn",
     description: "Limhamn, a charming district in Malmö, Sweden, blends coastal tranquility with urban vibrancy. Once an independent town, it retains a distinct character. Its harbor, bustling with sailboats and fishing vessels, offers scenic views of the Öresund strait. Limestone quarries, historically vital, now host recreational areas. Quaint streets are lined with diverse shops and restaurants, reflecting a mix of old-world charm and modern living. Limhamn's proximity to the sea encourages outdoor activities, from leisurely walks along the beach to kite surfing. The area boasts a relaxed atmosphere, attracting families and those seeking a peaceful yet connected lifestyle.",
@@ -30,8 +30,8 @@ const locationObject =  {
     },
 
     LOCATION3: {
-        lat:55.608952734938306,
-        lon: 12.994511836068497,
+        lat:55.60890612475543,
+        lon: 12.994687614177822,
         tolerance: 200,
         title: 'Niagara',
         description: 'Gott med kaffe',
