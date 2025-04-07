@@ -115,10 +115,12 @@ nav>div {
 
 #main {
     display: grid;
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: 12rem 1fr;
+    grid-template-rows: 2fr;
     
     border-top: 1px solid black;
     width: 100%;
+    height: 20rem;
     padding-top: 21px;
     padding-bottom: 21px;
     border-bottom: 1px solid black;
@@ -134,7 +136,28 @@ nav>div {
 audio {
     color: white;
     background-color: black;
-    
+
+}
+
+.audioContainer {
+    width: 100%;
+    height: 44px;
+    position: relative;
+    grid-column: 1 / 3 ;
+}
+
+#pauseBtn, #playBtn {
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    border-radius: 25px;
+    background-color: var(--color-brown);
+    color: var(--color-white);
+}
+
+
+.audioBtnSwitch {
+    display: none;
 }
 
 
@@ -220,6 +243,7 @@ svg {
     height: 177px;
     width: 180px;
     border: 1px solid black;
+    box-shadow: inset 0 0 0 1px black, inset 0 0 0 5px white, inset 0 0 0 6px black;
 }
 
 .image0,
@@ -280,6 +304,12 @@ svg {
 
 .hide {
     display: none;
+}
+
+#OBJECTBUTTON {
+    width: 100%;
+    height: 6rem;
+    grid-column: 1 / 3;
 }
 
 @media (max-width: 768px) {

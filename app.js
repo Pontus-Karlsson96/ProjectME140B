@@ -4,6 +4,27 @@ let userLon = null;
 let locationInterval = null;
 let trackingActive = null;
 
+//audio eventlistner
+const playBtn = document.getElementById('playBtn');
+const pauseBtn = document.getElementById('pauseBtn');
+const audio = document.getElementById('introAudio');
+console.log(playBtn);
+console.log(pauseBtn);
+console.log(audio);
+
+playBtn.addEventListener("click", () => {
+  audio.play();
+  playBtn.classList.toggle('audioBtnSwitch');
+  pauseBtn.classList.toggle('audioBtnSwitch');
+});
+
+pauseBtn.addEventListener("click", () => {
+  audio.pause();
+  pauseBtn.classList.toggle('audioBtnSwitch');
+  playBtn.classList.toggle('audioBtnSwitch');
+});
+
+
 //Hämtar location och sparar i lat och lon
 navigator.geolocation.getCurrentPosition(
   (position) => {
@@ -105,13 +126,22 @@ function displayLocationContent(location, userLat, userLon, distance) {
 
   if (location.audio) {
     const audio = document.createElement("audio");
-    audio.controls = true;
+    const play = document.createElement("button");
+    play.id = "playBtn";
+    const pause = document.createElement("button");
+    pause.id = "pauseBtn";
+    const audioContainer = document.createElement('div')
+    audioContainer.classList.add('audioContainer');
+
     audio.autoplay = true;
     const source = document.createElement("source");
     source.src = location.audio;
     source.type = "audio/mpeg";
     audio.appendChild(source);
+    audioContainer.appendChild(play);
+    audioContainer.appendChild(pause);
     main.appendChild(audio);
+    main.appendChild(audioContainer);
   }
 
   const quizContainer = document.getElementById('quizContainer');
@@ -164,9 +194,13 @@ startBtn.addEventListener("click", (event)=>{
 
   main.innerHTML = "";
   startBtn.classList.add("hide");
+  
   mapFunction();
   getLocation();
 })
+
+
+
 
 function renderBtn(obj, lat, lon, distance) {
 const existingBtn = document.getElementById("OBJECTBUTTON");
@@ -175,7 +209,6 @@ if (existingBtn) return;
 const btn = document.createElement('button');
 btn.id = "OBJECTBUTTON";
 btn.textContent = "Visa plats";
-
 
 btn.addEventListener("click", (event) => {
 event.preventDefault();
