@@ -13,17 +13,22 @@ console.log(pauseBtn);
 console.log(audio);
 
 playBtn.addEventListener("click", () => {
+  
   audio.play();
-  playBtn.classList.toggle('audioBtnSwitch');
-  pauseBtn.classList.toggle('audioBtnSwitch');
+  playBtn.classList.add('audioBtnDisabled');
+  playBtn.classList.remove('audioBtnEnabled');
+  pauseBtn.classList.add('audioBtnEnabled');
+  pauseBtn.classList.remove('pauseBtnDisabled');
 });
 
 pauseBtn.addEventListener("click", () => {
+ 
   audio.pause();
-  pauseBtn.classList.toggle('audioBtnSwitch');
-  playBtn.classList.toggle('audioBtnSwitch');
+  playBtn.classList.add('audioBtnEnabled');
+  playBtn.classList.remove('audioBtnDisabled');
+  pauseBtn.classList.add('audioBtnDisabled');
+  pauseBtn.classList.remove('audioBtnEnabled');
 });
-
 
 //Hämtar location och sparar i lat och lon
 navigator.geolocation.getCurrentPosition(
@@ -146,5 +151,7 @@ displayLocationContent(obj, lat, lon, distance);
 })
 main.appendChild(btn); 
 }
+
+structure.start();
 
 //window.onload = getLocation;
