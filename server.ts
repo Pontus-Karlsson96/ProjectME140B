@@ -21,7 +21,9 @@ const handleRequest = async (request: Request): Promise<Response> => {
       contentType = "image/jpeg";
     } else if (filePath.endsWith(".png")) {
       contentType = "image/png";
-    } else if (filePath.endsWith(".mp3")) {
+    } else if (filePath.endsWith(".svg")) {
+      contentType = "image/svg+xml";
+    }else if (filePath.endsWith(".mp3")) {
       contentType = "audio/mpeg";
     }
 
