@@ -85,75 +85,6 @@ function checkPosition(position) {
   }
 }
 
-function displayLocationContent(location, userLat, userLon, distance) {
-
-  const main = document.getElementById("main");
-  if (!main) {
-    console.error("Element with ID 'main' not found.");
-    return;
-  }
-
-  const map = document.getElementById('mapContainer');
-  if (!map) {
-    console.error("Element with ID 'mapContainer' not found.");
-    return;
-  }
-
-  map.classList.toggle('hide');
-  main.innerHTML = `
-    <h1>${location.title}</h1>
-    <h2>Din plats: ${userLat} ${userLon}</h2>
-    <h3>Du är ${distance} meter från mig</h3>
-    <h4>Body</h4>
-    <article>${location.description}</article>
-  `;
-
-  if (location.images) {
-    const carouselContainer = document.createElement("div");
-    carouselContainer.id = "carouselContainer";
-    location.images.forEach((imageHtml) => {
-      carouselContainer.innerHTML += imageHtml;
-    });
-    main.appendChild(carouselContainer);
-
-    const imageElements = document.querySelectorAll(".image1, .image2, .image3");
-    imageElements.forEach((image) => {
-      image.addEventListener("click", () => {
-        image.classList.toggle("selectedImage");
-      });
-    });
-  }
-
-  if (location.audio) {
-    const audio = document.createElement("audio");
-    const play = document.createElement("button");
-    play.id = "playBtn";
-    const pause = document.createElement("button");
-    pause.id = "pauseBtn";
-    const audioContainer = document.createElement('div')
-    audioContainer.classList.add('audioContainer');
-
-    audio.autoplay = true;
-    const source = document.createElement("source");
-    source.src = location.audio;
-    source.type = "audio/mpeg";
-    audio.appendChild(source);
-    audioContainer.appendChild(play);
-    audioContainer.appendChild(pause);
-    main.appendChild(audio);
-    main.appendChild(audioContainer);
-  }
-
-  const quizContainer = document.getElementById('quizContainer');
-  if (quizContainer && location.question) {
-    quizContainer.innerHTML = ""; 
-    location.question.forEach((item, index) => {
-      const question = document.createElement('button');
-      question.textContent = `Fråga ${index + 1}: ${item}`;
-      quizContainer.appendChild(question);
-    });
-  }
-}
 
 function showError(error) {
   switch (error.code) {
@@ -198,8 +129,6 @@ startBtn.addEventListener("click", (event)=>{
   mapFunction();
   getLocation();
 })
-
-
 
 
 function renderBtn(obj, lat, lon, distance) {

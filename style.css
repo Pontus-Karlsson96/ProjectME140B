@@ -10,7 +10,7 @@
 
     /*font-sizes*/
     --h1: 10rem;
-    --h2: 6rem;
+    --h2: 4rem;
     --h3: 4rem;
     --h4: 3rem;
     --main: 2rem;
@@ -63,7 +63,7 @@ body {
 }
 
 #wrapper {
- 
+
     display: flex;
     flex-direction: column;
     padding: 50px 20px 0 20px;
@@ -89,12 +89,15 @@ nav {
 }
 
 nav>div {
-    width:  25%;
+    width: 25%;
     height: 100%;
- 
+
     align-self: center;
 }
-#homeBtnContainer, #imageContainer, #mapBtnContainer {
+
+#homeBtnContainer,
+#imageContainer,
+#mapBtnContainer {
     display: flex;
     align-items: center;
     justify-content: center;
@@ -103,7 +106,7 @@ nav>div {
 /*NAV IDS
 #homeBtnContainer
 #imageContainer
-#mapBtnContainer*/ 
+#mapBtnContainer*/
 
 #imageContainer {
     flex-direction: row;
@@ -114,23 +117,35 @@ nav>div {
 
 
 #main {
-    display: grid;
-    grid-template-columns: 12rem 1fr;
-    grid-template-rows: 2fr;
-    
     border-top: 1px solid black;
     width: 100%;
-    height: 20rem;
     padding-top: 21px;
     padding-bottom: 21px;
     border-bottom: 1px solid black;
-
 }
 
-#main>p {
+.mainStart>p {
     grid-row: 2;
     grid-column: 2;
 
+}
+
+.mainStart {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 2fr;
+    gap: 1rem;
+}
+
+.mainObject {
+    border: 1px solid black;
+
+}
+
+#startBtn {
+    position: absolute;
+    bottom: 10px;
+    left: 150px;
 }
 
 audio {
@@ -143,10 +158,11 @@ audio {
     width: 100%;
     height: 44px;
     position: relative;
-    grid-column: 1 / 3 ;
+    grid-column: 1 / 3;
 }
 
-#pauseBtn, #playBtn {
+#pauseBtn,
+#playBtn {
     height: 100%;
     width: 100%;
     position: absolute;
@@ -240,10 +256,14 @@ svg {
 }
 
 .imageFrame {
-    height: 177px;
-    width: 180px;
+    height: 11.25rem;
+    width: 11.25rem;
     border: 1px solid black;
     box-shadow: inset 0 0 0 1px black, inset 0 0 0 5px white, inset 0 0 0 6px black;
+}
+
+.textframe {
+    width: 11rem;
 }
 
 .image0,
