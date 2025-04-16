@@ -84,7 +84,7 @@
 body {
     width: 100vw;
     height: 100vh;
-    background-color: var(--color-yellow);
+    background-color: var(--color-white);
     position: relative;
 }
 
@@ -194,6 +194,9 @@ audio {
     justify-content: center;
     align-items: center;
     gap: 0.4rem;
+
+    font-family: baskerville-semi;
+    letter-spacing: 1px;
 }
 
 .audioBtnDisabled {
@@ -283,8 +286,8 @@ article {
 }
 
 button {
-    font-family: baskerville-semi;
-    font-size: 0.875rem;
+    font-family: harmattan;
+    font-size: 1rem;
 }
 
 #carouselContainer {
@@ -389,6 +392,11 @@ svg {
     grid-column: 1 / 3;
 }
 
+footer {
+    width: 100%;
+    height: 200px;
+}
+
 @media (max-width: 768px) {
     #wrapper {
 
@@ -443,3 +451,4 @@ svg {
         background-color: var(--bg-color-red-lighter2);
     }
 }
+

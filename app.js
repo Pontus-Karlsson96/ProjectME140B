@@ -149,7 +149,7 @@ event.preventDefault();
 
 displayLocationContent(obj, lat, lon, distance);
 })
-main.appendChild(btn); 
+body.appendChild(btn); 
 }
 
 structure.start();
