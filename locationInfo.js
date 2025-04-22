@@ -52,7 +52,32 @@ const locationObject =  {
             "<img class='image3' src='./media/finland.jpg' alt='grattis Anton'>",
         ],
         audio: "./media/fi.mp3",
-        question: ["Fråga 1", "Fråga 2", "Fråga 3"]
+        quiz: [
+            {
+                question: "Fråga 1",
+                alternatives: [
+                    { answer: "Svar 1", value: 1 },
+                    { answer: "Svar 2", value: 0 },
+                    { answer: "Svar 3", value: 0 }
+                ]
+            },
+            {
+                question: "Fråga 2",
+                alternatives: [
+                    { answer: "Svar 1", value: 1 },
+                    { answer: "Svar 2", value: 0 },
+                    { answer: "Svar 3", value: 0 }
+                ]
+            },
+            {
+                question: "Fråga 3",
+                alternatives: [
+                    { answer: "Svar 1", value: 1 },
+                    { answer: "Svar 2", value: 0 },
+                    { answer: "Svar 3", value: 0 }
+                ]
+            }
+        ]
     },
 
     LOCATION3: {
@@ -67,7 +92,32 @@ const locationObject =  {
             "<img class='image3' src='./media/finland.jpg' alt='Japp'>",
         ],
         audio: "./media/fi.mp3",
-        question: ["Fråga 1", "Fråga 2", "Fråga 3"]
+        quiz: [
+            {
+                question: "Fråga 1",
+                alternatives: [
+                    { answer: "Svar 1", value: 1 },
+                    { answer: "Svar 2", value: 0 },
+                    { answer: "Svar 3", value: 0 }
+                ]
+            },
+            {
+                question: "Fråga 2",
+                alternatives: [
+                    { answer: "Svar 1", value: 1 },
+                    { answer: "Svar 2", value: 0 },
+                    { answer: "Svar 3", value: 0 }
+                ]
+            },
+            {
+                question: "Fråga 3",
+                alternatives: [
+                    { answer: "Svar 1", value: 1 },
+                    { answer: "Svar 2", value: 0 },
+                    { answer: "Svar 3", value: 0 }
+                ]
+            }
+        ]
     },
     LOCATION4: {
         lat: 55.58611327405579,
@@ -80,7 +130,32 @@ const locationObject =  {
         "<img class='image3' src='./media/finland.jpg' alt='Japp'>",
     ],
     audio: "./media/fi.mp3",
-    question: ["Fråga 1", "Fråga 2", "Fråga 3"]
+    quiz: [
+        {
+            question: "Fråga 1",
+            alternatives: [
+                { answer: "Svar 1", value: 1 },
+                { answer: "Svar 2", value: 0 },
+                { answer: "Svar 3", value: 0 }
+            ]
+        },
+        {
+            question: "Fråga 2",
+            alternatives: [
+                { answer: "Svar 1", value: 1 },
+                { answer: "Svar 2", value: 0 },
+                { answer: "Svar 3", value: 0 }
+            ]
+        },
+        {
+            question: "Fråga 3",
+            alternatives: [
+                { answer: "Svar 1", value: 1 },
+                { answer: "Svar 2", value: 0 },
+                { answer: "Svar 3", value: 0 }
+            ]
+        }
+    ]
     },
     MALMO: {
         lat: 55.60587,
@@ -93,7 +168,7 @@ const locationObject =  {
         "<img class='image3' src='./media/finland.jpg' alt='Japp'>",
     ],
     audio: "./media/fi.mp3",
-    question: ["Fråga 1", "Fråga 2", "Fråga 3"]
+    
 
     }
 

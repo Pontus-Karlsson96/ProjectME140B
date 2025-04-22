@@ -61,7 +61,6 @@
     align-items: center;
 }
 .quizQuestionContainer div label input {
-color: black;
 
 background-color: var(--color-black);
 
@@ -96,6 +95,9 @@ background-color: var(--color-black);
 
 }
 
+.quizQuestionContainer div:last-child {
+    border-radius: 10px 10px 0 0;
+}
 
 
 
@@ -198,7 +200,6 @@ background-color: var(--color-black);
 }
 
 #popUpConfirm, #popUpAbort {
-    
     height: 35px;
     aspect-ratio: 117 / 35;
     font-family: harmattan-semibold;

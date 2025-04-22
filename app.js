@@ -47,7 +47,7 @@ function mapFunction() {
 function getLocation(trackingActive) {
 locationInterval = setInterval(() => {
   if (!trackingActive) {
-  clearInterval() } 
+  clearInterval(locationInterval) } 
 
   navigator.geolocation.getCurrentPosition(checkPosition, showError, {
     enableHighAccuracy: true,
@@ -72,15 +72,16 @@ function checkPosition(position) {
 
   if (distanceToObject1 <= locationObject.LOCATION1.tolerance) {
     renderBtn(locationObject.LOCATION1, userLat, userLon, distanceToObject1);
-    trackingActive = true;
+    trackingActive = false;
+    
   } else if (distanceToObject2 <= locationObject.LOCATION2.tolerance) {
-    trackingActive = true;
+    trackingActive = false;
     renderBtn(locationObject.LOCATION2, userLat, userLon, distanceToObject2);
   } else if (distanceToObject3 <= locationObject.LOCATION3.tolerance) {
-    trackingActive = true;
+    trackingActive = false;
     renderBtn(locationObject.LOCATION3, userLat, userLon, distanceToObject3);
   } else if (distanceToObject4 <= locationObject.LOCATION4.tolerance) {
-    trackingActive = true;
+    trackingActive = false;
     renderBtn(locationObject.LOCATION4, userLat, userLon, distanceToObject4);
   } else { 
     const main = document.getElementById("main");

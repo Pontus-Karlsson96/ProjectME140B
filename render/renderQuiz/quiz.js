@@ -18,8 +18,6 @@ function renderQuiz(locationObject) {
 </div>
 `;
 
-
-
     const quizBox = document.createElement('form');
     quizBox.classList.add('quizQuestionContainer');
 
@@ -74,28 +72,6 @@ quizSubmitBtn.addEventListener("click", () => {
 });
 }
 
-function quizLogic() {
-    let score = 0;
-
-    const q1 = document.querySelector('input[name="q1"]:checked');
-    if (q1) score += parseInt(q1.value);
-
-    const q2 = document.querySelector('input[name="q2"]:checked');
-    if (q2) score += parseInt(q2.value);
-
-    const q3 = document.querySelector('input[name="q3"]:checked');
-    if (q3) score += parseInt(q3.value);
-
-    
-
-    if (score < 3) {
-        console.log(`Du fick ${score} av 3 rätt.`);
-    }
-
-    else {
-        structure.next();
-    }
-}
 
 
 
@@ -107,22 +83,22 @@ function quizPopUp() {
     const popUpAbort = document.createElement('button');
     console.log(popUpConfirm);
     console.log(popUpAbort);
-
+    
     popUpContainer.id = "popUpContainer";
     popUpText.id = "popUpText";
     popUpConfirm.id = "popUpConfirm";
     popUpAbort.id = "popUpAbort";
-
+    
     popUpText.textContent = "Säkert att du vill låsa in dina svar? Du kan inte ändra eller lyssna i efterhand!";
     popUpConfirm.textContent = "Ja";
     popUpAbort.textContent = "Nej, avbryt";
-
+    
     popUpContainer.appendChild(popUpText);
     popUpContainer.appendChild(popUpConfirm);
     popUpContainer.appendChild(popUpAbort);
-
+    
     container.appendChild(popUpContainer);
-
+    
     popUpConfirm.addEventListener("click", ()=>{
         console.log("ja");
         quizLogic();
@@ -133,4 +109,28 @@ function quizPopUp() {
         console.log("nej");
         popUpContainer.remove();
     })
+
+
+    function quizLogic() {
+        let score = 0;
+    
+        const q1 = document.querySelector('input[name="q1"]:checked');
+        if (q1) score += parseInt(q1.value);
+    
+        const q2 = document.querySelector('input[name="q2"]:checked');
+        if (q2) score += parseInt(q2.value);
+    
+        const q3 = document.querySelector('input[name="q3"]:checked');
+        if (q3) score += parseInt(q3.value);
+    
+        
+    
+        if (score < 3) {
+            console.log(`Du fick ${score} av 3 rätt.`);
+        }
+    
+        else {
+            structure.next();
+        }
+    }
 }
