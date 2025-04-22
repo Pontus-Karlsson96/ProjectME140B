@@ -127,8 +127,13 @@ const startBtn = document.getElementById('startBtn');
 
 startBtn.addEventListener("click", (event)=>{
   event.preventDefault();
+  const quizcontainer = document.getElementById('quizContainer');
 
+  //töm DOM
   main.innerHTML = "";
+  quizcontainer.innerHTML="";
+  
+
   startBtn.classList.add("hide");
   
   mapFunction();
