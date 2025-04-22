@@ -123,28 +123,10 @@ function calculateDistance(lat1, lon1, lat2, lon2) {
   return R * c;
 }
 
-const startBtn = document.getElementById('startBtn');
-
-startBtn.addEventListener("click", (event)=>{
-  event.preventDefault();
-  const quizcontainer = document.getElementById('quizContainer');
-
-  //töm DOM
-  main.innerHTML = "";
-  quizcontainer.innerHTML="";
-  
-
-  startBtn.classList.add("hide");
-  
-  mapFunction();
-  getLocation();
-})
-
-
 function renderBtn(obj, lat, lon, distance) {
 const existingBtn = document.getElementById("OBJECTBUTTON");
 if (existingBtn) return;
-
+const main = document.getElementById('main');
 const btn = document.createElement('button');
 btn.id = "OBJECTBUTTON";
 btn.textContent = "Visa plats";
@@ -154,7 +136,7 @@ event.preventDefault();
 
 displayLocationContent(obj, lat, lon, distance);
 })
-body.appendChild(btn); 
+main.appendChild(btn); 
 }
 
 structure.start();

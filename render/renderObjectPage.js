@@ -63,6 +63,6 @@ function displayLocationContent(location, userLat, userLon, distance) {
     const section = document.createElement('section');
     section.id = 'quizSection';
     wrapper.appendChild(section);
-    renderQuiz();
+    renderQuiz(locationObject);
     }
   

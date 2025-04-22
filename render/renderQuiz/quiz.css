@@ -45,7 +45,7 @@
 
 }
 
-.quizQuestionContainer div button {
+.quizQuestionContainer div label {
     width: 95%;
     border-radius: 100px;
     margin-bottom: 0.625rem;
@@ -56,6 +56,15 @@
     outline: none;
     aspect-ratio: auto 185 / 22;
     font-family: harmattan-semibold;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.quizQuestionContainer div label input {
+color: black;
+
+background-color: var(--color-black);
+
 }
 
 .quizQuestionContainer div button:first-child {

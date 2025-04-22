@@ -12,6 +12,32 @@ const locationObject =  {
         "<img class='image3' src='./media/limhamn3.jpg' alt='Tre personer i finkläder står på ett hustak och blickar ut över Limhamns industriområde'>",
 ],
     audio: "./media/fi.mp3",
+    quiz: [
+        {
+            question: "Fråga 1",
+            alternatives: [
+                { answer: "Svar 1", value: 1 },
+                { answer: "Svar 2", value: 0 },
+                { answer: "Svar 3", value: 0 }
+            ]
+        },
+        {
+            question: "Fråga 2",
+            alternatives: [
+                { answer: "Svar 1", value: 1 },
+                { answer: "Svar 2", value: 0 },
+                { answer: "Svar 3", value: 0 }
+            ]
+        },
+        {
+            question: "Fråga 3",
+            alternatives: [
+                { answer: "Svar 1", value: 1 },
+                { answer: "Svar 2", value: 0 },
+                { answer: "Svar 3", value: 0 }
+            ]
+        }
+    ]
     },
 
     LOCATION2: {
