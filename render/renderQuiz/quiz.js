@@ -1,136 +1,149 @@
 function renderQuiz(locationObject) {
     const container = document.getElementById('quizContainer');
-    console.log(container);
-    
-    
-    const location = locationObject.LOCATION1;
+    console.log(locationObject);
+
+    const location = locationObject;
     if (!location || !location.quiz) {
         console.error("Quiz data finns inte för LOCATION1");
-        return; 
+        return;
     }
-
 
     const quizHeader = document.createElement('div');
     quizHeader.classList.add('quizHeader');
     quizHeader.innerHTML = `
-<h3>Lyssnade du noga på samtalet?</h3>
-<p>Låt se om du minns va de talade om</p>
-</div>
-`;
+        <h3>Lyssnade du noga på samtalet?</h3>
+        <p>Låt se om du minns vad de talade om</p>
+    `;
 
     const quizBox = document.createElement('form');
     quizBox.classList.add('quizQuestionContainer');
 
     location.quiz.forEach((quizItem, index) => {
-        const questionContainer = document.createElement('div');
+        const questionContainer = document.createElement('fieldset');
         questionContainer.classList.add('quizQuestion');
 
-        const questionTitle = document.createElement('h4');
+        const questionTitle = document.createElement('legend');
         questionTitle.textContent = `Fråga ${index + 1}: ${quizItem.question}`;
         questionContainer.appendChild(questionTitle);
 
-        quizItem.alternatives.forEach((alt, i) => {
+        quizItem.alternatives.forEach((alt) => {
             const label = document.createElement('label');
             const radioInput = document.createElement('input');
             radioInput.type = 'radio';
-            radioInput.name = `q${index+1}`;
+            radioInput.name = `q${index + 1}`;
             radioInput.value = alt.value;
             label.appendChild(radioInput);
             label.appendChild(document.createTextNode(alt.answer));
             questionContainer.appendChild(label);
         });
+
         quizBox.appendChild(questionContainer);
     });
+
     container.appendChild(quizHeader);
     container.appendChild(quizBox);
-    
-const footer = document.createElement('div');
-footer.classList.add("quizFooter");
 
-const footerTextContent = document.createElement('div');
-footerTextContent.classList.add('quizFooterContent');
+    const footer = document.createElement('div');
+    footer.classList.add("quizFooter");
 
-const footerTextContentH4 = document.createElement('h4');
-footerTextContentH4.textContent = "Redo att låsa in ditt förslag?";
+    const footerTextContent = document.createElement('div');
+    footerTextContent.classList.add('quizFooterContent');
 
-const quizSubmitBtn = document.createElement("button");
-quizSubmitBtn.id = "quizSubmitBtn";
-quizSubmitBtn.textContent ="Ja";
+    const footerTextContentH4 = document.createElement('h4');
+    footerTextContentH4.textContent = "Redo att låsa in ditt förslag?";
 
-footerTextContent.appendChild(footerTextContentH4);
-footerTextContent.appendChild(quizSubmitBtn);
+    const quizSubmitBtn = document.createElement("button");
+    quizSubmitBtn.id = "quizSubmitBtn";
+    quizSubmitBtn.textContent = "Ja";
 
-footer.appendChild(footerTextContent);
-container.appendChild(footer);
+    footerTextContent.appendChild(footerTextContentH4);
+    footerTextContent.appendChild(quizSubmitBtn);
 
+    footer.appendChild(footerTextContent);
+    container.appendChild(footer);
 
-quizSubmitBtn.addEventListener("click", () => {
-   
-    console.log("klick");
-    quizPopUp();
-    
-});
+    quizSubmitBtn.addEventListener("click", () => {
+        console.log("klick");
+        quizPopUp();
+    });
 }
-
-
-
 
 function quizPopUp() {
     const container = document.getElementById("wrapper");
-    const popUpContainer = document.createElement('div');
-    const popUpText = document.createElement('p');
-    const popUpConfirm = document.createElement('button');
-    const popUpAbort = document.createElement('button');
-    console.log(popUpConfirm);
-    console.log(popUpAbort);
-    
+
+    // Skapa overlay
+    const overlay = document.createElement('div');
+    overlay.id = 'overlay';
+    overlay.style.position = 'fixed';
+    overlay.style.top = '0';
+    overlay.style.left = '0';
+    overlay.style.width = '100%';
+    overlay.style.height = '100%';
+    overlay.style.backgroundColor = 'rgba(0, 0, 0, 0.5)';
+    overlay.style.zIndex = '999';
+    document.body.appendChild(overlay);
+
+    // Skapa popup
+    const popUpContainer = document.createElement('section');
     popUpContainer.id = "popUpContainer";
+    popUpContainer.style.position = 'fixed';
+    popUpContainer.style.top = '50%';
+    popUpContainer.style.left = '50%';
+    popUpContainer.style.transform = 'translate(-50%, -50%)';
+    popUpContainer.style.zIndex = '1000';
+    popUpContainer.setAttribute('role', 'dialog');
+    popUpContainer.setAttribute('aria-modal', 'true');
+
+    const popUpText = document.createElement('p');
     popUpText.id = "popUpText";
-    popUpConfirm.id = "popUpConfirm";
-    popUpAbort.id = "popUpAbort";
-    
     popUpText.textContent = "Säkert att du vill låsa in dina svar? Du kan inte ändra eller lyssna i efterhand!";
+
+    const popUpConfirm = document.createElement('button');
+    popUpConfirm.id = "popUpConfirm";
     popUpConfirm.textContent = "Ja";
+
+    const popUpAbort = document.createElement('button');
+    popUpAbort.id = "popUpAbort";
     popUpAbort.textContent = "Nej, avbryt";
-    
+
     popUpContainer.appendChild(popUpText);
     popUpContainer.appendChild(popUpConfirm);
     popUpContainer.appendChild(popUpAbort);
-    
+
     container.appendChild(popUpContainer);
-    
-    popUpConfirm.addEventListener("click", ()=>{
+
+    popUpConfirm.addEventListener("click", () => {
         console.log("ja");
         quizLogic();
         popUpContainer.remove();
-    })
-    
+        overlay.remove();
+    });
+
     popUpAbort.addEventListener("click", () => {
         console.log("nej");
         popUpContainer.remove();
-    })
+        overlay.remove();
+    });
+}
 
+function quizLogic() {
+    let score = 0;
+    const questionNames = ['q1', 'q2', 'q3']; // Eftersom vi alltid har tre frågor
 
-    function quizLogic() {
-        let score = 0;
-    
-        const q1 = document.querySelector('input[name="q1"]:checked');
-        if (q1) score += parseInt(q1.value);
-    
-        const q2 = document.querySelector('input[name="q2"]:checked');
-        if (q2) score += parseInt(q2.value);
-    
-        const q3 = document.querySelector('input[name="q3"]:checked');
-        if (q3) score += parseInt(q3.value);
-    
-        
-    
-        if (score < 3) {
-            console.log(`Du fick ${score} av 3 rätt.`);
+    questionNames.forEach(name => {
+        const selected = document.querySelector(`input[name="${name}"]:checked`);
+        if (selected) {
+            score += parseInt(selected.value, 10);
         }
-    
-        else {
+    });
+
+    if (score < 3) {
+        console.log(`Du fick ${score} av 3 rätt.`);
+    } else {
+        if (typeof structure !== 'undefined' && typeof structure.next === 'function') {
             structure.next();
+        } else {
+            console.warn("structure.next() kunde inte anropas: structure är inte definierad eller saknar funktionen 'next'.");
         }
     }
 }

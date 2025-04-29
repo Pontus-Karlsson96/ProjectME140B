@@ -73,7 +73,6 @@ function checkPosition(position) {
   if (distanceToObject1 <= locationObject.LOCATION1.tolerance) {
     renderBtn(locationObject.LOCATION1, userLat, userLon, distanceToObject1);
     trackingActive = false;
-    
   } else if (distanceToObject2 <= locationObject.LOCATION2.tolerance) {
     trackingActive = false;
     renderBtn(locationObject.LOCATION2, userLat, userLon, distanceToObject2);
@@ -135,11 +134,18 @@ btn.textContent = "Visa plats";
 btn.addEventListener("click", (event) => {
 event.preventDefault();
 
-displayLocationContent(obj, lat, lon, distance);
+structure.renderObject(obj, lat, lon, distance);
 })
 main.appendChild(btn); 
 }
 
-structure.start();
+const startBtn = document.getElementById('startBtn');
+startBtn.textContent = "Start";
+startBtn.addEventListener("click", (event)=> {
+  event.preventDefault();
+  structure.start();
+});
+
+
 
 //window.onload = getLocation;

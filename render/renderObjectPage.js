@@ -24,7 +24,7 @@ function displayLocationContent(location, userLat, userLon, distance) {
       <article>${location.description}</article>
     `;
   
-    if (location.images) {
+    /*if (location.images) {
       const carouselContainer = document.createElement("div");
       carouselContainer.id = "carouselContainer";
       location.images.forEach((imageHtml) => {
@@ -38,7 +38,7 @@ function displayLocationContent(location, userLat, userLon, distance) {
           image.classList.toggle("selectedImage");
         });
       });
-    }
+    }*/
   
     if (location.audio) {
       const audio = document.createElement("audio");
@@ -63,6 +63,6 @@ function displayLocationContent(location, userLat, userLon, distance) {
     const section = document.createElement('section');
     section.id = 'quizSection';
     wrapper.appendChild(section);
-    renderQuiz(locationObject);
+    
     }
   

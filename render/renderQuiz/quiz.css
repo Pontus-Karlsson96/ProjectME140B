@@ -6,7 +6,6 @@
     border-radius: 25px 25px 0 0;
 }
 
-
 .quizHeader {
     display: flex;
     flex-direction: column;
@@ -18,23 +17,18 @@
     background-position: center;
     background-repeat: no-repeat;
     background-size: contain;
-
     z-index: 1;
     width: 100%;
     height: 11.5rem;
-
 }
 
 .quizHeader h3 {
     font-size: 1.2rem;
     margin-top: -3.25rem;
-
-
 }
 
 .quizHeader p {
     font-size: 0.8rem;
-
 }
 
 .quizQuestionContainer {
@@ -42,10 +36,40 @@
     flex-direction: column;
     align-items: center;
     background-color: var(--color-black);
-
 }
 
-.quizQuestionContainer div label {
+/* NYTT: Anpassning för fieldset istället för div */
+.quizQuestionContainer fieldset {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--color-white);
+    border: none;
+    border-bottom: 1.5px solid var(--color-black);
+    border-radius: 10px;
+    margin-top: -1px;
+    padding-top: 2rem;
+    aspect-ratio: auto 130/87;
+    padding-left: 0;
+    padding-right: 0;
+}
+
+.quizQuestionContainer fieldset:last-child {
+    border-radius: 10px 10px 0 0;
+}
+
+/* NYTT: Anpassning för legend istället för h4 */
+.quizQuestionContainer fieldset legend {
+    font-size: 1.2rem;
+    margin-bottom: 2rem;
+    font-weight: bold;
+    color: var(--color-black);
+    text-align: center;
+}
+
+.quizQuestionContainer fieldset label {
     width: 95%;
     border-radius: 100px;
     margin-bottom: 0.625rem;
@@ -60,78 +84,9 @@
     justify-content: center;
     align-items: center;
 }
-.quizQuestionContainer div label input {
 
-background-color: var(--color-black);
-
-}
-
-.quizQuestionContainer div button:first-child {
-    margin-top: calc(0.625rem * 3);
-}
-
-.quizQuestionContainer div button:last-child {
-    margin-bottom: 0;
-}
-
-.quizQuestionContainer div h4 {
-    /*margin-top: -2.5rem;*/
-    margin-bottom: 2rem;
-}
-
-.quizQuestionContainer div {
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    background-color: var(--color-white);
-    border-bottom: 1.5px solid var(--color-black);
-    border-radius: 10px;
-    margin-top: -1px;
-    padding-top: 2rem;
-    aspect-ratio: auto 130/87;
-
-
-}
-
-.quizQuestionContainer div:last-child {
-    border-radius: 10px 10px 0 0;
-}
-
-
-
-
-.quizQuestionContainer h4 {
-    background-color: var(--color-white);
-
-    margin: auto;
-    margin-top: -40px;
-    margin-bottom: 10px;
-    z-index: 2;
-}
-
-#firstQuizBox {
-    border-top: 0;
-
-    border-radius: 0 0 10px 10px;
-    padding-top: calc(0.625rem * 3);
-    padding-bottom: calc(0.625rem * 3);
-    width: 100%;
-    aspect-ratio: 65 / 34;
-}
-
-#firstQuizBox button:first-child {
-    margin-top: 0;
-}
-
-/*#firstQuizTitle {
-    margin-top: -3rem;
-}*/
-
-#lastQuizBox {
-    border-radius: 10px 10px 0 0;
-    border-bottom: 0;
+.quizQuestionContainer fieldset label input {
+    background-color: var(--color-black);
 }
 
 .quizFooter {
@@ -161,33 +116,43 @@ background-color: var(--color-black);
     border: 1px solid var(--color-black);
     padding: 0;
     outline: none;
-
     width: 117px;
     height: 44px;
     border-radius: 100px;
-
     margin-top: 1rem;
-
 }
 
+/* Overlay för popup */
+#overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 999;
+}
+
+/* Popup */
 #popUpContainer {
     width: 100%;
+    max-width: 500px;
     aspect-ratio: 4/3;
     background-color: var(--color-white);
-    z-index: 10;
+    z-index: 1000;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     position: fixed;
     top: 25%;
-    padding: 40px 60px 40px 60px;
+    left: 50%;
+    transform: translate(-50%, -25%);
+    padding: 40px 60px;
     border: 1px solid var(--color-black);
     border-radius: 10px;
-    
+    box-shadow: 0 0 20px rgba(0,0,0,0.25);
 }
-
-
 
 #popUpText {
     font-family: baskerville-semibold;
@@ -196,17 +161,16 @@ background-color: var(--color-black);
     letter-spacing: 0.2px;
     text-align: center;
     margin-bottom: 10px;
-    
 }
 
 #popUpConfirm, #popUpAbort {
-    height: 35px;
-    aspect-ratio: 117 / 35;
+    width: 117px;
+    height: 44px;
     font-family: harmattan-semibold;
     font-size: 1rem;
-    letter-spacing: 0.1rem;
     border-radius: 25px;
-    
+    letter-spacing: 0.1rem;
+    margin-top: 10px;
 }
 
 #popUpConfirm {
@@ -221,3 +185,18 @@ background-color: var(--color-black);
     color: var(--color-orange);
 }
 
+/* Justering om första quizboxen behöver extra padding */
+#firstQuizBox {
+    border-top: 0;
+    border-radius: 0 0 10px 10px;
+    padding-top: calc(0.625rem * 3);
+    padding-bottom: calc(0.625rem * 3);
+    width: 100%;
+    aspect-ratio: 65 / 34;
+}
+
+/* Sista quizboxen */
+#lastQuizBox {
+    border-radius: 10px 10px 0 0;
+    border-bottom: 0;
+}
