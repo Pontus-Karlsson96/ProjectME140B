@@ -1,4 +1,4 @@
-function renderQuiz(locationObject) {
+function renderQuiz(locationObject, storage_id) {
     const container = document.getElementById('quizContainer');
     console.log(locationObject);
 
@@ -23,7 +23,7 @@ function renderQuiz(locationObject) {
         questionContainer.classList.add('quizQuestion');
 
         const questionTitle = document.createElement('legend');
-        questionTitle.textContent = `Fråga ${index + 1}: ${quizItem.question}`;
+        questionTitle.innerHTML = `Fråga ${index + 1}: <br> ${quizItem.question}`;
         questionContainer.appendChild(questionTitle);
 
         quizItem.alternatives.forEach((alt) => {
@@ -64,11 +64,11 @@ function renderQuiz(locationObject) {
 
     quizSubmitBtn.addEventListener("click", () => {
         console.log("klick");
-        quizPopUp();
+        quizPopUp(locationObject.quiz, storage_id);
     });
 }
 
-function quizPopUp() {
+function quizPopUp(quizData, storage_id) {
     const container = document.getElementById("wrapper");
 
     // Skapa overlay
@@ -114,7 +114,10 @@ function quizPopUp() {
 
     popUpConfirm.addEventListener("click", () => {
         console.log("ja");
-        quizLogic();
+        console.log(quizData);
+        const results = quizLogic(quizData);
+        console.log(results);
+        saveQuizResults(results.answers, storage_id);
         popUpContainer.remove();
         overlay.remove();
     });
@@ -126,24 +129,35 @@ function quizPopUp() {
     });
 }
 
-function quizLogic() {
+//behöver kallas med nuvarande object.quiz
+function quizLogic(quizData) {
     let score = 0;
-    const questionNames = ['q1', 'q2', 'q3']; // Eftersom vi alltid har tre frågor
+    const answers = [];
 
-    questionNames.forEach(name => {
+    quizData.forEach((quizItem, index) => {
+        const name = `q${index + 1}`;
         const selected = document.querySelector(`input[name="${name}"]:checked`);
-        if (selected) {
-            score += parseInt(selected.value, 10);
-        }
-    });
 
-    if (score < 3) {
-        console.log(`Du fick ${score} av 3 rätt.`);
-    } else {
-        if (typeof structure !== 'undefined' && typeof structure.next === 'function') {
-            structure.next();
+        if (selected) {
+            const selectedValue = parseInt(selected.value, 10);
+            const isCorrect = selectedValue === 1;
+            score += selectedValue;
+
+            answers.push({
+                question: quizItem.question,
+                selectedAnswer: selected.value,
+                isCorrect: isCorrect,
+                points: selectedValue
+            });
         } else {
-            console.warn("structure.next() kunde inte anropas: structure är inte definierad eller saknar funktionen 'next'.");
+            answers.push({
+                question: quizItem.question,
+                selectedAnswer: null,
+                isCorrect: false,
+                points: 0
+            });
         }
-    }
-}
+        
+    })
+return {answers, score}
+};

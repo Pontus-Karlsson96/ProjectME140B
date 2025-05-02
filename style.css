@@ -96,16 +96,7 @@ body {
     background-color: var(--color-white);
     color: var(--color-black);
     height: 100%;
-    
-    /*animation-name: bg;
-    animation-duration: 8s;
-    animation-direction: alternate-reverse;
-    animation-iteration-count: infinite;
-*/
-
 }
-
-
 
 .imageContent {
     width: 90%;
@@ -130,9 +121,6 @@ body {
     padding-right: 10px;
     border-bottom: 1px solid black;
 }
-
-
-
 
 .mainStart {
     display: grid;
@@ -173,8 +161,10 @@ padding: 1rem 1rem 2rem 1rem;
 
 #startBtn {
     
-    height: 250px;
+    height: 6rem;
     width: 100%;
+    background-color: var(--color-red);
+    border: 1px solid var(--color-black);
 }
 
 audio {

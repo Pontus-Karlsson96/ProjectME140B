@@ -1,10 +1,9 @@
 const locationObject =  {
-
-
+    
     LOCATION1:{
     id: 1,
-    lat: 55.60888775381207,//55.60587,
-    lon: 12.994727729769723,//13.00073,
+    lat: 55.58602398013286,//55.60587, 55.58602398013286
+    lon: 13.013998030893251,//13.00073, 13.013998030893251
     tolerance: 1000,
     title: "Kalkbrottet",
     description: "Limhamn, a charming district in Malmö, Sweden, blends coastal tranquility with urban vibrancy. Once an independent town, it retains a distinct character. Its harbor, bustling with sailboats and fishing vessels, offers scenic views of the Öresund strait. Limestone quarries, historically vital, now host recreational areas. Quaint streets are lined with diverse shops and restaurants, reflecting a mix of old-world charm and modern living. Limhamn's proximity to the sea encourages outdoor activities, from leisurely walks along the beach to kite surfing. The area boasts a relaxed atmosphere, attracting families and those seeking a peaceful yet connected lifestyle.",
@@ -44,11 +43,11 @@ const locationObject =  {
 
     LOCATION2: {
         id: 2,
-        lat: 55.60170625333595,
-        lon: 13.001817923103184,
+        lat: 55.571957675146884,
+        lon: 12.90055784671468,
         tolerance: 100,
         title: 'Sumphamnen',
-        description: "Grattis på födelsedagen, Anton",
+        description: "Nu står vi på en historisk plats i Limhamn där man länge kunde skåda silla båtarna guppa i vattenbrynet. Fisket har varit en stor del för Limhamn och många livnärde sig på yrkesfisket i Limhamn.",
         images: [
             "<img class='image1' src='./media/finland.jpg' alt='grattis Anton'>",
             "<img class='image2' src='./media/finland.jpg' alt='grattis Anton'>",
@@ -85,8 +84,8 @@ const locationObject =  {
 
     LOCATION3: {
         id:3,
-        lat:55.60890612475543,
-        lon: 12.994687614177822,
+        lat:55.58253967723235,
+        lon: 12.926866558119663,
         tolerance: 200,
         title: 'Linnégatan',
         description: 'Gott med kaffe',
@@ -125,8 +124,8 @@ const locationObject =  {
     },
     LOCATION4: {
         id:4,
-        lat: 55.58611327405579,
-        lon: 13.014027259123269,
+        lat: 55.58746813358296,
+        lon: 12.926203784035609,
         tolerance: 400,
         title: 'Öresunds hamen',
         description: 'Här är jag',
@@ -164,8 +163,8 @@ const locationObject =  {
     },
     LOCATION5: {
         id:5,
-        lat: 55.58611327405579,
-        lon: 13.014027259123269,
+        lat: 55.5871994008723,
+        lon: 12.92474667391729,
         tolerance: 400,
         title: 'Cementfabriken',
         description: 'Här är jag',

@@ -60,14 +60,39 @@ function checkPosition(position) {
   userLat = position.coords.latitude;
   userLon = position.coords.longitude;
   console.log(`User position: ${userLat}, ${userLon}`);
+
+  const nextLocation = verifyOrder();
+  console.log(nextLocation);
   
-  const distanceToObject1 = calculateDistance(userLat, userLon, locationObject.LOCATION1.lat, locationObject.LOCATION1.lon);
+
+  const key = `LOCATION${nextLocation.storage_id}`;
+  const locationData = locationObject[key];
+  console.log("locationData:", locationData);
+  if (!locationData) {
+    console.warn(`Ingen platsdata hittades för id: ${nextLocation.id}`);
+    return;
+  }
+
+  const distance = calculateDistance(userLat, userLon, locationData.lat, locationData.lon);
+  console.log("distance:", distance);
+
+  if (distance <= locationData.tolerance) {
+    trackingActive = false;
+    renderBtn(locationData, userLat, userLon, distance);
+  } else {
+    const main = document.getElementById("main");
+    if (main) {
+      main.innerText = `Ta dig till nästa plats: Avstånd till ${key}: ${Math.round(distance)} meter.`;
+    };
+  };
+
+  
+  /*const distanceToObject1 = calculateDistance(userLat, userLon, locationObject.LOCATION1.lat, locationObject.LOCATION1.lon);
   const distanceToObject2 = calculateDistance(userLat, userLon, locationObject.LOCATION2.lat, locationObject.LOCATION2.lon);
   const distanceToObject3 = calculateDistance(userLat, userLon, locationObject.LOCATION3.lat, locationObject.LOCATION3.lon);
   const distanceToObject4 = calculateDistance(userLat, userLon, locationObject.LOCATION4.lat, locationObject.LOCATION4.lon);
   const distanceToMalmo = calculateDistance(userLat, userLon, locationObject.MALMO.lat, locationObject.MALMO.lon);
-  console.log(distanceToObject1, distanceToObject2);
-  console.log(locationObject.LOCATION1.tolerance)
+  
  
 
   if (distanceToObject1 <= locationObject.LOCATION1.tolerance) {
@@ -87,7 +112,7 @@ function checkPosition(position) {
     if (main) {
       main.innerText = `Ta dig till en av platserna på kartan. ${userLat} ${userLon} ${distanceToMalmo}`;
     }
-  }
+  }*/
 }
 
 
@@ -148,4 +173,4 @@ startBtn.addEventListener("click", (event)=> {
 
 
 
-//window.onload = getLocation;
+
