@@ -7,11 +7,16 @@
     <link rel="stylesheet" href="./style.css">
     <link rel="stylesheet" href="./render/renderQuiz/quiz.css">
     <link rel="stylesheet" href="./render/renderNav/nav.css">
+    <link rel="stylesheet" href="./render/renderFinish/renderFinish.css">
     <link rel="icon" type="image/x-icon" href="/media/icons/placeholderIcon.svg">
 </head>
 <body>
     
     <nav></nav>
+    <div id="imageOverlay" class="hide">
+        <img src="./media/KartaMedSträckTestVecka.png" alt="Karta" id="fullscreenImage">
+        <span id="closeOverlay">&times;</span>
+    </div>
     <div id="wrapper">
         <section id="mapContainer" class="hide">
             
@@ -67,6 +72,7 @@
     </footer>
     <script src="./logic/storage.js"></script>
     <script src="./logic/verifyOrder.js"></script>
+    <script src="./render/renderFinish/renderFinish.js"></script>
     <script src="./render/renderAudio.js"></script>
     <script src="./render/renderNextLocation.js"></script>
     <script src="./render/renderQuiz/quiz.js"></script>

@@ -2,17 +2,22 @@ const locationObject =  {
     
     LOCATION1:{
     id: 1,
-    lat: 55.60874048026735,//55.60587, 55.58602398013286
-    lon: 12.994096812900331,//13.00073, 13.013998030893251
-    tolerance: 1000,
+    lat: 58703357598807,//55.60587, 55.58602398013286
+    lon: 13.011712758014033,//13.00073, 13.013998030893251
+    tolerance: 20,
     title: "Kalkbrottet",
     adress: "Kalbrottets utsiktsplats",
-    description: "Limhamn, a charming district in Malmö, Sweden, blends coastal tranquility with urban vibrancy. Once an independent town, it retains a distinct character. Its harbor, bustling with sailboats and fishing vessels, offers scenic views of the Öresund strait. Limestone quarries, historically vital, now host recreational areas. Quaint streets are lined with diverse shops and restaurants, reflecting a mix of old-world charm and modern living. Limhamn's proximity to the sea encourages outdoor activities, from leisurely walks along the beach to kite surfing. The area boasts a relaxed atmosphere, attracting families and those seeking a peaceful yet connected lifestyle.",
+    description: "Lorem kalkum dolor sit amet, quarry consectetur limhamborum. Sed do eiusmod tempor incididunt ut labore et dolore magna karst aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex calx commodo.",
     images: [
-        "<img class='image1' src='./media/limhamn1.jpg' alt='Okänd fotograf / Bild ur boken “Limhamn - Från stenåldern till nutid”'>",
-        "<img class='image2' src='./media/kalkbrottet2.jpg' alt='Sista resan för kalktåget samlade tusentalks åskådare. Foto: Okänd fotograf/ Sydsvenskan 1967'>",
-        "<img class='image3' src='./media/kalkbrottet3.jpg' alt='Handbrytning i kalkbrottet. Fotot: Okänd fotograf / Bild ur boken “Limhamn - Från stenåldern till nutid”.'>",
+        './media/limhamn3.jpg',
+        './media/kalkbrottet2.png',
+        './media/kalkbrottet3.png',
 ],
+    alt: [
+        "'Okänd fotograf / Bild ur boken “Limhamn - Från stenåldern till nutid”",
+        "'Sista resan för kalktåget samlade tusentalks åskådare. Foto: Okänd fotograf/ Sydsvenskan 1967'",
+        "'Handbrytning i kalkbrottet. Fotot: Okänd fotograf / Bild ur boken “Limhamn - Från stenåldern till nutid”."
+    ],
     audio: "./media/audio/kalkbrottet.wav",
     quiz: [
         {
@@ -44,16 +49,25 @@ const locationObject =  {
 
     LOCATION2: {
         id: 2,
-        lat: 55.60874048026735,
-        lon: 12.994096812900331,
-        tolerance: 100,
+        lat: 55.58558394859705,
+        lon: 13.015059715353877,
+        tolerance: 20,
         title: 'Sumphamnen',
         adress: 'Sibbarps småbåtshamn',
         description: "Nu står vi på en historisk plats i Limhamn där man länge kunde skåda silla båtarna guppa i vattenbrynet. Fisket har varit en stor del för Limhamn och många livnärde sig på yrkesfisket i Limhamn.",
         images: [
-            "<img class='image1' src='./media/finland.jpg' alt='grattis Anton'>",
-            "<img class='image2' src='./media/finland.jpg' alt='grattis Anton'>",
-            "<img class='image3' src='./media/finland.jpg' alt='grattis Anton'>",
+            "./media/limhamn1.jpg",
+            "./media/sumphamnen2.png",
+            "./media/sumphamnen3.png",
+            "./media/sumphamnen4.png",
+            "./media/limhamn2.jpg",
+        ],
+        alt: [
+            "Bildtext referens",
+            "Johan Richthoff hoppar längd på Limhamns idrottsplats år 1926. Med på bilden är bland annat Tage Jeppsson, bror till Eric Jeppsson. Foto: Eric Jeppsson / Malmö museum",
+            "Sumphamnen. Foto: okänd fotograf/ Sydsvenskans bildarkiv 1942.",
+            "Johan Richthoff hoppar längd på Limhamns idrottsplats år 1926. Med på bilden är bland annat Tage Jeppsson, bror till Eric Jeppsson. Foto: Eric Jeppsson / Malmö museum",
+            "Johan Richthoff hoppar längd på Limhamns idrottsplats år 1926. Med på bilden är bland annat Tage Jeppsson, bror till Eric Jeppsson. Foto: Eric Jeppsson / Malmö museum",
         ],
         audio: "./media/audio/fisket.wav",
         quiz: [
@@ -86,17 +100,22 @@ const locationObject =  {
 
     LOCATION3: {
         id:3,
-        lat:55.58253967723235,
-        lon: 12.926866558119663,
-        tolerance: 200,
+        lat:55.58602398013286,
+        lon: 13.013998030893251,
+        tolerance: 20,
         title: 'Limhamns torg',
         adress: 'Linnégatan 15',
         description: 'Gott med kaffe',
         images: [
-            "<img class='image1' src='./media/finland.jpg' alt='Japp'>",
-            "<img class='image2' src='./media/finland.jpg' alt='Japp'>",
-            "<img class='image3' src='./media/finland.jpg' alt='Japp'>",
+            "./media/linnegatan1.png",
+            "./media/linnegatan2.png",
+            "./media/limhamn3.jpg",
         ],
+        alt: [
+            "Bildtext referens",
+            "Limhamns Torg, vykort, 1940. Foto: Okänd fotograf / facebook",
+            "Bildtext referens",
+    ],
         audio: "./media/audio/linnegatan.wav",
         quiz: [
             {
@@ -127,16 +146,22 @@ const locationObject =  {
     },
     LOCATION4: {
         id:4,
-        lat: 55.58746813358296,
-        lon: 12.926203784035609,
-        tolerance: 400,
+        lat:55.58602398013286,
+        lon: 13.013998030893251,
+        tolerance: 20,
         title: 'Öresunds hamen',
         adress: 'Norra Fiskehamnen',
         description: 'Här är jag',
-        images: ["<img class='image1' src='./media/finland.jpg' alt='Japp'>",
-        "<img class='image2' src='./media/finland.jpg' alt='Japp'>",
-        "<img class='image3' src='./media/finland.jpg' alt='Japp'>",
+        images: [
+            "./media/öresundshamnen1.png",
+            "./media/öresundshamnen2.png",
+            "./media/öresundshamnen3.png",
+            "./media/öresundshamnen4.jpg",
     ],
+    alt: [
+        "Bildtext referens",
+        "Bildtext referens",
+        "Bildtext referens",],
     audio: "./media/audio/öresund.wav",
     quiz: [
         {
@@ -167,16 +192,17 @@ const locationObject =  {
     },
     LOCATION5: {
         id:5,
-        lat: 55.5871994008723,
-        lon: 12.92474667391729,
-        tolerance: 400,
+        lat:55.58602398013286,
+        lon: 13.013998030893251,
+        tolerance: 20,
         title: 'Cementfabriken',
         adress: 'Övägen 6A',
         description: 'Här är jag',
-        images: ["<img class='image1' src='./media/finland.jpg' alt='Japp'>",
-        "<img class='image2' src='./media/finland.jpg' alt='Japp'>",
-        "<img class='image3' src='./media/finland.jpg' alt='Japp'>",
+        images: [
+            "./media/cementfabriken1.png",
+
     ],
+    alt: ["Bildtext referens",],
     audio: "./media/audio/cementfabriken.wav",
     quiz: [
         {

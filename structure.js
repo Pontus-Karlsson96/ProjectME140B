@@ -26,10 +26,23 @@ const structure = {
     next() {
         main.innerHTML = "";
         quizContainer.innerHTML="";
-        verifyOrder();
+
+        const nextLocation = verifyOrder();
+
+        if (!nextLocation) {
+            console.warn("Alla moment avklarade");
+            this.finish();
+            return;
+        }
+
         renderMapLocations();
         getLocation();
         mapFunction();
+    },
+
+    finish() {
+        renderFinish()
+
     }
 
 };

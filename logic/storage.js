@@ -8,30 +8,40 @@ function initializeState() {
                 completed: false,
                 answers: [],
                 score: 0,
+                lat: 55.57065979970439,
+                lon: 12.94175508465805,
             },
             2: {
                 storage_id: 2,
                 completed: false,
                 answers: [],
                 score: 0,
+                lat: 55.571957675146884,
+                lon: 12.90055784671468,
             },
             3: {
                 storage_id: 3,
                 completed: false,
                 answers: [],
                 score: 0,
+                lat: 55.58253967723235,
+                lon: 12.926866558119663,
             },
             4: {
                 storage_id: 4,
                 completed: false,
                 answers: [],
                 score: 0,
+                lat: 55.58746813358296,
+                lon: 12.926203784035609,
             },
             5: {
                 storage_id: 5,
                 completed: false,
                 answers: [],
                 score: 0,
+                lat: 55.5871994008723,
+                lon: 12.92474667391729,
             }
         };
 

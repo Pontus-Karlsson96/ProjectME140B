@@ -13,16 +13,13 @@ function renderMapLocations() {
 
         if (x.completed === true) {
             completed.push(x.storage_id);
-           
-            
         }
         else if (x.completed === false){
-           return
+           return;
         }
 
     });
     
-
     Object.values(data).forEach(item => {
         const card = document.createElement('div');
         card.classList.add('mapLocationCard');
@@ -31,7 +28,7 @@ function renderMapLocations() {
             <img src="../media/600x400.svg" alt="location image">
             <div class="mapLocationCardInfo">
                 <h5>${item.title}</h5>
-                <p>Öppna i kartor <img src="../media/icons/arrow.svg"></p>
+                <p class="mapArrow">Öppna i kartor <img src="../media/icons/arrow.svg"></p>
                 
             </div>
         `;
@@ -40,6 +37,7 @@ function renderMapLocations() {
            
             card.classList.add("completed")
             card.classList.remove("notCompleted")
+
 
             const check = document.createElement('img');
             check.setAttribute('src', '../media/icons/check.svg');
@@ -62,9 +60,18 @@ function renderMapLocations() {
             //ändra till items adress
             
             const distanceP = document.createElement('p');
-            distanceP.textContent = `Adress: ${item.tolerance}`;
+            distanceP.textContent = `Adress: ${item.adress}`;
+            console.log(item.adress);
 
             card.appendChild(distanceP);
+
+            const mapArrow = card.querySelector('.mapArrow');
+            mapArrow.addEventListener('click', () => {
+            console.log(item.lat, item.lon)
+            const gmapsUrl = `https://www.google.com/maps/search/?api=1&query=${item.lat},${item.lon}`;
+            
+            window.open(gmapsUrl, '_blank');
+});
 
         }
 

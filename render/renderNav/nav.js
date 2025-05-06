@@ -7,3 +7,15 @@ nav.innerHTML = `
 <div id="mapBtnContainer"><img src="../media/icons/iconGlobe.svg"><div>Karta</div>`;
 
 //sätt nav logic här
+const mapBtn = document.getElementById('mapBtnContainer');
+const overlay = document.getElementById('imageOverlay');
+const closeBtn = document.getElementById('closeOverlay');
+
+mapBtn.addEventListener("click", (event) => {
+    event.preventDefault();
+    overlay.classList.remove('hide');
+});
+
+closeBtn.addEventListener("click", () => {
+    overlay.classList.add('hide');
+});

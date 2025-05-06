@@ -2,7 +2,7 @@ let locationAlreadyDisplayed = false;
 let userLat = null;
 let userLon = null;
 let locationInterval = null;
-let trackingActive = null;
+let trackingActive = true;
 
 
 
@@ -20,25 +20,45 @@ function mapFunction() {
 }
 
 //uppdaterar locationInterval variable med hämtad position och kallar på checkPosition(), uppdateras var 5e sekund. Denna måste stoppas!
-function getLocation(trackingActive) {
-locationInterval = setInterval(() => {
-  if (!trackingActive) {
-  clearInterval(locationInterval) } 
+function getLocation() {
 
-  navigator.geolocation.getCurrentPosition(checkPosition, showError, {
-    enableHighAccuracy: true,
-    timeout: 10000,
-    maximumAge: 0
-  });
-}, 5000);}
+  trackingActive = true;
+
+  locationInterval = setInterval(() => {
+    if (!trackingActive) {
+      console.log("TRACKING HAS BEEN DEACTIVATED", trackingActive);
+      clearInterval(locationInterval);
+      return;
+    }
+
+    console.log("Tracking on", trackingActive);
+
+    navigator.geolocation.getCurrentPosition(checkPosition, showError, {
+      enableHighAccuracy: true,
+      timeout: 10000,
+      maximumAge: 0
+    });
+  }, 5000);
+}
+
 
 function checkPosition(position) {
   userLat = position.coords.latitude;
   userLon = position.coords.longitude;
   console.log(`User position: ${userLat}, ${userLon}`);
 
+  console.log("Kallar verifyOrder()");
   const nextLocation = verifyOrder();
-  
+  console.log("verifyOrder() resultat:", nextLocation);
+
+  if (!nextLocation) {
+    console.warn("verifyOrder() returnerade null – ingen aktiv plats.");
+    trackingActive = false;
+    clearInterval(locationInterval);
+    return;
+  }
+
+  console.log("verifyOrder() resultat:", nextLocation);
   
 
   const key = `LOCATION${nextLocation.storage_id}`;
@@ -58,10 +78,16 @@ function checkPosition(position) {
   } else {
     const parent = document.getElementById("activeCard");
     if (parent) {
-      const nextTextContainer = document.createElement('div');
-      nextTextContainer.innerHTML = `Ta dig till nästa plats: Avstånd till ${key}: ${Math.round(distance)} meter.`;
+      let nextTextContainer = parent.querySelector('.distanceMessage');
 
-      parent.append(nextTextContainer);
+    if (!nextTextContainer) {
+    nextTextContainer = document.createElement('div');
+    nextTextContainer.classList.add('distanceMessage');
+    parent.appendChild(nextTextContainer);
+  }
+
+  nextTextContainer.innerHTML = `Ta dig till nästa plats: Avstånd till ${key}: ${Math.round(distance)} meter.`;
+
       
     };
   };

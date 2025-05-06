@@ -1,4 +1,4 @@
-function displayLocationContent(location, userLat, userLon, distance) {
+function displayLocationContent(location, distance) {
     const wrapper = document.getElementById('wrapper');
 
     const main = document.getElementById("main");
@@ -14,22 +14,39 @@ function displayLocationContent(location, userLat, userLon, distance) {
     }
   
     map.classList.toggle('hide');
-    main.classList.remove('mainStart');
-    main.classList.toggle('mainObject');
+
     main.innerHTML = `
-      <h2>${location.title}</h2>
-      <h3>Din plats: ${userLat} ${userLon}</h2>
-      <h4>Du är ${distance} meter från mig</h3>
-      <h4>Body</h4>
-      <article>${location.description}</article>
+      <div class="mainTitleContainer"><h2>${location.title}</h2>
+        <li>---- 10 min<img src="./media/icons/iconStar.svg" 09-04-2025 alt="Stjärna">09-04-2025</li>
+        <div class="imageFrame"><div class="imageContent"><img class="img" src="${location.images[0]}" alt="${location.alt[0]}"></div></div>
+        <div class="bildtext">${location.alt[0]}</div>
+        <article>${location.description}</article>
+      </div>
     `;
   
-    if (location.images) {
-      console.log("LÄGG TILL BILDER HÄR");
-    };
-
+    
     renderAudio(location, "#main");
-
+    
+    //image gallery om det finns bilder kommer de displayas här
+    if (location.images && location.images.length > 1) {
+      const gallery = document.createElement("div");
+      gallery.classList.add("imageGallery");
+  
+      for (let i = 1; i < location.images.length; i++) {
+        const galleryItem = document.createElement("div");
+        galleryItem.classList.add("imageFrame");
+  
+        galleryItem.innerHTML = `
+          <div class="imageContent">
+            <img class="img" src="${location.images[i]}" alt="${location.alt[i] || ""}">
+          </div>
+          <div class="bildtext">${location.alt[i] || ""}</div>
+        `;
+  
+        gallery.appendChild(galleryItem);
+      }
+  
+      main.appendChild(gallery);
   
     const section = document.createElement('section');
     section.id = 'quizSection';
@@ -37,3 +54,4 @@ function displayLocationContent(location, userLat, userLon, distance) {
     
     }
   
+  };

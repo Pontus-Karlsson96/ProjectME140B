@@ -117,6 +117,7 @@ function quizPopUp(quizData, storage_id) {
         saveQuizResults(results.answers, storage_id);
         popUpContainer.remove();
         overlay.remove();
+        structure.next();
     });
 
     popUpAbort.addEventListener("click", () => {
@@ -145,7 +146,7 @@ function quizLogic(quizData) {
                 isCorrect: isCorrect,
                 points: selectedValue
             });
-            structure.next();
+            
         } else {
             answers.push({
                 question: quizItem.question,

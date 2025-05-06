@@ -150,10 +150,6 @@ body {
     
 }
 
-.mainObject {
-    border: 1px solid black;
-
-}
 
 .mainTitleContainer {
 width: 100%;
@@ -454,7 +450,7 @@ border: 0;
 
 
 .hide {
-    display: none;
+    display: none !important;
 }
 
 .cover {
@@ -511,6 +507,35 @@ footer {
     padding: 23px;
     
 
+}
+
+/*Map css*/
+#imageOverlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: var(--color-black);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 9999;
+}
+
+#fullscreenImage {
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: contain;
+}
+
+#closeOverlay {
+    position: absolute;
+    top: 20px;
+    right: 30px;
+    font-size: 40px;
+    color: white;
+    cursor: pointer;
 }
 
 
