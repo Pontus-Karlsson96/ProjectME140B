@@ -1,0 +1,76 @@
+function renderMapLocations() {
+    const data = locationObject;
+    const storedData = JSON.parse(localStorage.getItem("_state"));
+    const parent = document.getElementById('mapContainer');
+    const activeLocation = verifyOrder();
+    const completed = [];
+    
+
+    parent.innerHTML = "";
+
+
+    Object.values(storedData).forEach(x => {
+
+        if (x.completed === true) {
+            completed.push(x.storage_id);
+           
+            
+        }
+        else if (x.completed === false){
+           return
+        }
+
+    });
+    
+
+    Object.values(data).forEach(item => {
+        const card = document.createElement('div');
+        card.classList.add('mapLocationCard');
+
+        card.innerHTML = `
+            <img src="../media/600x400.svg" alt="location image">
+            <div class="mapLocationCardInfo">
+                <h5>${item.title}</h5>
+                <p>Öppna i kartor <img src="../media/icons/arrow.svg"></p>
+                
+            </div>
+        `;
+
+        if (completed.includes(item.id)) {
+           
+            card.classList.add("completed")
+            card.classList.remove("notCompleted")
+
+            const check = document.createElement('img');
+            check.setAttribute('src', '../media/icons/check.svg');
+            check.setAttribute('alt', 'Check icon');
+            check.id = 'check';
+            card.appendChild(check);
+            
+        } else if (!completed.includes(item.id) && activeLocation.storage_id !== item.id) {
+            card.classList.add("notCompleted")
+            const cover = document.createElement('div');
+            cover.classList.add('cover');
+            card.append(cover);
+        };
+
+        if (activeLocation.storage_id === item.id) {
+            card.id = 'activeCard';
+            card.classList.remove("notCompleted")
+
+
+            //ändra till items adress
+            
+            const distanceP = document.createElement('p');
+            distanceP.textContent = `Adress: ${item.tolerance}`;
+
+            card.appendChild(distanceP);
+
+        }
+
+       
+        parent.appendChild(card);
+    });
+}
+
+

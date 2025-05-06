@@ -4,31 +4,7 @@ let userLon = null;
 let locationInterval = null;
 let trackingActive = null;
 
-//audio eventlistner
-const playBtn = document.getElementById('playBtn');
-const pauseBtn = document.getElementById('pauseBtn');
-const audio = document.getElementById('introAudio');
-console.log(playBtn);
-console.log(pauseBtn);
-console.log(audio);
 
-playBtn.addEventListener("click", () => {
-  
-  audio.play();
-  playBtn.classList.add('audioBtnDisabled');
-  playBtn.classList.remove('audioBtnEnabled');
-  pauseBtn.classList.add('audioBtnEnabled');
-  pauseBtn.classList.remove('pauseBtnDisabled');
-});
-
-pauseBtn.addEventListener("click", () => {
- 
-  audio.pause();
-  playBtn.classList.add('audioBtnEnabled');
-  playBtn.classList.remove('audioBtnDisabled');
-  pauseBtn.classList.add('audioBtnDisabled');
-  pauseBtn.classList.remove('audioBtnEnabled');
-});
 
 //Hämtar location och sparar i lat och lon
 navigator.geolocation.getCurrentPosition(
@@ -62,27 +38,31 @@ function checkPosition(position) {
   console.log(`User position: ${userLat}, ${userLon}`);
 
   const nextLocation = verifyOrder();
-  console.log(nextLocation);
+  
   
 
   const key = `LOCATION${nextLocation.storage_id}`;
   const locationData = locationObject[key];
-  console.log("locationData:", locationData);
+ 
   if (!locationData) {
     console.warn(`Ingen platsdata hittades för id: ${nextLocation.id}`);
     return;
   }
 
   const distance = calculateDistance(userLat, userLon, locationData.lat, locationData.lon);
-  console.log("distance:", distance);
+  
 
   if (distance <= locationData.tolerance) {
     trackingActive = false;
     renderBtn(locationData, userLat, userLon, distance);
   } else {
-    const main = document.getElementById("main");
-    if (main) {
-      main.innerText = `Ta dig till nästa plats: Avstånd till ${key}: ${Math.round(distance)} meter.`;
+    const parent = document.getElementById("activeCard");
+    if (parent) {
+      const nextTextContainer = document.createElement('div');
+      nextTextContainer.innerHTML = `Ta dig till nästa plats: Avstånd till ${key}: ${Math.round(distance)} meter.`;
+
+      parent.append(nextTextContainer);
+      
     };
   };
 
@@ -151,25 +131,43 @@ function calculateDistance(lat1, lon1, lat2, lon2) {
 function renderBtn(obj, lat, lon, distance) {
 const existingBtn = document.getElementById("OBJECTBUTTON");
 if (existingBtn) return;
-const main = document.getElementById('main');
+const parent = document.getElementById('activeCard');
+const objectBtnContainer = document.createElement('div');
 const btn = document.createElement('button');
+
+objectBtnContainer.id = "objectBtnContainer";
+objectBtnContainer.innerHTML =`
+<h2> På plats!</h2> <br>
+<h2>Redo att starta?</h2>
+`;
+
 btn.id = "OBJECTBUTTON";
-btn.textContent = "Visa plats";
+btn.textContent = "Starta";
 
 btn.addEventListener("click", (event) => {
 event.preventDefault();
 
 structure.renderObject(obj, lat, lon, distance);
 })
-main.appendChild(btn); 
+objectBtnContainer.appendChild(btn);
+parent.appendChild(objectBtnContainer); 
 }
 
 const startBtn = document.getElementById('startBtn');
-startBtn.textContent = "Start";
+const startBtnContainer = document.getElementById('startContainer');
+
+
+
 startBtn.addEventListener("click", (event)=> {
   event.preventDefault();
+  startBtnContainer.remove();
   structure.start();
 });
+
+document.addEventListener("DOMContentLoaded", () => {
+  initAudioControls();
+});
+
 
 
 

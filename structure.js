@@ -9,7 +9,7 @@ const structure = {
         initializeState(); //initialize state with all locations false
         console.log(`Initialize local storage: ${localStorage}`);
         verifyOrder(); //picks out the first location.completed=false and returns the object.
-        
+        renderMapLocations();
         getLocation();
         mapFunction();
     },
@@ -26,7 +26,9 @@ const structure = {
     next() {
         main.innerHTML = "";
         quizContainer.innerHTML="";
-        getLocation(trackingActive);
+        verifyOrder();
+        renderMapLocations();
+        getLocation();
         mapFunction();
     }
 

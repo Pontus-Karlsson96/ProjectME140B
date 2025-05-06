@@ -24,41 +24,12 @@ function displayLocationContent(location, userLat, userLon, distance) {
       <article>${location.description}</article>
     `;
   
-    /*if (location.images) {
-      const carouselContainer = document.createElement("div");
-      carouselContainer.id = "carouselContainer";
-      location.images.forEach((imageHtml) => {
-        carouselContainer.innerHTML += imageHtml;
-      });
-      main.appendChild(carouselContainer);
-  
-      const imageElements = document.querySelectorAll(".image1, .image2, .image3");
-      imageElements.forEach((image) => {
-        image.addEventListener("click", () => {
-          image.classList.toggle("selectedImage");
-        });
-      });
-    }*/
-  
-    if (location.audio) {
-      const audio = document.createElement("audio");
-      const play = document.createElement("button");
-      play.id = "playBtn";
-      const pause = document.createElement("button");
-      pause.id = "pauseBtn";
-      const audioContainer = document.createElement('div')
-      audioContainer.classList.add('audioContainer');
-  
-      audio.autoplay = true;
-      const source = document.createElement("source");
-      source.src = location.audio;
-      source.type = "audio/mpeg";
-      audio.appendChild(source);
-      audioContainer.appendChild(play);
-      audioContainer.appendChild(pause);
-      main.appendChild(audio);
-      main.appendChild(audioContainer);
-    }
+    if (location.images) {
+      console.log("LÄGG TILL BILDER HÄR");
+    };
+
+    renderAudio(location, "#main");
+
   
     const section = document.createElement('section');
     section.id = 'quizSection';

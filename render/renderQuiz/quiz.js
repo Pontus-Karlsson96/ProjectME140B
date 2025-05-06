@@ -1,6 +1,6 @@
 function renderQuiz(locationObject, storage_id) {
     const container = document.getElementById('quizContainer');
-    console.log(locationObject);
+    
 
     const location = locationObject;
     if (!location || !location.quiz) {
@@ -63,7 +63,7 @@ function renderQuiz(locationObject, storage_id) {
     container.appendChild(footer);
 
     quizSubmitBtn.addEventListener("click", () => {
-        console.log("klick");
+        
         quizPopUp(locationObject.quiz, storage_id);
     });
 }
@@ -113,17 +113,13 @@ function quizPopUp(quizData, storage_id) {
     container.appendChild(popUpContainer);
 
     popUpConfirm.addEventListener("click", () => {
-        console.log("ja");
-        console.log(quizData);
         const results = quizLogic(quizData);
-        console.log(results);
         saveQuizResults(results.answers, storage_id);
         popUpContainer.remove();
         overlay.remove();
     });
 
     popUpAbort.addEventListener("click", () => {
-        console.log("nej");
         popUpContainer.remove();
         overlay.remove();
     });
@@ -149,6 +145,7 @@ function quizLogic(quizData) {
                 isCorrect: isCorrect,
                 points: selectedValue
             });
+            structure.next();
         } else {
             answers.push({
                 question: quizItem.question,

@@ -49,7 +49,7 @@ function saveCurrentObject(obj) {
    
         if (currentStorage[key].storage_id === currentObject.id) { 
             currentStorage[key].completed = true; 
-            console.log("Uppdaterat objekt:", currentStorage);
+            
 
         
         } else if (currentStorage[key.storage_id != currentObject.id]) {
@@ -61,8 +61,7 @@ function saveCurrentObject(obj) {
 }
 
 function saveQuizResults(answers, storage_id) {
-    console.log(answers);
-    console.log(storage_id);
+    
     
         const rawState = localStorage.getItem("_state");
         if (!rawState) return;
@@ -78,6 +77,6 @@ function saveQuizResults(answers, storage_id) {
         state[storage_id].completed = true;
     
         localStorage.setItem("_state", JSON.stringify(state));
-        console.log(`Svar sparade för steg ${storage_id}`);
+        
     }
     

@@ -2,17 +2,18 @@ const locationObject =  {
     
     LOCATION1:{
     id: 1,
-    lat: 55.58602398013286,//55.60587, 55.58602398013286
-    lon: 13.013998030893251,//13.00073, 13.013998030893251
+    lat: 55.60874048026735,//55.60587, 55.58602398013286
+    lon: 12.994096812900331,//13.00073, 13.013998030893251
     tolerance: 1000,
     title: "Kalkbrottet",
+    adress: "Kalbrottets utsiktsplats",
     description: "Limhamn, a charming district in Malmö, Sweden, blends coastal tranquility with urban vibrancy. Once an independent town, it retains a distinct character. Its harbor, bustling with sailboats and fishing vessels, offers scenic views of the Öresund strait. Limestone quarries, historically vital, now host recreational areas. Quaint streets are lined with diverse shops and restaurants, reflecting a mix of old-world charm and modern living. Limhamn's proximity to the sea encourages outdoor activities, from leisurely walks along the beach to kite surfing. The area boasts a relaxed atmosphere, attracting families and those seeking a peaceful yet connected lifestyle.",
     images: [
-        "<img class='image1' src='./media/limhamn1.jpg' alt='Gata med hus på båda sidor, tre bilar parkerade på vänster sida brevid vägen, en bil parkerad på höger sida på vägen, bilden är daterad 1969'>",
-        "<img class='image2' src='./media/limhamn2.jpg' alt='Bostadsområde. Gammal bil parkerad på vänster sida'>",
-        "<img class='image3' src='./media/limhamn3.jpg' alt='Tre personer i finkläder står på ett hustak och blickar ut över Limhamns industriområde'>",
+        "<img class='image1' src='./media/limhamn1.jpg' alt='Okänd fotograf / Bild ur boken “Limhamn - Från stenåldern till nutid”'>",
+        "<img class='image2' src='./media/kalkbrottet2.jpg' alt='Sista resan för kalktåget samlade tusentalks åskådare. Foto: Okänd fotograf/ Sydsvenskan 1967'>",
+        "<img class='image3' src='./media/kalkbrottet3.jpg' alt='Handbrytning i kalkbrottet. Fotot: Okänd fotograf / Bild ur boken “Limhamn - Från stenåldern till nutid”.'>",
 ],
-    audio: "./media/fi.mp3",
+    audio: "./media/audio/kalkbrottet.wav",
     quiz: [
         {
             question: "Vad var en av orsakerna till nedläggningen av kalk- och cementindustrin i Limhamn?",
@@ -43,17 +44,18 @@ const locationObject =  {
 
     LOCATION2: {
         id: 2,
-        lat: 55.571957675146884,
-        lon: 12.90055784671468,
+        lat: 55.60874048026735,
+        lon: 12.994096812900331,
         tolerance: 100,
         title: 'Sumphamnen',
+        adress: 'Sibbarps småbåtshamn',
         description: "Nu står vi på en historisk plats i Limhamn där man länge kunde skåda silla båtarna guppa i vattenbrynet. Fisket har varit en stor del för Limhamn och många livnärde sig på yrkesfisket i Limhamn.",
         images: [
             "<img class='image1' src='./media/finland.jpg' alt='grattis Anton'>",
             "<img class='image2' src='./media/finland.jpg' alt='grattis Anton'>",
             "<img class='image3' src='./media/finland.jpg' alt='grattis Anton'>",
         ],
-        audio: "./media/fi.mp3",
+        audio: "./media/audio/fisket.wav",
         quiz: [
             {
                 question: "Vilken var den vanligaste fiskarten som fiskades på Limhamn? ",
@@ -87,14 +89,15 @@ const locationObject =  {
         lat:55.58253967723235,
         lon: 12.926866558119663,
         tolerance: 200,
-        title: 'Linnégatan',
+        title: 'Limhamns torg',
+        adress: 'Linnégatan 15',
         description: 'Gott med kaffe',
         images: [
             "<img class='image1' src='./media/finland.jpg' alt='Japp'>",
             "<img class='image2' src='./media/finland.jpg' alt='Japp'>",
             "<img class='image3' src='./media/finland.jpg' alt='Japp'>",
         ],
-        audio: "./media/fi.mp3",
+        audio: "./media/audio/linnegatan.wav",
         quiz: [
             {
                 question: "Vad jobbade Herman Göring som under tiden han bodde på Limhamn?",
@@ -128,12 +131,13 @@ const locationObject =  {
         lon: 12.926203784035609,
         tolerance: 400,
         title: 'Öresunds hamen',
+        adress: 'Norra Fiskehamnen',
         description: 'Här är jag',
         images: ["<img class='image1' src='./media/finland.jpg' alt='Japp'>",
         "<img class='image2' src='./media/finland.jpg' alt='Japp'>",
         "<img class='image3' src='./media/finland.jpg' alt='Japp'>",
     ],
-    audio: "./media/fi.mp3",
+    audio: "./media/audio/öresund.wav",
     quiz: [
         {
             question: "Hur mycket kostade tur- och returbiljetten på fartyget Dragör mellan Limhamn och Dragör året 1934?",
@@ -167,12 +171,13 @@ const locationObject =  {
         lon: 12.92474667391729,
         tolerance: 400,
         title: 'Cementfabriken',
+        adress: 'Övägen 6A',
         description: 'Här är jag',
         images: ["<img class='image1' src='./media/finland.jpg' alt='Japp'>",
         "<img class='image2' src='./media/finland.jpg' alt='Japp'>",
         "<img class='image3' src='./media/finland.jpg' alt='Japp'>",
     ],
-    audio: "./media/fi.mp3",
+    audio: "./media/audio/cementfabriken.wav",
     quiz: [
         {
             question: "Varför kallades Cristo Redento statyn i Rio de Janeiro 'Limhamns-Jesus' av Limhamns fiskare?",
@@ -201,6 +206,7 @@ const locationObject =  {
     ]
     },
     MALMO: {
+        id:6,
         lat: 55.60587,
         lon: 13.00073,
         tolerance: 300,
