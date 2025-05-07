@@ -1,10 +1,10 @@
 import { serve } from "https://deno.land/std@0.200.0/http/server.ts";
 
+// Enkel router för HTML, CSS, JS – inga lokala bilder!
 const handleRequest = async (request: Request): Promise<Response> => {
   const url = new URL(request.url);
-
-  // Serve static files
   let filePath = `.${url.pathname}`;
+
   if (filePath === "./") {
     filePath = "./index.html";
   }
@@ -17,14 +17,8 @@ const handleRequest = async (request: Request): Promise<Response> => {
       contentType = "text/html";
     } else if (filePath.endsWith(".css")) {
       contentType = "text/css";
-    } else if (filePath.endsWith(".jpg") || filePath.endsWith(".jpeg")) {
-      contentType = "image/jpeg";
-    } else if (filePath.endsWith(".png")) {
-      contentType = "image/png";
-    } else if (filePath.endsWith(".svg")) {
-      contentType = "image/svg+xml";
-    }else if (filePath.endsWith(".mp3")) {
-      contentType = "audio/mpeg";
+    } else if (filePath.endsWith(".js")) {
+      contentType = "application/javascript";
     }
 
     return new Response(file, {
@@ -38,5 +32,17 @@ const handleRequest = async (request: Request): Promise<Response> => {
   }
 };
 
-console.log("Server is running");
+console.log("Server is running on Deno Deploy");
 serve(handleRequest);
+
+/*import { serveDir } from "https://deno.land/std@0.200.0/http/file_server.ts";
+
+Deno.serve((req: Request) => {
+  return serveDir(req, {
+    fsRoot: ".",           // Servera allt från projektroten
+    urlRoot: "",           // Behåll URL-strukturen
+    showDirListing: true,  // Visa kataloger (kan sättas till false)
+    enableCors: true       // Tillåt hämtning från JS/andra domäner
+  });
+});
+ */

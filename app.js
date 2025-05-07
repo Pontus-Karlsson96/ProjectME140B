@@ -86,7 +86,8 @@ function checkPosition(position) {
     parent.appendChild(nextTextContainer);
   }
 
-  nextTextContainer.innerHTML = `Ta dig till nästa plats: Avstånd till ${key}: ${Math.round(distance)} meter.`;
+  nextTextContainer.innerHTML = `Ta dig till nästa plats: Avstånd till ${key}: ${formatDistance(distance)}.`;
+
 
       
     };
@@ -152,6 +153,12 @@ function calculateDistance(lat1, lon1, lat2, lon2) {
   const c = 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1 - a));
 
   return R * c;
+}
+
+function formatDistance(meters) {
+  return meters >= 1000
+    ? `${(meters / 1000).toFixed(1)} km`
+    : `${Math.round(meters)} m`;
 }
 
 function renderBtn(obj, lat, lon, distance) {
