@@ -1,4 +1,23 @@
-import { serve } from "https://deno.land/std@0.200.0/http/server.ts";
+// server.ts
+import { serveFile } from "https://deno.land/std@0.200.0/http/file_server.ts";
+
+Deno.serve(async (req: Request) => {
+  const url = new URL(req.url);
+  let pathname = url.pathname;
+
+  if (pathname === "/") {
+    pathname = "/index.html";
+  }
+
+  try {
+    return await serveFile(req, `.${pathname}`);
+  } catch {
+    return new Response("404 – Not Found", { status: 404 });
+  }
+});
+
+
+/*import { serve } from "https://deno.land/std@0.200.0/http/server.ts";
 
 // Enkel router för HTML, CSS, JS – inga lokala bilder!
 const handleRequest = async (request: Request): Promise<Response> => {
@@ -33,16 +52,4 @@ const handleRequest = async (request: Request): Promise<Response> => {
 };
 
 console.log("Server is running on Deno Deploy");
-serve(handleRequest);
-
-/*import { serveDir } from "https://deno.land/std@0.200.0/http/file_server.ts";
-
-Deno.serve((req: Request) => {
-  return serveDir(req, {
-    fsRoot: ".",           // Servera allt från projektroten
-    urlRoot: "",           // Behåll URL-strukturen
-    showDirListing: true,  // Visa kataloger (kan sättas till false)
-    enableCors: true       // Tillåt hämtning från JS/andra domäner
-  });
-});
- */
+serve(handleRequest);*/

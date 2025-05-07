@@ -2,23 +2,23 @@ const locationObject =  {
     
     LOCATION1:{
     id: 1,
-    lat: 55.5868642841036,//55.60587, 55.5868642841036, 13.011596879998164
-    lon: 13.011712758014033,//13.00073, 13.013998030893251
+    lat: 55.57065979970439,//55.60587, 55.5868642841036, 13.011596879998164
+    lon: 12.94175508465805,//13.00073, 13.013998030893251
     tolerance: 20,
     title: "Kalkbrottet",
     adress: "Kalbrottets utsiktsplats",
     description: "Lorem kalkum dolor sit amet, quarry consectetur limhamborum. Sed do eiusmod tempor incididunt ut labore et dolore magna karst aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex calx commodo.",
     images: [
-        './media/limhamn3.jpg',
-        './media/kalkbrottet2.png',
-        './media/kalkbrottet3.png',
+        'https://pontus-karlsson96.github.io/ProjectME140B/media/limhamn3.jpg',
+        'https://pontus-karlsson96.github.io/ProjectME140B/media/kalkbrottet2.png',
+        'https://pontus-karlsson96.github.io/ProjectME140B/media/kalkbrottet3.png',
 ],
     alt: [
         "'Okänd fotograf / Bild ur boken “Limhamn - Från stenåldern till nutid”",
         "'Sista resan för kalktåget samlade tusentalks åskådare. Foto: Okänd fotograf/ Sydsvenskan 1967'",
         "'Handbrytning i kalkbrottet. Fotot: Okänd fotograf / Bild ur boken “Limhamn - Från stenåldern till nutid”."
     ],
-    audio: "./media/audio/kalkbrottet.wav",
+    audio: "https://pontus-karlsson96.github.io/ProjectME140B/media/audio/kalkbrottet.wav",
     quiz: [
         {
             question: "Vad var en av orsakerna till nedläggningen av kalk- och cementindustrin i Limhamn?",
@@ -49,18 +49,18 @@ const locationObject =  {
 
     LOCATION2: {
         id: 2,
-        lat: 55.58558394859705,
-        lon: 13.015059715353877,
+        lat: 55.571957675146884,
+        lon: 12.90055784671468,
         tolerance: 20,
         title: 'Sumphamnen',
         adress: 'Sibbarps småbåtshamn',
         description: "Nu står vi på en historisk plats i Limhamn där man länge kunde skåda silla båtarna guppa i vattenbrynet. Fisket har varit en stor del för Limhamn och många livnärde sig på yrkesfisket i Limhamn.",
         images: [
-            "./media/limhamn1.jpg",
-            "./media/sumphamnen2.png",
-            "./media/sumphamnen3.png",
-            "./media/sumphamnen4.png",
-            "./media/limhamn2.jpg",
+            "https://pontus-karlsson96.github.io/ProjectME140B/media/limhamn1.jpg",
+            "https://pontus-karlsson96.github.io/ProjectME140B/media/sumphamnen2.png",
+            "https://pontus-karlsson96.github.io/ProjectME140B/media/sumphamnen3.png",
+            "https://pontus-karlsson96.github.io/ProjectME140B/media/sumphamnen4.png",
+            "https://pontus-karlsson96.github.io/ProjectME140B/media/limhamn2.jpg",
         ],
         alt: [
             "Bildtext referens",
@@ -69,7 +69,7 @@ const locationObject =  {
             "Johan Richthoff hoppar längd på Limhamns idrottsplats år 1926. Med på bilden är bland annat Tage Jeppsson, bror till Eric Jeppsson. Foto: Eric Jeppsson / Malmö museum",
             "Johan Richthoff hoppar längd på Limhamns idrottsplats år 1926. Med på bilden är bland annat Tage Jeppsson, bror till Eric Jeppsson. Foto: Eric Jeppsson / Malmö museum",
         ],
-        audio: "./media/audio/fisket.wav",
+        audio: "https://pontus-karlsson96.github.io/ProjectME140B/media/audio/fisket.wav",
         quiz: [
             {
                 question: "Vilken var den vanligaste fiskarten som fiskades på Limhamn? ",
@@ -100,23 +100,23 @@ const locationObject =  {
 
     LOCATION3: {
         id:3,
-        lat:55.58602398013286,
-        lon: 13.013998030893251,
+        lat:55.58253967723235,
+        lon: 12.926866558119663,
         tolerance: 20,
         title: 'Limhamns torg',
         adress: 'Linnégatan 15',
         description: 'Gott med kaffe',
         images: [
-            "./media/linnegatan1.png",
-            "./media/linnegatan2.png",
-            "./media/limhamn3.jpg",
+            "https://pontus-karlsson96.github.io/ProjectME140B/media/linnegatan1.png",
+            "https://pontus-karlsson96.github.io/ProjectME140B/media/linnegatan2.png",
+            "https://pontus-karlsson96.github.io/ProjectME140B/media/limhamn3.jpg",
         ],
         alt: [
             "Bildtext referens",
             "Limhamns Torg, vykort, 1940. Foto: Okänd fotograf / facebook",
             "Bildtext referens",
     ],
-        audio: "./media/audio/linnegatan.wav",
+        audio: "https://pontus-karlsson96.github.io/ProjectME140B/media/audio/linnegatan.wav",
         quiz: [
             {
                 question: "Vad jobbade Herman Göring som under tiden han bodde på Limhamn?",
@@ -146,23 +146,23 @@ const locationObject =  {
     },
     LOCATION4: {
         id:4,
-        lat:55.58602398013286,
-        lon: 13.013998030893251,
+        lat:55.58746813358296,
+        lon: 12.926203784035609,
         tolerance: 20,
         title: 'Öresunds hamen',
         adress: 'Norra Fiskehamnen',
         description: 'Här är jag',
         images: [
-            "./media/öresundshamnen1.png",
-            "./media/öresundshamnen2.png",
-            "./media/öresundshamnen3.png",
-            "./media/öresundshamnen4.jpg",
+            "https://pontus-karlsson96.github.io/ProjectME140B/media/öresundshamnen1.png",
+            "https://pontus-karlsson96.github.io/ProjectME140B/media/öresundshamnen2.png",
+            "https://pontus-karlsson96.github.io/ProjectME140B/media/öresundshamnen3.png",
+            "https://pontus-karlsson96.github.io/ProjectME140B/media/öresundshamnen4.jpg",
     ],
     alt: [
         "Bildtext referens",
         "Bildtext referens",
         "Bildtext referens",],
-    audio: "./media/audio/öresund.wav",
+    audio: "https://pontus-karlsson96.github.io/ProjectME140B/media/audio/öresund.wav",
     quiz: [
         {
             question: "Hur mycket kostade tur- och returbiljetten på fartyget Dragör mellan Limhamn och Dragör året 1934?",
@@ -192,18 +192,18 @@ const locationObject =  {
     },
     LOCATION5: {
         id:5,
-        lat:55.58602398013286,
-        lon: 13.013998030893251,
+        lat:55.5871994008723,
+        lon: 12.92474667391729,
         tolerance: 20,
         title: 'Cementfabriken',
         adress: 'Övägen 6A',
         description: 'Här är jag',
         images: [
-            "./media/cementfabriken1.png",
+            "https://pontus-karlsson96.github.io/ProjectME140B/media/cementfabriken1.png",
 
     ],
     alt: ["Bildtext referens",],
-    audio: "./media/audio/cementfabriken.wav",
+    audio: "https://pontus-karlsson96.github.io/ProjectME140B/media/audio/cementfabriken.wav",
     quiz: [
         {
             question: "Varför kallades Cristo Redento statyn i Rio de Janeiro 'Limhamns-Jesus' av Limhamns fiskare?",
