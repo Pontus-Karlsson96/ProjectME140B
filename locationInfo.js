@@ -153,16 +153,16 @@ const locationObject =  {
         adress: 'Norra Fiskehamnen',
         description: 'Här är jag',
         images: [
-            "https://pontus-karlsson96.github.io/ProjectME140B/media/öresundshamnen1.png",
-            "https://pontus-karlsson96.github.io/ProjectME140B/media/öresundshamnen2.png",
-            "https://pontus-karlsson96.github.io/ProjectME140B/media/öresundshamnen3.png",
-            "https://pontus-karlsson96.github.io/ProjectME140B/media/öresundshamnen4.jpg",
+            "https://pontus-karlsson96.github.io/ProjectME140B/media/oresundshamnen1.png",
+            "https://pontus-karlsson96.github.io/ProjectME140B/media/oresundshamnen2.png",
+            "https://pontus-karlsson96.github.io/ProjectME140B/media/oresundshamnen3.png",
+            "https://pontus-karlsson96.github.io/ProjectME140B/media/oresundshamnen4.jpg",
     ],
     alt: [
         "Bildtext referens",
         "Bildtext referens",
         "Bildtext referens",],
-    audio: "https://pontus-karlsson96.github.io/ProjectME140B/media/audio/öresund.wav",
+    audio: "https://pontus-karlsson96.github.io/ProjectME140B/media/audio/oresund.wav",
     quiz: [
         {
             question: "Hur mycket kostade tur- och returbiljetten på fartyget Dragör mellan Limhamn och Dragör året 1934?",
