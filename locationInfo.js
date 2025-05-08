@@ -2,9 +2,9 @@ const locationObject =  {
     
     LOCATION1:{
     id: 1,
-    lat: 55.57065979970439,//55.60587, 55.5868642841036, 13.011596879998164
-    lon: 12.94175508465805,//13.00073, 13.013998030893251
-    tolerance: 20,
+    lat: 55.570394282336544,
+    lon: 12.941692694021766,
+    tolerance: 50,
     title: "Kalkbrottet",
     adress: "Kalbrottets utsiktsplats",
     description: "Lorem kalkum dolor sit amet, quarry consectetur limhamborum. Sed do eiusmod tempor incididunt ut labore et dolore magna karst aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex calx commodo.",
@@ -49,9 +49,9 @@ const locationObject =  {
 
     LOCATION2: {
         id: 2,
-        lat: 55.571957675146884,
-        lon: 12.90055784671468,
-        tolerance: 20,
+        lat: 55.57170023617143, //55.57170023617143, 12.9006683751294
+        lon: 12.9006683751294,
+        tolerance: 50,
         title: 'Sumphamnen',
         adress: 'Sibbarps småbåtshamn',
         description: "Nu står vi på en historisk plats i Limhamn där man länge kunde skåda silla båtarna guppa i vattenbrynet. Fisket har varit en stor del för Limhamn och många livnärde sig på yrkesfisket i Limhamn.",
@@ -100,9 +100,9 @@ const locationObject =  {
 
     LOCATION3: {
         id:3,
-        lat:55.58253967723235,
-        lon: 12.926866558119663,
-        tolerance: 20,
+        lat: 55.5823352070059, 
+        lon: 12.927463053379727,
+        tolerance: 50,
         title: 'Limhamns torg',
         adress: 'Linnégatan 15',
         description: 'Gott med kaffe',
@@ -146,9 +146,9 @@ const locationObject =  {
     },
     LOCATION4: {
         id:4,
-        lat:55.58746813358296,
-        lon: 12.926203784035609,
-        tolerance: 20,
+        lat:55.58742425290773, 
+        lon: 12.924839556735098,
+        tolerance: 50,
         title: 'Öresunds hamen',
         adress: 'Norra Fiskehamnen',
         description: 'Här är jag',
@@ -192,9 +192,9 @@ const locationObject =  {
     },
     LOCATION5: {
         id:5,
-        lat:55.5871994008723,
-        lon: 12.92474667391729,
-        tolerance: 20,
+        lat:55.58873061916144, 
+        lon: 12.926327755570668,
+        tolerance: 50,
         title: 'Cementfabriken',
         adress: 'Övägen 6A',
         description: 'Här är jag',
