@@ -15,7 +15,7 @@
     <nav></nav>
     <div id="imageOverlay" class="hide">
         <img src="./media/KartaMedStrackTestVecka.png" alt="Karta" id="fullscreenImage">
-        <span id="closeOverlay">&times;</span>
+        
     </div>
     <div id="wrapper">
         <section id="mapContainer" class="hide">
@@ -44,6 +44,9 @@
         <button id="pauseBtn" class="audioBtnDisabled">
         <img src="https://pontus-karlsson96.github.io/ProjectME140B/media/icons/iconPlay.svg">Pausa
         </button>
+        <button id="replayBtn" class="audioBtnDisabled">
+            <img src="https://pontus-karlsson96.github.io/ProjectME140B/media/icons/iconReplay.svg">Spela om
+          </button>
 </div>
 
             
@@ -72,6 +75,7 @@
     </footer>
     <script src="./logic/storage.js"></script>
     <script src="./logic/verifyOrder.js"></script>
+    <script src="./render/renderNextBtn"></script>
     <script src="./render/renderFinish/renderFinish.js"></script>
     <script src="./render/renderAudio.js"></script>
     <script src="./render/renderNextLocation.js"></script>

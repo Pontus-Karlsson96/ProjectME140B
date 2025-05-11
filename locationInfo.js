@@ -2,8 +2,8 @@ const locationObject =  {
     
     LOCATION1:{
     id: 1,
-    lat: 55.570394282336544,
-    lon: 12.941692694021766,
+    lat: 55.586085319092035,
+    lon: 13.013902538397984,
     tolerance: 50,
     title: "Kalkbrottet",
     adress: "Kalbrottets utsiktsplats",
@@ -23,24 +23,24 @@ const locationObject =  {
         {
             question: "Vad var en av orsakerna till nedläggningen av kalk- och cementindustrin i Limhamn?",
             alternatives: [
-                { answer: "Ökad turism i området.", value: 1 },
-                { answer: "Förlusten av många arbetsmöjligheter.", value: 0 },
+                { answer: "Ökad turism i området.", value: 0 },
+                { answer: "Minskad efterfrågan på cement.", value: 1 },
                 { answer: "Förbättrad miljö och naturbevarande åtgärder.", value: 0 }
             ]
         },
         {
             question: "Vad är en av de hotade djurarter som finns i kalkbrottet?",
             alternatives: [
-                { answer: "Berguven.", value: 1 },
-                { answer: "Grönfläckig padda.", value: 0 },
+                { answer: "Berguven.", value: 0 },
+                { answer: "Grönfläckig padda.", value: 1 },
                 { answer: "Korpen.", value: 0 }
             ]
         },
         {
             question: "Vad är en av anledningarna till den grönfläckiga paddans minskning i antal?",
             alternatives: [
-                { answer: "Förbättrad vattenkvalitet.", value: 1 },
-                { answer: "Övergödning och försämrad livsmiljö.", value: 0 },
+                { answer: "Förbättrad vattenkvalitet.", value: 0 },
+                { answer: "Övergödning och försämrad livsmiljö.", value: 1 },
                 { answer: "Ökad predation från andra djur.", value: 0 }
             ]
         }
@@ -74,17 +74,17 @@ const locationObject =  {
             {
                 question: "Vilken var den vanligaste fiskarten som fiskades på Limhamn? ",
                 alternatives: [
-                    { answer: "Torsk", value: 1 },
-                    { answer: "Sill", value: 0 },
+                    { answer: "Torsk", value: 0 },
+                    { answer: "Sill", value: 1 },
                     { answer: "Lax", value: 0 }
                 ]
             },
             {
                 question: "Vilket var Johans Rischtoffs första jobb?",
                 alternatives: [
-                    { answer: "Fiskare", value: 1 },
+                    { answer: "Fiskare", value: 0 },
                     { answer: "Rallare", value: 0 },
-                    { answer: "Tunnbindare", value: 0 }
+                    { answer: "Tunnbindare", value: 1 }
                 ]
             },
             {
@@ -119,7 +119,7 @@ const locationObject =  {
         audio: "https://pontus-karlsson96.github.io/ProjectME140B/media/audio/linnegatan.wav",
         quiz: [
             {
-                question: "Vad jobbade Herman Göring som under tiden han bodde på Limhamn?",
+                question: "Vad jobbade Hermann Göring som under tiden han bodde på Limhamn?",
                 alternatives: [
                     { answer: "Testpilot", value: 1 },
                     { answer: "Flygplansmekaniker", value: 0 },
@@ -129,8 +129,8 @@ const locationObject =  {
             {
                 question: "Vilken färg hade spårvagnen nr 4 som gick till Sibbarp?",
                 alternatives: [
-                    { answer: "Mintgrön", value: 1 },
-                    { answer: "Olivgrön", value: 0 },
+                    { answer: "Mintgrön", value: 0 },
+                    { answer: "Olivgrön", value: 1 },
                     { answer: "Limegrön", value: 0 }
                 ]
             },
@@ -167,25 +167,25 @@ const locationObject =  {
         {
             question: "Hur mycket kostade tur- och returbiljetten på fartyget Dragör mellan Limhamn och Dragör året 1934?",
             alternatives: [
-                { answer: "0.5 öre", value: 1 },
+                { answer: "0.5 öre", value: 0 },
                 { answer: "2 kr", value: 0 },
-                { answer: "1.75 kr", value: 0 }
+                { answer: "1.75 kr", value: 1 }
             ]
         },
         {
             question: "Vad var namnet på fartyget som gjorde den sista resan mellan Limhamn och Dragör året 1999.",
             alternatives: [
-                { answer: "Dragör", value: 1 },
-                { answer: "Scania", value: 0 },
+                { answer: "Dragör", value: 0 },
+                { answer: "Scania", value: 1 },
                 { answer: "Scandinavia", value: 0 }
             ]
         },
         {
             question: "Vilken typ av fartyg var det första passagerarfartyget mellan Limhamn och Dragör på 1930-talet?",
             alternatives: [
-                { answer: "Motorfartyg", value: 1 },
+                { answer: "Motorfartyg", value: 0 },
                 { answer: "Segelbåtsfartyg", value: 0 },
-                { answer: "Ångfartyg", value: 0 }
+                { answer: "Ångfartyg", value: 1 }
             ]
         }
     ]
@@ -208,9 +208,9 @@ const locationObject =  {
         {
             question: "Varför kallades Cristo Redento statyn i Rio de Janeiro 'Limhamns-Jesus' av Limhamns fiskare?",
             alternatives: [
-                { answer: "Hela statyn är gjord av Limhamns cement.", value: 1 },
+                { answer: "Hela statyn är gjord av Limhamns cement.", value: 0 },
                 { answer: "Statyns överkropp är gjord av Limhamns cement.", value: 0 },
-                { answer: "Statyns fundament är gjord av Limhamns cement.", value: 0 }
+                { answer: "Statyns fundament är gjord av Limhamns cement.", value: 1 }
             ]
         },
         {
@@ -224,27 +224,11 @@ const locationObject =  {
         {
             question: "Vad var speciellt med 'dambandet' på cementfabriken?",
             alternatives: [
-                { answer: "Det var ett band där endast män arbetade.", value: 1 },
-                { answer: "Det var ett band där endast kvinnor arbetade med sorteringen av kalk.", value: 0 },
+                { answer: "Det var ett band där endast män arbetade.", value: 0 },
+                { answer: "Det var ett band där endast kvinnor arbetade med sorteringen av kalk.", value: 1 },
                 { answer: "Det var ett band som användes för att transportera cement till andra fabriker.", value: 0 }
             ]
         }
     ]
     },
-    MALMO: {
-        id:6,
-        lat: 55.60587,
-        lon: 13.00073,
-        tolerance: 300,
-        title: 'Malmo',
-        description: "VÄLKOMMEN TILL MALMÖ",
-        images: ["<img class='image1' src='./media/finland.jpg' alt='Japp'>",
-        "<img class='image2' src='./media/finland.jpg' alt='Japp'>",
-        "<img class='image3' src='./media/finland.jpg' alt='Japp'>",
-    ],
-    audio: "./media/fi.mp3",
-    
-
-    }
-
 };

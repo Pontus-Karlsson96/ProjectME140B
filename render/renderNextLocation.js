@@ -38,12 +38,23 @@ function renderMapLocations() {
             card.classList.add("completed")
             card.classList.remove("notCompleted")
 
-
             const check = document.createElement('img');
             check.setAttribute('src', '../media/icons/check.svg');
             check.setAttribute('alt', 'Check icon');
             check.id = 'check';
             card.appendChild(check);
+
+            const reopenBtn = document.createElement('button');
+            reopenBtn.classList.add('reopenBtn');
+            reopenBtn.textContent = "Återbesök platsen";
+            reopenBtn.addEventListener('click', (event) => {
+            event.preventDefault();
+
+            structure.reopenObject(item);
+            console.log('reopen item:', item);
+
+    });
+    card.appendChild(reopenBtn);
             
         } else if (!completed.includes(item.id) && activeLocation.storage_id !== item.id) {
             card.classList.add("notCompleted")

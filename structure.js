@@ -18,9 +18,17 @@ const structure = {
         main.innerHTML = "";
         quizContainer.innerHTML="";
 
-        displayLocationContent(obj, lat, lon, distance);
+        displayLocationContent(obj);
         renderQuiz(obj, obj.id);
-        saveCurrentObject(obj);
+        
+    },
+
+    reopenObject(obj) {
+        main.innerHTML = '';
+        quizContainer.innerHTML = '';
+
+        displayLocationContent(obj);
+        renderNextBtn();
     },
 
     next() {

@@ -6,6 +6,7 @@ function initializeState() {
             1: {
                 storage_id: 1,
                 completed: false,
+                questions: [],
                 answers: [],
                 score: 0,
                 lat: 55.57065979970439,
@@ -14,6 +15,7 @@ function initializeState() {
             2: {
                 storage_id: 2,
                 completed: false,
+                questions: [],
                 answers: [],
                 score: 0,
                 lat: 55.571957675146884,
@@ -22,6 +24,7 @@ function initializeState() {
             3: {
                 storage_id: 3,
                 completed: false,
+                questions: [],
                 answers: [],
                 score: 0,
                 lat: 55.58253967723235,
@@ -30,6 +33,7 @@ function initializeState() {
             4: {
                 storage_id: 4,
                 completed: false,
+                questions: [],
                 answers: [],
                 score: 0,
                 lat: 55.58746813358296,
@@ -38,6 +42,7 @@ function initializeState() {
             5: {
                 storage_id: 5,
                 completed: false,
+                questions: [],
                 answers: [],
                 score: 0,
                 lat: 55.5871994008723,
@@ -70,7 +75,7 @@ function saveCurrentObject(obj) {
     localStorage.setItem("_state", JSON.stringify(currentStorage)); 
 }
 
-function saveQuizResults(answers, storage_id) {
+function saveQuizResults(answers, questions, storage_id) {
     
     
         const rawState = localStorage.getItem("_state");
@@ -84,6 +89,7 @@ function saveQuizResults(answers, storage_id) {
         }
     
         state[storage_id].answers = answers;
+        state[storage_id].questions = questions;
         state[storage_id].completed = true;
     
         localStorage.setItem("_state", JSON.stringify(state));

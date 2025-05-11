@@ -114,9 +114,10 @@ function quizPopUp(quizData, storage_id) {
 
     popUpConfirm.addEventListener("click", () => {
         const results = quizLogic(quizData);
-        saveQuizResults(results.answers, storage_id);
+        saveQuizResults(results.answers, results.questions, storage_id);
         popUpContainer.remove();
         overlay.remove();
+        saveCurrentObject(location);
         structure.next();
     });
 
@@ -157,5 +158,8 @@ function quizLogic(quizData) {
         }
         
     })
-return {answers, score}
+return {
+    questions: quizData,
+    answers: answers,
+    score: score}
 };

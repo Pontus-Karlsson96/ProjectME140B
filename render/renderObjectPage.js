@@ -1,4 +1,4 @@
-function displayLocationContent(location, distance) {
+function displayLocationContent(location) {
     const wrapper = document.getElementById('wrapper');
 
     const main = document.getElementById("main");
