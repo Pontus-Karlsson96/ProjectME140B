@@ -7,6 +7,7 @@
     --color-red: #DB2E17;
     --color-white: #FFFEF5;
     --color-black: #000000;
+    --color-beige: #D6D4BA;
 
     /*font-sizes*/
     --h1: 1.25rem;
@@ -101,7 +102,7 @@ body {
 
 .imageContent {
     width: 100%;
-    height: 14rem;
+    height: 11.25rem;
     border: 1px solid var(--color-black);
     display: flex;
     justify-content: center;
@@ -110,13 +111,12 @@ body {
 
 }
 
-#check {
-    height: 1.5rem;
-    width: 1.5rem;
-    position: absolute;
-    right: 1rem;
-    bottom: 1rem;
+.imageGallery {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 0.8rem;
 }
+
 
 .imageFrame {
     width: 100%;
@@ -124,9 +124,18 @@ body {
 }
 
 .img {
-   width: 90%;
-   height: 90%;
+    width: 90%;
+    height: 90%;
     border: 1px solid black;
+}
+
+#check {
+    height: 1.5rem;
+    width: 1.5rem;
+    position: absolute;
+    right: 1rem;
+    bottom: 1rem;
+    border: 1px solid var(--color-white);
 }
 
 #main {
@@ -134,10 +143,10 @@ body {
     border: 1px solid black;
     border-radius: 10px;
     width: 100%;
-    padding-top: 21px;
-    padding-bottom: 21px;
-    padding-left: 10px;
-    padding-right: 10px;
+    padding-top: 0.8rem;
+    padding-bottom: 0.8rem;
+    padding-left: 0.625rem;
+    padding-right: 0.625rem;
     border-bottom: 1px solid black;
 }
 
@@ -218,7 +227,8 @@ audio {
     width: 100%;
     height: 44px;
     position: relative;
-    grid-column: 1 / 3;
+    
+    margin-bottom: 1rem;
 }
 
 #pauseBtn,
@@ -348,7 +358,7 @@ svg {
 .textFrame {
     width: 100%;
     padding-top: 1.25rem;
-    padding-bottom: 2rem;
+    padding-bottom: 1rem;
     
 }
 
@@ -356,7 +366,10 @@ svg {
     position: absolute;
     bottom: 0px;
     left: 0px;
+}
 
+.textFrame p {
+    margin-bottom: 1.2rem;
 }
 
 .image0,
@@ -419,13 +432,18 @@ svg {
 .mapLocationCard > img {
 width: 100%;
 height: 160px;
-background-color: #EF8E31;
+
 border-radius: 10px;
+border: 1px solid var(--color-black);
 }
 
 .mapLocationCardInfo p:first-of-type {
 color: var(--color-orange);
 border: 0;
+}
+
+.mapLocationCardInfo h5 {
+    font-size: 1rem;
 }
 
 .mapLocationCardInfo p {
@@ -481,6 +499,17 @@ border: 0;
     flex-direction: column;
     align-items: center;
     justify-content: center;
+}
+
+.reopenBtn {
+    height: 1.875rem;
+    background-color: var(--color-beige);
+    color: var(--color-white);
+    border-radius: 25px;
+    padding-left: 1.75rem;
+    padding-right: 1.75rem;
+    border-style: none;
+
 }
 
 #nextBtnRedisplay {
@@ -539,6 +568,7 @@ footer {
     justify-content: center;
     align-items: center;
     z-index: 9999;
+    transition: 10s;
 }
 
 #fullscreenImage {

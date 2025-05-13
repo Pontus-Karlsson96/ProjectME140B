@@ -60,7 +60,7 @@ function checkPosition(position) {
 
   console.log("verifyOrder() resultat:", nextLocation);
   
-
+  
   const key = `LOCATION${nextLocation.storage_id}`;
   const locationData = locationObject[key];
  
@@ -86,7 +86,7 @@ function checkPosition(position) {
     parent.appendChild(nextTextContainer);
   }
 
-  nextTextContainer.innerHTML = `Ta dig till nästa plats: Avstånd till ${key}: ${formatDistance(distance)}.`;
+  nextTextContainer.innerHTML = `Rör på påkarna! ${formatDistance(distance)} kvar.`;
 
 
       

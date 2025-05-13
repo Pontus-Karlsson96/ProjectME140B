@@ -23,9 +23,10 @@ function renderMapLocations() {
     Object.values(data).forEach(item => {
         const card = document.createElement('div');
         card.classList.add('mapLocationCard');
+        console.log(item);
 
         card.innerHTML = `
-            <img src="../media/600x400.svg" alt="location image">
+            <img src="../media/${item.id}.png" alt="location image">
             <div class="mapLocationCardInfo">
                 <h5>${item.title}</h5>
                 <p class="mapArrow">Öppna i kartor <img src="../media/icons/arrow.svg"></p>
@@ -63,12 +64,13 @@ function renderMapLocations() {
             card.append(cover);
         };
 
+        //lägg till else statement för om alla är completed
         if (activeLocation.storage_id === item.id) {
             card.id = 'activeCard';
             card.classList.remove("notCompleted")
 
 
-            //ändra till items adress
+          
             
             const distanceP = document.createElement('p');
             distanceP.textContent = `Adress: ${item.adress}`;

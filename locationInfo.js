@@ -2,8 +2,8 @@ const locationObject =  {
     
     LOCATION1:{
     id: 1,
-    lat: 55.586085319092035,
-    lon: 13.013902538397984,
+    lat: 55.60872931336824,  
+    lon: 12.994075737901131,
     tolerance: 50,
     title: "Kalkbrottet",
     adress: "Kalbrottets utsiktsplats",
@@ -49,8 +49,8 @@ const locationObject =  {
 
     LOCATION2: {
         id: 2,
-        lat: 55.57170023617143, //55.57170023617143, 12.9006683751294
-        lon: 12.9006683751294,
+        lat: 55.60872931336824, //55.57170023617143, 12.9006683751294
+        lon: 12.994075737901131,
         tolerance: 50,
         title: 'Sumphamnen',
         adress: 'Sibbarps småbåtshamn',
@@ -100,8 +100,8 @@ const locationObject =  {
 
     LOCATION3: {
         id:3,
-        lat: 55.5823352070059, 
-        lon: 12.927463053379727,
+        lat: 55.60872931336824, 
+        lon: 12.994075737901131,
         tolerance: 50,
         title: 'Limhamns torg',
         adress: 'Linnégatan 15',
@@ -135,19 +135,19 @@ const locationObject =  {
                 ]
             },
             {
-                question: "Vad hette den nasistiska partiledaren som talade på Limhamnstorget den 1933. ",
+                question: "Vilket årtal avgick spårvagn 4 från limhamn sista gången?",
                 alternatives: [
-                    { answer: "Sven Olof Lindholm", value: 1 },
-                    { answer: "Sven Olof Lindfors", value: 0 },
-                    { answer: "Sven Olof Lindström", value: 0 }
+                    { answer: "1973", value: 1 },
+                    { answer: "1922", value: 0 },
+                    { answer: "1975", value: 0 }
                 ]
             }
         ]
     },
     LOCATION4: {
         id:4,
-        lat:55.58742425290773, 
-        lon: 12.924839556735098,
+        lat:55.60872931336824, 
+        lon: 12.994075737901131,
         tolerance: 50,
         title: 'Öresunds hamen',
         adress: 'Norra Fiskehamnen',
@@ -192,8 +192,8 @@ const locationObject =  {
     },
     LOCATION5: {
         id:5,
-        lat:55.58873061916144, 
-        lon: 12.926327755570668,
+        lat:55.60872931336824, 
+        lon: 12.994075737901131,
         tolerance: 50,
         title: 'Cementfabriken',
         adress: 'Övägen 6A',
@@ -206,11 +206,11 @@ const locationObject =  {
     audio: "https://pontus-karlsson96.github.io/ProjectME140B/media/audio/cementfabriken.wav",
     quiz: [
         {
-            question: "Varför kallades Cristo Redento statyn i Rio de Janeiro 'Limhamns-Jesus' av Limhamns fiskare?",
+            question: "Vem var Limhamnskungen?",
             alternatives: [
-                { answer: "Hela statyn är gjord av Limhamns cement.", value: 0 },
-                { answer: "Statyns överkropp är gjord av Limhamns cement.", value: 0 },
-                { answer: "Statyns fundament är gjord av Limhamns cement.", value: 1 }
+                { answer: "Rudolf Fredrik Beijer.", value: 0 },
+                { answer: "Rudolf Fredrik Börjesson.", value: 0 },
+                { answer: "Rudolf Fredrik Berg.", value: 1 }
             ]
         },
         {
