@@ -171,7 +171,7 @@ const btn = document.createElement('button');
 
 objectBtnContainer.id = "objectBtnContainer";
 objectBtnContainer.innerHTML =`
-<h2> På plats!</h2> <br>
+<h2> På plats!</h2>
 <h2>Redo att starta?</h2>
 `;
 

@@ -75,28 +75,24 @@ function renderFinish() {
         fieldset.appendChild(legend);
 
         const questionData = location.questions[index];
-        const selectedIndex = parseInt(answer.selectedAnswer);
-
-        console.log(questionData);
-        console.log(selectedIndex);
-
-        questionData.alternatives.forEach((alt, i) => {
+        questionData.alternatives.forEach((alt) => {
           const altP = document.createElement('p');
           altP.textContent = alt.answer;
-
+        
           if (alt.value === 1) {
             altP.classList.add("right");
           }
-          
-          if (i === selectedIndex && alt.value === 0) {
-            altP.classList.add("wrong");
-          }
-
-          if (i === selectedIndex) {
+        
+          if (alt.answer === answer.selectedAnswer) {
             altP.classList.add("yourAnswer");
+            if (alt.value === 0) {
+              altP.classList.add("wrong");
+            }
           }
+        
           fieldset.appendChild(altP);
         });
+        
   
         
   

@@ -1,8 +1,7 @@
 function renderQuiz(locationObject, storage_id) {
     const container = document.getElementById('quizContainer');
-    
-
     const location = locationObject;
+
     if (!location || !location.quiz) {
         console.error("Quiz data finns inte för LOCATION1");
         return;
@@ -19,23 +18,34 @@ function renderQuiz(locationObject, storage_id) {
     quizBox.classList.add('quizQuestionContainer');
 
     location.quiz.forEach((quizItem, index) => {
-        const questionContainer = document.createElement('fieldset');
+        const questionContainer = document.createElement('div');
         questionContainer.classList.add('quizQuestion');
 
-        const questionTitle = document.createElement('legend');
-        questionTitle.innerHTML = `Fråga ${index + 1}: <br> ${quizItem.question}`;
+        const questionTitle = document.createElement('div');
+        questionTitle.classList.add('questionTitle');
+        questionTitle.innerHTML = `<strong>Fråga ${index + 1}:</strong><br><br>${quizItem.question}`;
         questionContainer.appendChild(questionTitle);
 
-        quizItem.alternatives.forEach((alt) => {
-            const label = document.createElement('label');
+        quizItem.alternatives.forEach((alt, altIndex) => {
+            const optionWrapper = document.createElement('div');
+            optionWrapper.classList.add('quizOption');
+        
             const radioInput = document.createElement('input');
+            const inputId = `q${index + 1}_alt${altIndex}`; // unikt per fråga + alternativ
             radioInput.type = 'radio';
             radioInput.name = `q${index + 1}`;
             radioInput.value = alt.value;
-            label.appendChild(radioInput);
-            label.appendChild(document.createTextNode(alt.answer));
-            questionContainer.appendChild(label);
+            radioInput.id = inputId;
+        
+            const label = document.createElement('label');
+            label.setAttribute('for', inputId);
+            label.textContent = alt.answer;
+        
+            optionWrapper.appendChild(radioInput);
+            optionWrapper.appendChild(label);
+            questionContainer.appendChild(optionWrapper);
         });
+        
 
         quizBox.appendChild(questionContainer);
     });
@@ -50,7 +60,7 @@ function renderQuiz(locationObject, storage_id) {
     footerTextContent.classList.add('quizFooterContent');
 
     const footerTextContentH4 = document.createElement('h4');
-    footerTextContentH4.textContent = "Redo att låsa in ditt förslag?";
+    footerTextContentH4.textContent = "Redo att låsa in ditt svar?";
 
     const quizSubmitBtn = document.createElement("button");
     quizSubmitBtn.id = "quizSubmitBtn";
@@ -63,10 +73,11 @@ function renderQuiz(locationObject, storage_id) {
     container.appendChild(footer);
 
     quizSubmitBtn.addEventListener("click", () => {
-        
         quizPopUp(locationObject.quiz, storage_id);
     });
 }
+
+
 
 function quizPopUp(quizData, storage_id) {
     const container = document.getElementById("wrapper");
@@ -133,33 +144,44 @@ function quizLogic(quizData) {
     const answers = [];
 
     quizData.forEach((quizItem, index) => {
-        const name = `q${index + 1}`;
-        const selected = document.querySelector(`input[name="${name}"]:checked`);
+        const questionName = `q${index + 1}`;
+        const selectedInput = document.querySelector(`input[name="${questionName}"]:checked`);
 
-        if (selected) {
-            const selectedValue = parseInt(selected.value, 10);
+        if (selectedInput) {
+            const selectedValue = parseInt(selectedInput.value, 10);
+            const selectedId = selectedInput.id;
+
+            // Hitta rätt alternativ utifrån inputens ID
+            const matchingAlt = quizItem.alternatives.find((alt, altIndex) => {
+                const expectedId = `q${index + 1}_alt${altIndex}`;
+                return selectedId === expectedId;
+            });
+
             const isCorrect = selectedValue === 1;
             score += selectedValue;
 
             answers.push({
                 question: quizItem.question,
-                selectedAnswer: selected.value,
+                selectedAnswer: matchingAlt ? matchingAlt.answer : null,
+                selectedValue: selectedValue,
                 isCorrect: isCorrect,
                 points: selectedValue
             });
-            
         } else {
             answers.push({
                 question: quizItem.question,
                 selectedAnswer: null,
+                selectedValue: null,
                 isCorrect: false,
                 points: 0
             });
         }
-        
-    })
-return {
-    questions: quizData,
-    answers: answers,
-    score: score}
-};
+    });
+
+    return {
+        questions: quizData,
+        answers: answers,
+        score: score
+    };
+}
+

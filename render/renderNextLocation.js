@@ -93,7 +93,10 @@ function renderMapLocations() {
             structure.finish();
         });
 
-        const mainParent = document.getElementById('main');
-        mainParent.appendChild(scoreBtn);
+        const resultBtnParent = document.getElementById('mapContainer');
+        const resultBtnContainer = document.createElement('div');
+        resultBtnContainer.id='resultBtnContainer';
+        resultBtnContainer.appendChild(scoreBtn);
+        resultBtnParent.appendChild(resultBtnContainer);
     }
 }

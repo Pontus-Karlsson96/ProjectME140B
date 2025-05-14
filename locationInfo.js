@@ -2,8 +2,8 @@ const locationObject =  {
     
     LOCATION1:{
     id: 1,
-    lat: 55.608944898640615, 
-    lon: 12.994435260727128,
+    lat: 55.58609773863481, 
+    lon: 13.013877801783176,
     tolerance: 50,
     title: "Kalkbrottet",
     adress: "Kalkbrottets utsiktsplats",
@@ -49,8 +49,8 @@ const locationObject =  {
 
     LOCATION2: {
         id: 2,
-        lat: 55.608944898640615, //55.57170023617143, 12.9006683751294
-        lon: 12.994435260727128,
+        lat: 55.58609773863481, 
+        lon: 13.013877801783176,
         tolerance: 50,
         title: 'Sumphamnen',
         adress: 'Sibbarps småbåtshamn',
@@ -100,8 +100,8 @@ const locationObject =  {
 
     LOCATION3: {
         id:3,
-        lat: 55.608944898640615, 
-        lon: 12.994435260727128,
+        lat: 55.58609773863481, 
+        lon: 13.013877801783176,
         tolerance: 50,
         title: 'Limhamns torg',
         adress: 'Linnégatan 15',
@@ -109,6 +109,7 @@ const locationObject =  {
         images: [
             "https://pontus-karlsson96.github.io/ProjectME140B/media/linnegatan1.png",
             "https://pontus-karlsson96.github.io/ProjectME140B/media/linnegatan2.png",
+            "./media/limhamn2.jpg",
             
         ],
         alt: [
@@ -146,8 +147,8 @@ const locationObject =  {
     },
     LOCATION4: {
         id:4,
-        lat:55.608944898640615, 
-        lon: 12.994435260727128,
+        lat: 55.58609773863481, 
+        lon: 13.013877801783176,
         tolerance: 50,
         title: 'Öresundshamen',
         adress: 'Norra Fiskehamnen',
@@ -157,6 +158,7 @@ const locationObject =  {
             "https://pontus-karlsson96.github.io/ProjectME140B/media/oresundshamnen2.png",
             "https://pontus-karlsson96.github.io/ProjectME140B/media/oresundshamnen3.png",
             "https://pontus-karlsson96.github.io/ProjectME140B/media/oresundshamnen4.jpg",
+            "https://pontus-karlsson96.github.io/ProjectME140B/media/oresundshamnen1.png",
     ],
     alt: [
         "Bildtext referens",
@@ -192,8 +194,8 @@ const locationObject =  {
     },
     LOCATION5: {
         id:5,
-        lat:55.608944898640615, 
-        lon: 12.994435260727128,
+        lat: 55.58609773863481, 
+        lon: 13.013877801783176,
         tolerance: 50,
         title: 'Cementfabriken',
         adress: 'Övägen 6A',

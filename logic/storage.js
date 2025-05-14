@@ -76,23 +76,21 @@ function saveCurrentObject(obj) {
 }
 
 function saveQuizResults(answers, questions, storage_id) {
-    
-    
-        const rawState = localStorage.getItem("_state");
-        if (!rawState) return;
-    
-        const state = JSON.parse(rawState);
-    
-        if (!state[storage_id]) {
-            console.warn(`storage_id ${storage_id} saknas i state`);
-            return;
-        }
-    
-        state[storage_id].answers = answers;
-        state[storage_id].questions = questions;
-        state[storage_id].completed = true;
-    
-        localStorage.setItem("_state", JSON.stringify(state));
-        
+    const rawState = localStorage.getItem("_state");
+    if (!rawState) return;
+
+    const state = JSON.parse(rawState);
+
+    if (!state[storage_id]) {
+        console.warn(`storage_id ${storage_id} saknas i state`);
+        return;
     }
+
+    state[storage_id].answers = answers;
+    state[storage_id].questions = questions;
+    state[storage_id].completed = true;
+
+    localStorage.setItem("_state", JSON.stringify(state));
+}
+
     

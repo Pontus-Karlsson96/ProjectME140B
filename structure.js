@@ -5,6 +5,7 @@ let currentObjectId = null; //använd för att spara besökta objekt
 const structure = {
     start() {
         main.innerHTML = "";
+        main.classList.add('hide');
         quizContainer.innerHTML = "";
         initializeState(); //initialize state with all locations false
         console.log(`Initialize local storage: ${localStorage}`);
@@ -17,6 +18,7 @@ const structure = {
 
     renderObject(obj, lat, lon, distance) {
         main.innerHTML = "";
+        main.classList.remove('hide');
         quizContainer.innerHTML="";
 
         window.scrollTo(0, 0);
@@ -27,6 +29,7 @@ const structure = {
 
     reopenObject(obj) {
         main.innerHTML = '';
+        main.classList.remove('hide');
         quizContainer.innerHTML = '';
 
         window.scrollTo(0, 0);
@@ -36,6 +39,7 @@ const structure = {
 
     reopenCards() {
         main.innerHTML = "";
+        main.classList.remove("hide");
         quizContainer.innerHTML = "";
         renderMapLocations();
         window.scrollTo(0, 0);
@@ -44,6 +48,7 @@ const structure = {
 
     next() {
         main.innerHTML = "";
+        main.classList.add('hide')
         quizContainer.innerHTML="";
         window.scrollTo(0, 0);
 
@@ -62,6 +67,7 @@ const structure = {
     },
 
     finish() {
+        main.classList.add("hide");
         renderFinish()
 
     }
