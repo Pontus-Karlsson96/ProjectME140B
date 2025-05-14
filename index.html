@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -10,53 +11,63 @@
     <link rel="stylesheet" href="./render/renderFinish/renderFinish.css">
     <link rel="icon" type="image/x-icon" href="/media/icons/placeholderIcon.svg">
 </head>
+
 <body>
-    
+
     <nav></nav>
     <div id="imageOverlay" class="hide">
         <img src="./media/Karta2Strack.png" alt="Karta" id="fullscreenImage">
-        
+
     </div>
     <div id="wrapper">
         <section id="mapContainer" class="hide">
-            
+
         </section>
-        
+
         <main id="main" class="mainStart">
 
-        <div class="mainTitleContainer"><h2>Kaffesurr från förr</h2>
-        <li>---- 10 min<img src="https://pontus-karlsson96.github.io/ProjectME140B/media/icons/iconStar.svg" 09-04-2025 alt="Stjärna">09-04-2025</li>
-    
-        </div>
-        <div class="imageFrame"><div class="imageContent"><img class="img" src="https://pontus-karlsson96.github.io/ProjectME140B/media/Skarmavbild.png" alt=""></div></div>
-        <div class="bildtext">Okänd fotograf / Bild ur boken “Limhamn - Från stenåldern till nutid”</div>
-        <div class="textFrame">
-            <p>Lars, Britta & Ingvar sitter vid bordet intill och chattrar om sina unga daga i Limhamn. Många kära gamla minnen har dom från yngre dagar. Vågar du tjuvlyssna på deras samtal, eller är du feg?</p>
-            
-            <!-- statiskt ljudblock -->
-        <audio id="introAudio">
-        <source src="https://pontus-karlsson96.github.io/ProjectME140B/media/audio/intro.wav" type="audio/mpeg">
-        </audio>
-        <div class="audioContainer">
-        <button id="playBtn" class="audioBtnEnabled">
-        <img src="https://pontus-karlsson96.github.io/ProjectME140B/media/icons/iconPlay.svg">Tjuvlyssna
-        </button>
-        <button id="pauseBtn" class="audioBtnDisabled">
-        <img src="https://pontus-karlsson96.github.io/ProjectME140B/media/icons/iconPlay.svg">Pausa
-        </button>
-        <button id="replayBtn" class="audioBtnDisabled">
-            <img src="https://pontus-karlsson96.github.io/ProjectME140B/media/icons/iconReplay.svg">Spela om
-          </button>
-</div>
+            <div class="mainTitleContainer">
+                <h2>Kaffesurr från förr</h2>
+                <li>---- 10 min<img src="https://pontus-karlsson96.github.io/ProjectME140B/media/icons/iconStar.svg"
+                        09-04-2025 alt="Stjärna">09-04-2025</li>
 
-            
+            </div>
+            <div class="imageFrame">
+                <div class="imageContent"><img class="img"
+                        src="https://pontus-karlsson96.github.io/ProjectME140B/media/gamlingar.jpg" alt=""></div>
+            </div>
+            <div class="bildtext">Okänd fotograf / Bild ur boken “Limhamn - Från stenåldern till nutid”</div>
+            <div class="textFrame">
+                <p>Lars, Britta & Ingvar sitter vid bordet intill och chattrar om sina unga daga i Limhamn. Många kära
+                    gamla minnen har dom från yngre dagar. Vågar du tjuvlyssna på deras samtal, eller är du feg?</p>
+
+                <!-- statiskt ljudblock -->
+                <audio id="introAudio">
+                    <source src="https://pontus-karlsson96.github.io/ProjectME140B/media/audio/intro.wav"
+                        type="audio/mpeg">
+                </audio>
+                <div class="audioContainer">
+                    <button id="playBtn" class="audioBtnEnabled">
+                        <img src="https://pontus-karlsson96.github.io/ProjectME140B/media/icons/iconPlay.svg">Tjuvlyssna
+                    </button>
+                    <button id="pauseBtn" class="audioBtnDisabled">
+                        <img src="https://pontus-karlsson96.github.io/ProjectME140B/media/icons/iconPlay.svg">Pausa
+                    </button>
+                    <button id="replayBtn" class="audioBtnDisabled">
+                        <img src="https://pontus-karlsson96.github.io/ProjectME140B/media/icons/iconReplay.svg">Spela om
+                    </button>
+                </div>
+
+
         </main>
         <section id="startContainer"> Redo att gå vidare? <button id="startBtn">Ja</button> </section>
         <section id="quizContainer"></section>
-        
+
     </div>
     <footer>
-        <div id="footerLogoContainer"><img src="https://pontus-karlsson96.github.io/ProjectME140B/media/icons/placeholderIcon.svg" alt=""><img src="https://pontus-karlsson96.github.io/ProjectME140B/media/icons/title.svg" alt=""></div>
+        <div id="footerLogoContainer"><img
+                src="https://pontus-karlsson96.github.io/ProjectME140B/media/icons/placeholderIcon.svg" alt=""><img
+                src="https://pontus-karlsson96.github.io/ProjectME140B/media/icons/title.svg" alt=""></div>
         <div id="footerTextContainer">
             <p>
                 Studentprojekt VT2025<br>
@@ -86,4 +97,5 @@
     <script src="./locationInfo.js"></script>
     <script src="./app.js"></script>
 </body>
+
 </html>

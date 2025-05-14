@@ -8,12 +8,14 @@
     --color-white: #FFFEF5;
     --color-black: #000000;
     --color-beige: #D6D4BA;
+    --color-green: #8AA146;
 
     /*font-sizes*/
     --h1: 1.25rem;
     --h2: 1.15rem;
     --h3: 1rem;
     --h4: 0.8rem;
+    --h5: 0.5rem;
     --main: 1rem;
 }
 
@@ -313,6 +315,11 @@ h3 {
 h4 {
     font-family: bodoni72;
     font-size: var(--h4);
+}
+
+h5 {
+    font-family: baskerville-semi;
+    font-size: var(--h5);
 }
 
 p {

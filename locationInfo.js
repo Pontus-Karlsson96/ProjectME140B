@@ -2,11 +2,11 @@ const locationObject =  {
     
     LOCATION1:{
     id: 1,
-    lat: 55.60872931336824,  
-    lon: 12.994075737901131,
+    lat: 55.608768182641626,
+    lon: 12.993934477216271,
     tolerance: 50,
     title: "Kalkbrottet",
-    adress: "Kalbrottets utsiktsplats",
+    adress: "Kalkbrottets utsiktsplats",
     description: "Lorem kalkum dolor sit amet, quarry consectetur limhamborum. Sed do eiusmod tempor incididunt ut labore et dolore magna karst aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex calx commodo.",
     images: [
         'https://pontus-karlsson96.github.io/ProjectME140B/media/limhamn3.jpg',
@@ -49,8 +49,8 @@ const locationObject =  {
 
     LOCATION2: {
         id: 2,
-        lat: 55.60872931336824, //55.57170023617143, 12.9006683751294
-        lon: 12.994075737901131,
+        lat: 55.608768182641626, //55.57170023617143, 12.9006683751294
+        lon: 12.993934477216271,
         tolerance: 50,
         title: 'Sumphamnen',
         adress: 'Sibbarps småbåtshamn',
@@ -100,8 +100,8 @@ const locationObject =  {
 
     LOCATION3: {
         id:3,
-        lat: 55.60872931336824, 
-        lon: 12.994075737901131,
+        lat: 55.608768182641626, 
+        lon: 12.993934477216271,
         tolerance: 50,
         title: 'Limhamns torg',
         adress: 'Linnégatan 15',
@@ -146,10 +146,10 @@ const locationObject =  {
     },
     LOCATION4: {
         id:4,
-        lat:55.60872931336824, 
-        lon: 12.994075737901131,
+        lat:55.608768182641626, 
+        lon: 12.993934477216271,
         tolerance: 50,
-        title: 'Öresunds hamen',
+        title: 'Öresundshamen',
         adress: 'Norra Fiskehamnen',
         description: 'Här är jag',
         images: [
@@ -192,8 +192,8 @@ const locationObject =  {
     },
     LOCATION5: {
         id:5,
-        lat:55.60872931336824, 
-        lon: 12.994075737901131,
+        lat:55.608768182641626, 
+        lon: 12.993934477216271,
         tolerance: 50,
         title: 'Cementfabriken',
         adress: 'Övägen 6A',

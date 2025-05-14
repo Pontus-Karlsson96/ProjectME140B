@@ -3,6 +3,7 @@ let userLat = null;
 let userLon = null;
 let locationInterval = null;
 let trackingActive = true;
+let gameDone = false;
 
 
 

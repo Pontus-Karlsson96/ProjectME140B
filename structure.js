@@ -40,6 +40,7 @@ const structure = {
         if (!nextLocation) {
             console.warn("Alla moment avklarade");
             this.finish();
+            gameDone = true;
             return;
         }
 
