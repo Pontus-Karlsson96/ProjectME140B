@@ -19,7 +19,7 @@ function renderFinish() {
     <h1>${totalCorrect}/15</h1>
     </div>
     <p>Se alla dina svar nedan</p>
-    <img src='https://pontus-karlsson96.github.io/ProjectME140B/media/finalscreenimg1'> <img src='https://pontus-karlsson96.github.io/ProjectME140B/media/finalscreenimg2'>
+    <img src='https://pontus-karlsson96.github.io/ProjectME140B/media/finalscreenimg1.svg'> <img src='https://pontus-karlsson96.github.io/ProjectME140B/media/finalscreenimg2.svg'>
     `;
     wrapper.appendChild(scoreDiv);
   
