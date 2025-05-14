@@ -2,12 +2,12 @@ const locationObject =  {
     
     LOCATION1:{
     id: 1,
-    lat: 55.58609773863481, 
-    lon: 13.013877801783176,
+    lat: 55.57035821109426, 
+    lon: 12.941780949728019,
     tolerance: 50,
     title: "Kalkbrottet",
     adress: "Kalkbrottets utsiktsplats",
-    description: "Välkommen till kalkbrottet! En dammig och bullrig plats men en stor möjlighet för Limhamns borna. Idag en lugn plats för olika djurarter.",
+    description: "Välkommen till kalkbrottet! En dammig och bullrig plats men en stor möjlighet för Limhamnsborna. Idag en lugn plats för olika djurarter.",
     images: [
         './media/kalkbrottet1.png',
         './media/kalkbrottet2.png',
@@ -49,8 +49,8 @@ const locationObject =  {
 
     LOCATION2: {
         id: 2,
-        lat: 55.58609773863481, 
-        lon: 13.013877801783176,
+        lat: 55.57170689301456, 
+        lon: 12.900686310149116,
         tolerance: 50,
         title: 'Sumphamnen',
         adress: 'Sibbarps småbåtshamn',
@@ -100,8 +100,8 @@ const locationObject =  {
 
     LOCATION3: {
         id:3,
-        lat: 55.58609773863481, 
-        lon: 13.013877801783176,
+        lat: 55.58244926064056, 
+        lon: 12.92742508757873,
         tolerance: 50,
         title: 'Limhamns torg',
         adress: 'Linnégatan 15',
@@ -147,8 +147,8 @@ const locationObject =  {
     },
     LOCATION4: {
         id:4,
-        lat: 55.58609773863481, 
-        lon: 13.013877801783176,
+        lat: 55.58744103751432, 
+        lon: 12.92478843712304,
         tolerance: 50,
         title: 'Öresundshamen',
         adress: 'Norra Fiskehamnen',
@@ -194,8 +194,8 @@ const locationObject =  {
     },
     LOCATION5: {
         id:5,
-        lat: 55.58609773863481, 
-        lon: 13.013877801783176,
+        lat: 55.58875130828082, 
+        lon: 12.926325183171926,
         tolerance: 50,
         title: 'Cementfabriken',
         adress: 'Övägen 6A',
