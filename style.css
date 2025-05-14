@@ -109,7 +109,10 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
+}
 
+.imageFrame .imageContent {
+   height: 15.25rem;
 
 }
 

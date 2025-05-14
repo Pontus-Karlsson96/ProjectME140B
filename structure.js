@@ -12,12 +12,14 @@ const structure = {
         renderMapLocations();
         getLocation();
         mapFunction();
+        window.scrollTo(0, 0);
     },
 
     renderObject(obj, lat, lon, distance) {
         main.innerHTML = "";
         quizContainer.innerHTML="";
 
+        window.scrollTo(0, 0);
         displayLocationContent(obj);
         renderQuiz(obj, obj.id);
         
@@ -27,6 +29,7 @@ const structure = {
         main.innerHTML = '';
         quizContainer.innerHTML = '';
 
+        window.scrollTo(0, 0);
         displayLocationContent(obj);
         renderNextBtn();
     },
@@ -34,6 +37,7 @@ const structure = {
     next() {
         main.innerHTML = "";
         quizContainer.innerHTML="";
+        window.scrollTo(0, 0);
 
         const nextLocation = verifyOrder();
 

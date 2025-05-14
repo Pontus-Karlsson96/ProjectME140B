@@ -19,7 +19,7 @@ function renderFinish() {
     <h1>${totalCorrect}/15</h1>
     </div>
     <p>Se alla dina svar nedan</p>
-    <img src='https://pontus-karlsson96.github.io/ProjectME140B/media/finalscreenimg1.svg'> <img src='https://pontus-karlsson96.github.io/ProjectME140B/media/finalscreenimg2.svg'>
+    <div> <img src='https://pontus-karlsson96.github.io/ProjectME140B/media/finalscreenimg1.svg'> <img src='https://pontus-karlsson96.github.io/ProjectME140B/media/finalscreenimg2.svg'> </div>
     `;
     wrapper.appendChild(scoreDiv);
   
@@ -93,10 +93,27 @@ function renderFinish() {
         locationBlock.appendChild(fieldset);
         iQuestion++;
       });
+
+      
+
+      
   
       resultDiv.appendChild(locationBlock);
     });
-  
+
+    const btn = document.createElement('button');
+      btn.classList.add('reopenBtn');
+      btn.textContent = 'Tillbaka';
+
+      
+      btn.addEventListener('click', (event) => {
+        event.preventDefault();
+
+        structure.next();
+      })
+      
+      
+      resultDiv.appendChild(btn);
     wrapper.appendChild(resultDiv);
   }
   
