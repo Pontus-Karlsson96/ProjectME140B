@@ -2,6 +2,7 @@ function renderMapLocations() {
     const data = locationObject;
     const storedData = JSON.parse(localStorage.getItem("_state"));
     const parent = document.getElementById('mapContainer');
+    console.log(parent);
     const activeLocation = verifyOrder();
     const completed = [];
 

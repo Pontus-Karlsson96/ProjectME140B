@@ -16,7 +16,7 @@ function displayLocationContent(location) {
     map.classList.toggle('hide');
 
     main.innerHTML = `
-      <div class="mainTitleContainer"><h2>${location.title}</h2>
+      <div class="mainTitleContainer"><div class="mainTitleHolder"><h2>${location.title}</h2></div>
         <li>---- 10 min<img src="./media/icons/iconStar.svg" 09-04-2025 alt="Stjärna">09-04-2025</li>
         <div class="imageFrame"><div class="imageContent"><img class="img" src="${location.images[0]}" alt="${location.alt[0]}"></div></div>
         <div class="bildtext">${location.alt[0]}</div>

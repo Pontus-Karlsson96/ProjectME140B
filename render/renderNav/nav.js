@@ -9,6 +9,9 @@ nav.innerHTML = `
 //sätt nav logic här
 const mapBtn = document.getElementById('mapBtnContainer');
 const overlay = document.getElementById('imageOverlay');
+const hemknapp = document.getElementById('imageContainer');
+const omOss = document.getElementById('homeBtnContainer');
+const omOssInfo = document.getElementById('infoWrapper');
 
 
 mapBtn.addEventListener("click", (event) => {
@@ -22,3 +25,25 @@ overlay.addEventListener("click", (event) => {
     overlay.classList.add('hide');
     console.log('clock');
 })
+
+hemknapp.addEventListener("click", (event) => {
+    event.preventDefault();
+
+    location.reload();
+
+})
+
+omOss.addEventListener('click', (event) => {
+    event.preventDefault();
+
+    omOssInfo.classList.remove("hide");
+    
+})
+
+omOssInfo.addEventListener('click', (event) => {
+    event.preventDefault();
+
+    omOssInfo.classList.add("hide");
+    
+})
+

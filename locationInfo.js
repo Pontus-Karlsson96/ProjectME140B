@@ -7,7 +7,7 @@ const locationObject =  {
     tolerance: 50,
     title: "Kalkbrottet",
     adress: "Kalkbrottets utsiktsplats",
-    description: "Lorem kalkum dolor sit amet, quarry consectetur limhamborum. Sed do eiusmod tempor incididunt ut labore et dolore magna karst aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex calx commodo.",
+    description: "Idag är kalkbrottet en harmonisk plats jämfört med den tidiga bullriga och dammiga miljön. Jag minns hur morfar berättade historier om kalkbrottet och hur han arbetade här. Det var en plats för möjligheter såsom fisket i Limhamn och utan dessa industrier hade inte Limhamn varit detsamma idag. Den första moderna brytningen av kalk påbörjades år 1866 och man bröt kalk ända fram till 1990-talet. Sprängningarna av kalk kändes över stora delar av Limhamn och från och till kunde även Malmöbor känna av dessa via vibrationerna i marken.",
     images: [
         'https://pontus-karlsson96.github.io/ProjectME140B/media/limhamn3.jpg',
         'https://pontus-karlsson96.github.io/ProjectME140B/media/kalkbrottet2.png',
@@ -105,7 +105,7 @@ const locationObject =  {
         tolerance: 50,
         title: 'Limhamns torg',
         adress: 'Linnégatan 15',
-        description: 'Gott med kaffe',
+        description: 'Nu har du kommit till Linnégatan, en lång gata med rik historia. Här kommer du ta del av den oroliga tiden och spår av nasistiska ledare i Limhamn.',
         images: [
             "https://pontus-karlsson96.github.io/ProjectME140B/media/linnegatan1.png",
             "https://pontus-karlsson96.github.io/ProjectME140B/media/linnegatan2.png",
@@ -151,7 +151,7 @@ const locationObject =  {
         tolerance: 50,
         title: 'Öresundshamen',
         adress: 'Norra Fiskehamnen',
-        description: 'Här är jag',
+        description: 'Britta minns hur hennes mormor berättade om den första ångfärjan Alexandra som sedan 1930-talet påbörjade ett nytt kapitel för passagerarfartyg mellan Limhamn och Dragör. Hennes mormor är dansk och då fick hon äntligen åka ut för att se sina släktingar. Britta nämner att hon hittade gamla biljetter från ångfartygen Dragör 1934 hos sin mormor som, gillade att samla på gamla minnen. Britta blir då förvånad eftersom tur- och returbiljetten kostade 1,75 kr. Under den tyska ockupationen i Danmark upphörde färjetrafiken mellan Limhamn och Dragör som hennes mormor mindes väl.',
         images: [
             "https://pontus-karlsson96.github.io/ProjectME140B/media/oresundshamnen1.png",
             "https://pontus-karlsson96.github.io/ProjectME140B/media/oresundshamnen2.png",
@@ -197,7 +197,7 @@ const locationObject =  {
         tolerance: 50,
         title: 'Cementfabriken',
         adress: 'Övägen 6A',
-        description: 'Här är jag',
+        description: 'Innan bron reste sig över sundet, var det ljudet av fartygens dova tutor som ekade mellan kusterna – ljudet av pendling, av resor mot Europa, och av resurser i rörelse. Tillsammans med vågornas rytmiska slag mot landet och det ständiga dånet från hamnens pulserande industriliv, målade de en ljudbild som präglade kustens vardag sedan 1800-talet.',
         images: [
             "https://pontus-karlsson96.github.io/ProjectME140B/media/cementfabriken1.png",
 

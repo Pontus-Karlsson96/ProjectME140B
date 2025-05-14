@@ -34,6 +34,14 @@ const structure = {
         renderNextBtn();
     },
 
+    reopenCards() {
+        main.innerHTML = "";
+        quizContainer.innerHTML = "";
+        renderMapLocations();
+        window.scrollTo(0, 0);
+
+    },
+
     next() {
         main.innerHTML = "";
         quizContainer.innerHTML="";

@@ -1,6 +1,16 @@
 function renderFinish() {
     const wrapper = document.getElementById('wrapper');
-    wrapper.innerHTML = "";
+    const mapContainer = document.getElementById('mapContainer');
+    if (mapContainer) {
+      mapContainer.innerHTML = '';
+      mapContainer.classList.add('hide');
+    }
+
+    const main = document.getElementById('main');
+    if (main) {
+      main.innerHTML = '';
+      main.classList.add('hide');
+    }
   
     const rawData = localStorage.getItem("_state");
     if (!rawData) {
@@ -103,13 +113,15 @@ function renderFinish() {
 
     const btn = document.createElement('button');
       btn.classList.add('reopenBtn');
-      btn.textContent = 'Tillbaka';
+      btn.textContent = 'Ta mig till toppen';
 
       
       btn.addEventListener('click', (event) => {
         event.preventDefault();
-
-        structure.start();
+        
+        mapContainer.innerHTML = '';
+        main.innerHTML = '';
+        structure.reopenCards();
       })
       
       
