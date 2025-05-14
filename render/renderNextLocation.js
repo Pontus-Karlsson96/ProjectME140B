@@ -25,7 +25,7 @@ function renderMapLocations() {
             <img src="../media/${item.id}.png" alt="location image">
             <div class="mapLocationCardInfo">
                 <h5>${item.title}</h5>
-                <p class="mapArrow">Öppna i kartor <img src="../media/icons/arrow.svg"></p>
+                <p class="mapArrow">Öppna i kartor →</p>
             </div>
         `;
 

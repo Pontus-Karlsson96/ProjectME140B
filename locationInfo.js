@@ -7,9 +7,9 @@ const locationObject =  {
     tolerance: 50,
     title: "Kalkbrottet",
     adress: "Kalkbrottets utsiktsplats",
-    description: "Idag är kalkbrottet en harmonisk plats jämfört med den tidiga bullriga och dammiga miljön. Jag minns hur morfar berättade historier om kalkbrottet och hur han arbetade här. Det var en plats för möjligheter såsom fisket i Limhamn och utan dessa industrier hade inte Limhamn varit detsamma idag. Den första moderna brytningen av kalk påbörjades år 1866 och man bröt kalk ända fram till 1990-talet. Sprängningarna av kalk kändes över stora delar av Limhamn och från och till kunde även Malmöbor känna av dessa via vibrationerna i marken.",
+    description: "Välkommen till kalkbrottet! En dammig och bullrig plats men en stor möjlighet för Limhamns borna. Idag en lugn plats för olika djurarter.",
     images: [
-        'https://pontus-karlsson96.github.io/ProjectME140B/media/limhamn3.jpg',
+        'https://pontus-karlsson96.github.io/ProjectME140B/media/kalkbrottet1.png',
         'https://pontus-karlsson96.github.io/ProjectME140B/media/kalkbrottet2.png',
         'https://pontus-karlsson96.github.io/ProjectME140B/media/kalkbrottet3.png',
 ],
@@ -56,11 +56,11 @@ const locationObject =  {
         adress: 'Sibbarps småbåtshamn',
         description: "Nu står vi på en historisk plats i Limhamn där man länge kunde skåda silla båtarna guppa i vattenbrynet. Fisket har varit en stor del för Limhamn och många livnärde sig på yrkesfisket i Limhamn.",
         images: [
-            "https://pontus-karlsson96.github.io/ProjectME140B/media/limhamn1.jpg",
+            "https://pontus-karlsson96.github.io/ProjectME140B/media/sumphamnen1.png",
             "https://pontus-karlsson96.github.io/ProjectME140B/media/sumphamnen2.png",
             "https://pontus-karlsson96.github.io/ProjectME140B/media/sumphamnen3.png",
             "https://pontus-karlsson96.github.io/ProjectME140B/media/sumphamnen4.png",
-            "https://pontus-karlsson96.github.io/ProjectME140B/media/limhamn2.jpg",
+            "https://pontus-karlsson96.github.io/ProjectME140B/media/sumphamnen5.png",
         ],
         alt: [
             "Bildtext referens",
@@ -109,7 +109,7 @@ const locationObject =  {
         images: [
             "https://pontus-karlsson96.github.io/ProjectME140B/media/linnegatan1.png",
             "https://pontus-karlsson96.github.io/ProjectME140B/media/linnegatan2.png",
-            "https://pontus-karlsson96.github.io/ProjectME140B/media/limhamn3.jpg",
+            
         ],
         alt: [
             "Bildtext referens",
@@ -197,7 +197,7 @@ const locationObject =  {
         tolerance: 50,
         title: 'Cementfabriken',
         adress: 'Övägen 6A',
-        description: 'Innan bron reste sig över sundet, var det ljudet av fartygens dova tutor som ekade mellan kusterna – ljudet av pendling, av resor mot Europa, och av resurser i rörelse. Tillsammans med vågornas rytmiska slag mot landet och det ständiga dånet från hamnens pulserande industriliv, målade de en ljudbild som präglade kustens vardag sedan 1800-talet.',
+        description: 'Rudolf Fredrik Berg utan dig hade inte Limhamn expanderat och blivit den stadsdelen det är idag. Cementfabriken erbjöd ytterligare arbeten här och en massa ny underhållning. Varför inte ta ett dopp i badhuset? ',
         images: [
             "https://pontus-karlsson96.github.io/ProjectME140B/media/cementfabriken1.png",
 

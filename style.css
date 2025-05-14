@@ -173,7 +173,7 @@ body {
 
 .mainTitleContainer {
 width: 100%;
-padding: 0.813rem 0rem 0.625rem 0rem;
+
 margin-bottom: 10px;
 
 }
@@ -195,7 +195,7 @@ margin-bottom: 10px;
     display: flex;
     justify-content: center;
     border: 1px solid var(--color-black);
-    padding: 0.75rem 0 1.875rem 0;
+    padding: 0.75rem 0 0.75rem 0;
 }
 
 .bildtext {
@@ -213,8 +213,8 @@ margin-bottom: 10px;
     background-repeat: no-repeat;
     background-position: center;
     background-size: cover;
-    height: 16rem;
-    border-radius: 0px 0px 25px 25px;
+    height: 10.125rem;
+    border-radius: 0px 0px 10px 10px;
     font-family: "baskerville-semi";
     color: var(--color-white);
     font-size: 1.25rem;
@@ -466,6 +466,7 @@ border: 1px solid var(--color-black);
 .mapLocationCardInfo p:first-of-type {
 color: var(--color-orange);
 border: 0;
+margin-left: 1rem;
 }
 
 .mapLocationCardInfo h5 {
@@ -477,7 +478,7 @@ border: 0;
 }
 
 .mapLocationCardInfo {
-    width: 60%;
+    width: 100%;
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     grid-template-rows: repeat(2, 1fr);
