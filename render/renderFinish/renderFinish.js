@@ -19,8 +19,8 @@ function renderFinish() {
     <h1>${totalCorrect}/15</h1>
     </div>
     <p>Se alla dina svar nedan</p>
-    <img>
-    `
+    <img src='https://pontus-karlsson96.github.io/ProjectME140B/media/finalscreenimg1'> <img src='https://pontus-karlsson96.github.io/ProjectME140B/media/finalscreenimg2'>
+    `;
     wrapper.appendChild(scoreDiv);
   
     const resultDiv = document.createElement("div");
