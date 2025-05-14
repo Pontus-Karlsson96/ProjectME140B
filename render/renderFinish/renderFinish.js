@@ -109,7 +109,7 @@ function renderFinish() {
       btn.addEventListener('click', (event) => {
         event.preventDefault();
 
-        structure.next();
+        structure.start();
       })
       
       
