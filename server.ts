@@ -1,20 +1,15 @@
 // server.ts
-import { serveFile } from "https://deno.land/std@0.200.0/http/file_server.ts";
+import { serveDir } from "https://deno.land/std@0.200.0/http/file_server.ts";
 
-Deno.serve(async (req: Request) => {
-  const url = new URL(req.url);
-  let pathname = url.pathname;
-
-  if (pathname === "/") {
-    pathname = "/index.html";
-  }
-
-  try {
-    return await serveFile(req, `.${pathname}`);
-  } catch {
-    return new Response("404 – Not Found", { status: 404 });
-  }
+Deno.serve((req) => {
+  return serveDir(req, {
+    fsRoot: ".",
+    urlRoot: "",
+    showDirListing: true, // valfritt
+    enableCors: true,
+  });
 });
+
 
 
 /*import { serve } from "https://deno.land/std@0.200.0/http/server.ts";

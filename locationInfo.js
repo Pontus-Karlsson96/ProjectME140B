@@ -9,16 +9,16 @@ const locationObject =  {
     adress: "Kalkbrottets utsiktsplats",
     description: "Välkommen till kalkbrottet! En dammig och bullrig plats men en stor möjlighet för Limhamns borna. Idag en lugn plats för olika djurarter.",
     images: [
-        'https://pontus-karlsson96.github.io/ProjectME140B/media/kalkbrottet1.png',
-        'https://pontus-karlsson96.github.io/ProjectME140B/media/kalkbrottet2.png',
-        'https://pontus-karlsson96.github.io/ProjectME140B/media/kalkbrottet3.png',
+        './media/kalkbrottet1.png',
+        './media/kalkbrottet2.png',
+        './media/kalkbrottet3.png',
 ],
     alt: [
         "'Okänd fotograf / Bild ur boken “Limhamn - Från stenåldern till nutid”",
         "'Sista resan för kalktåget samlade tusentalks åskådare. Foto: Okänd fotograf/ Sydsvenskan 1967'",
         "'Handbrytning i kalkbrottet. Fotot: Okänd fotograf / Bild ur boken “Limhamn - Från stenåldern till nutid”."
     ],
-    audio: "https://pontus-karlsson96.github.io/ProjectME140B/media/audio/kalkbrottet.wav",
+    audio: "./media/audio/kalkbrottet.wav",
     quiz: [
         {
             question: "Vad var en av orsakerna till nedläggningen av kalk- och cementindustrin i Limhamn?",
@@ -56,11 +56,11 @@ const locationObject =  {
         adress: 'Sibbarps småbåtshamn',
         description: "Nu står vi på en historisk plats i Limhamn där man länge kunde skåda silla båtarna guppa i vattenbrynet. Fisket har varit en stor del för Limhamn och många livnärde sig på yrkesfisket i Limhamn.",
         images: [
-            "https://pontus-karlsson96.github.io/ProjectME140B/media/sumphamnen1.png",
-            "https://pontus-karlsson96.github.io/ProjectME140B/media/sumphamnen2.png",
-            "https://pontus-karlsson96.github.io/ProjectME140B/media/sumphamnen3.png",
-            "https://pontus-karlsson96.github.io/ProjectME140B/media/sumphamnen4.png",
-            "https://pontus-karlsson96.github.io/ProjectME140B/media/sumphamnen5.png",
+            "./media/sumphamnen1.png",
+            "./media/sumphamnen2.png",
+            "./media/sumphamnen3.png",
+            "./media/sumphamnen4.png",
+            "./media/sumphamnen5.png",
         ],
         alt: [
             "Bildtext referens",
@@ -69,7 +69,7 @@ const locationObject =  {
             "Johan Richthoff hoppar längd på Limhamns idrottsplats år 1926. Med på bilden är bland annat Tage Jeppsson, bror till Eric Jeppsson. Foto: Eric Jeppsson / Malmö museum",
             "Johan Richthoff hoppar längd på Limhamns idrottsplats år 1926. Med på bilden är bland annat Tage Jeppsson, bror till Eric Jeppsson. Foto: Eric Jeppsson / Malmö museum",
         ],
-        audio: "https://pontus-karlsson96.github.io/ProjectME140B/media/audio/fisket.wav",
+        audio: "./media/audio/fisket.wav",
         quiz: [
             {
                 question: "Vilken var den vanligaste fiskarten som fiskades på Limhamn? ",
@@ -107,8 +107,8 @@ const locationObject =  {
         adress: 'Linnégatan 15',
         description: 'Nu har du kommit till Linnégatan, en lång gata med rik historia. Här kommer du ta del av den oroliga tiden och spår av nasistiska ledare i Limhamn.',
         images: [
-            "https://pontus-karlsson96.github.io/ProjectME140B/media/linnegatan1.png",
-            "https://pontus-karlsson96.github.io/ProjectME140B/media/linnegatan2.png",
+            "./media/linnegatan1.png",
+            "./media/linnegatan2.png",
             "./media/limhamn2.jpg",
             
         ],
@@ -117,7 +117,7 @@ const locationObject =  {
             "Limhamns Torg, vykort, 1940. Foto: Okänd fotograf / facebook",
             "Bildtext referens",
     ],
-        audio: "https://pontus-karlsson96.github.io/ProjectME140B/media/audio/linnegatan.wav",
+        audio: "./media/audio/linnegatan.wav",
         quiz: [
             {
                 question: "Vad jobbade Hermann Göring som under tiden han bodde på Limhamn?",
@@ -154,17 +154,17 @@ const locationObject =  {
         adress: 'Norra Fiskehamnen',
         description: 'Britta minns hur hennes mormor berättade om den första ångfärjan Alexandra som sedan 1930-talet påbörjade ett nytt kapitel för passagerarfartyg mellan Limhamn och Dragör. Hennes mormor är dansk och då fick hon äntligen åka ut för att se sina släktingar. Britta nämner att hon hittade gamla biljetter från ångfartygen Dragör 1934 hos sin mormor som, gillade att samla på gamla minnen. Britta blir då förvånad eftersom tur- och returbiljetten kostade 1,75 kr. Under den tyska ockupationen i Danmark upphörde färjetrafiken mellan Limhamn och Dragör som hennes mormor mindes väl.',
         images: [
-            "https://pontus-karlsson96.github.io/ProjectME140B/media/oresundshamnen1.png",
-            "https://pontus-karlsson96.github.io/ProjectME140B/media/oresundshamnen2.png",
-            "https://pontus-karlsson96.github.io/ProjectME140B/media/oresundshamnen3.png",
-            "https://pontus-karlsson96.github.io/ProjectME140B/media/oresundshamnen4.jpg",
-            "https://pontus-karlsson96.github.io/ProjectME140B/media/oresundshamnen1.png",
+            "./media/oresundshamnen1.png",
+            "./media/oresundshamnen2.png",
+            "./media/oresundshamnen3.png",
+            "./media/oresundshamnen4.jpg",
+            "./media/oresundshamnen1.png",
     ],
     alt: [
         "Bildtext referens",
         "Bildtext referens",
         "Bildtext referens",],
-    audio: "https://pontus-karlsson96.github.io/ProjectME140B/media/audio/oresund.wav",
+    audio: "./media/audio/oresund.wav",
     quiz: [
         {
             question: "Hur mycket kostade tur- och returbiljetten på fartyget Dragör mellan Limhamn och Dragör året 1934?",
@@ -201,11 +201,11 @@ const locationObject =  {
         adress: 'Övägen 6A',
         description: 'Rudolf Fredrik Berg utan dig hade inte Limhamn expanderat och blivit den stadsdelen det är idag. Cementfabriken erbjöd ytterligare arbeten här och en massa ny underhållning. Varför inte ta ett dopp i badhuset? ',
         images: [
-            "https://pontus-karlsson96.github.io/ProjectME140B/media/cementfabriken1.png",
+            "./media/cementfabriken1.png",
 
     ],
     alt: ["Bildtext referens",],
-    audio: "https://pontus-karlsson96.github.io/ProjectME140B/media/audio/cementfabriken.wav",
+    audio: "./media/audio/cementfabriken.wav",
     quiz: [
         {
             question: "Vem var Limhamnskungen?",
