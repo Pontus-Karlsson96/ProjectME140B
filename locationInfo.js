@@ -2,8 +2,8 @@ const locationObject =  {
     
     LOCATION1:{
     id: 1,
-    lat: 55.58609806216724, 
-    lon: 13.013890644017337, //lat: 55.57035821109426, lon: 12.941780949728019,
+    lat: 55.57035821109426, 
+    lon: 12.941780949728019, //lat: 55.57035821109426, lon: 12.941780949728019,
     tolerance: 50,
     title: "Kalkbrottet",
     adress: "Kalkbrottets utsiktsplats",
@@ -49,8 +49,8 @@ const locationObject =  {
 
     LOCATION2: {
         id: 2,
-        lat: 55.58609806216724, 
-    lon: 13.013890644017337, //lat: 55.57170689301456, lon: 12.900686310149116,
+        lat: 55.57170689301456, 
+    lon: 12.900686310149116, //lat: 55.57170689301456, lon: 12.900686310149116,
         tolerance: 50,
         title: 'Sumphamnen',
         adress: 'Sibbarps småbåtshamn',
@@ -100,8 +100,8 @@ const locationObject =  {
 
     LOCATION3: {
         id:3,
-        lat: 55.58609806216724, 
-    lon: 13.013890644017337, //lat: 55.58244926064056, lon: 12.92742508757873,
+        lat: 55.58244926064056, 
+    lon: 12.92742508757873, //lat: 55.58244926064056, lon: 12.92742508757873,
         tolerance: 50,
         title: 'Limhamns torg',
         adress: 'Linnégatan 15',
@@ -147,8 +147,8 @@ const locationObject =  {
     },
     LOCATION4: {
         id:4,
-        lat: 55.58609806216724, 
-    lon: 13.013890644017337, //lat: 55.58744103751432, lon: 12.92478843712304,
+        lat: 55.58744103751432, 
+    lon: 12.92478843712304, //lat: 55.58744103751432, lon: 12.92478843712304,
         tolerance: 50,
         title: 'Öresundshamen',
         adress: 'Norra Fiskehamnen',
@@ -194,8 +194,8 @@ const locationObject =  {
     },
     LOCATION5: {
         id:5,
-        lat: 55.58609806216724, 
-    lon: 13.013890644017337, //lat: 55.5881618301511,lon: 12.925593332012443,
+        lat: 55.5881618301511, 
+    lon: 12.925593332012443, //lat: 55.5881618301511,lon: 12.925593332012443,
         tolerance: 50,
         title: 'Cementfabriken',
         adress: 'Övägen 6A',
