@@ -194,8 +194,8 @@ const locationObject =  {
     },
     LOCATION5: {
         id:5,
-        lat: 55.58875130828082, 
-        lon: 12.926325183171926,
+        lat: 55.5881618301511,
+        lon: 12.925593332012443,
         tolerance: 50,
         title: 'Cementfabriken',
         adress: 'Övägen 6A',
