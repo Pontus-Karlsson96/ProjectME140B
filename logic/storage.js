@@ -56,6 +56,7 @@ function initializeState() {
 
 
 function saveCurrentObject(obj) {
+    console.log(obj);
 
     const currentObject = obj;
     const currentStorage = JSON.parse(localStorage.getItem("_state")); 
