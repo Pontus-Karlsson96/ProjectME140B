@@ -130,16 +130,17 @@ function showError(error) {
       alert("Var vänligt tillåt din webbläsare att se din plats.");
       break;
     case error.POSITION_UNAVAILABLE:
-      alert("Platsinformation är otillgänglig.");
+      console.log("Platsinformation är otillgänglig.");
       break;
     case error.TIMEOUT:
-      alert("Tidsgränsen för att få användarens plats överskreds.");
+      console.log("Tidsgränsen för att få användarens plats överskreds.");
       break;
     case error.UNKNOWN_ERROR:
-      alert("Ett okänt fel uppstod.");
+      console.log("Ett okänt fel uppstod.");
       break;
   }
 }
+
 
 function calculateDistance(lat1, lon1, lat2, lon2) {
   const R = 6371e3;
